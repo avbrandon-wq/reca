@@ -8,6 +8,109 @@
         </div>
     </section>
 
+<section class="beneficios">
+        <div class="beneficios-grid">
+            <div class="beneficio-card">
+                <div class="circle-num">1</div>
+                <h3>Propósitos <br>alineados</h3>
+                <div class="short-line"></div>
+                <p>Beneficios reales para la organización y el candidato.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <div class="circle-num">2</div>
+                <h3>Una Red de <br>Servicio</h3>
+                <div class="short-line"></div>
+                <p>Acompañamiento integral durante todo el proceso <strong>(SIN COSTO)</strong>.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <div class="circle-num">3</div>
+                <h3>Vinculación <br>flexible</h3>
+                <div class="short-line"></div>
+                <p>Programas por tipo de contrato (directo y aprendices).</p>
+            </div>
+
+            <div class="beneficio-card">
+                <div class="circle-num">4</div>
+                <h3>Solución y <br>Oportunidad</h3>
+                <div class="short-line"></div>
+                <p>Cumplimiento de ley y beneficios tributarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .beneficios {
+            padding: 80px 6%;
+            background-color: var(--blanco);
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .beneficio-card {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circle-num {
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid var(--purpura-reca);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--purpura-reca);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .beneficio-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--purpura-reca);
+            line-height: 1.3;
+            margin: 0;
+            text-transform: none; /* Mantiene un look más moderno que las puras mayúsculas */
+        }
+
+        .short-line {
+            width: 35px;
+            height: 2px;
+            background-color: var(--purpura-reca);
+            margin: 15px 0;
+        }
+
+        .beneficio-card p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            color: var(--gris-suave);
+            margin: 0;
+            max-width: 200px;
+        }
+
+        .beneficio-card strong {
+            font-weight: 700;
+            color: var(--gris-premium);
+        }
+
+        @media (max-width: 768px) {
+            .beneficios-grid { gap: 60px; }
+        }
+    </style>
+
     <style>
         /* Estilos específicos para el título estilizado */
         .hero-title {
