@@ -1,164 +1,97 @@
-<section class="hero-title">
-        <div class="container">
-            <h1 class="main-heading">
-                Inclusión laboral <span class="highlight">sostenible y efectiva</span> <br>
-                <span class="sub-heading">en cumplimiento de la ley.</span>
-            </h1>
-            <div class="accent-line"></div>
-        </div>
-    </section>
-
-<section class="beneficios">
-        <div class="beneficios-grid">
-            <div class="beneficio-card">
-                <div class="circle-num">1</div>
-                <h3>Propósitos <br>alineados</h3>
-                <div class="short-line"></div>
-                <p>Beneficios reales para la organización y el candidato.</p>
-            </div>
-
-            <div class="beneficio-card">
-                <div class="circle-num">2</div>
-                <h3>Una Red de <br>Servicio</h3>
-                <div class="short-line"></div>
-                <p>Acompañamiento integral durante todo el proceso <strong>(SIN COSTO)</strong>.</p>
-            </div>
-
-            <div class="beneficio-card">
-                <div class="circle-num">3</div>
-                <h3>Vinculación <br>flexible</h3>
-                <div class="short-line"></div>
-                <p>Programas por tipo de contrato (directo y aprendices).</p>
-            </div>
-
-            <div class="beneficio-card">
-                <div class="circle-num">4</div>
-                <h3>Solución y <br>Oportunidad</h3>
-                <div class="short-line"></div>
-                <p>Cumplimiento de ley y beneficios tributarios.</p>
-            </div>
-        </div>
-    </section>
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECA Colombia – Inclusión Laboral Sostenible</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        .beneficios {
-            padding: 80px 6%;
-            background-color: var(--blanco);
+        :root {
+            --purpura-reca: #702A75; 
+            --gris-premium: #2D2D2D;
+            --gris-suave: #666666;
+            --blanco: #ffffff;
+            --sombra-sutil: rgba(0, 0, 0, 0.05);
         }
 
-        .beneficios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .beneficio-card {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .circle-num {
-            width: 40px;
-            height: 40px;
-            border: 1.5px solid var(--purpura-reca);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--purpura-reca);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        .beneficio-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--purpura-reca);
-            line-height: 1.3;
+        body {
             margin: 0;
-            text-transform: none; /* Mantiene un look más moderno que las puras mayúsculas */
-        }
-
-        .short-line {
-            width: 35px;
-            height: 2px;
-            background-color: var(--purpura-reca);
-            margin: 15px 0;
-        }
-
-        .beneficio-card p {
+            padding: 0;
             font-family: 'Open Sans', sans-serif;
-            font-size: 14px;
-            color: var(--gris-suave);
-            margin: 0;
-            max-width: 200px;
-        }
-
-        .beneficio-card strong {
-            font-weight: 700;
-            color: var(--gris-premium);
-        }
-
-        @media (max-width: 768px) {
-            .beneficios-grid { gap: 60px; }
-        }
-    </style>
-
-    <style>
-        /* Estilos específicos para el título estilizado */
-        .hero-title {
-            padding: 100px 6%;
-            text-align: center;
             background-color: var(--blanco);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .main-heading {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300; /* Peso ligero para elegancia */
-            font-size: 48px;
             color: var(--gris-premium);
-            line-height: 1.2;
-            margin: 0;
-            letter-spacing: -1px;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .main-heading .highlight {
-            font-weight: 800; /* Peso extra bold para contraste */
+        /* --- NAVEGACIÓN ESTILIZADA --- */
+        .header-estilizado {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background: var(--blanco);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px var(--sombra-sutil);
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-box img {
+            height: 45px;
+            width: auto;
+        }
+
+        .tagline-marca {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2.5px; /* Espaciado premium */
             color: var(--purpura-reca);
         }
 
-        .sub-heading {
-            display: block;
-            font-size: 38px;
-            font-weight: 500;
+        .nav-estilizada ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-estilizada a {
+            text-decoration: none;
             color: var(--gris-suave);
-            margin-top: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
         }
 
-        .accent-line {
-            width: 60px;
-            height: 4px;
+        .nav-estilizada a:hover {
+            color: var(--purpura-reca);
+            letter-spacing: 2px;
+        }
+
+        .btn-premium {
             background-color: var(--purpura-reca);
-            margin: 40px auto 0;
-            border-radius: 2px;
+            color: white !important;
+            padding: 12px 25px;
+            border-radius: 2px; /* Look arquitectónico */
+            font-weight: 700 !important;
+            font-size: 10px !important;
+            box-shadow: 0 10px 20px rgba(112, 42, 117, 0.15);
         }
 
-        /* Ajuste para pantallas pequeñas */
-        @media (max-width: 768px) {
-            .main-heading { font-size: 32px; }
-            .sub-heading { font-size: 26px; }
-            .hero-title { padding: 60px 20px; }
-        }
-    </style>
+        /* --- TÍTULO IMPACT
