@@ -593,157 +593,122 @@
 </body>
 
 
-
-        <footer class="footer-reca">
+<footer class="footer-reca-centrado">
     <div class="footer-container">
-        <div class="footer-main-info">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logotipo.png" alt="RECA 15 Años" class="footer-logo">
-            <div class="footer-links">
+        
+        <div class="footer-redes">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="footer-brand-docs">
+            <div class="footer-logo-wrapper">
+                <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logotipo.png" alt="RECA 15 Años" class="logo-footer-white">
+            </div>
+            
+            <div class="footer-doc-links">
                 <a href="#">Documentos legales 2025</a>
                 <a href="#">Política de tratamiento de datos</a>
                 <a href="mailto:info@recacolombia.org">info@recacolombia.org</a>
             </div>
         </div>
 
-        <div class="footer-social">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-
-        <div class="footer-bottom">
-            <p class="sede-info"><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
-            <p class="copyright">RECA © Derechos Reservados 2024</p>
+        <div class="footer-info-final">
+            <p class="txt-sede"><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
+            <p class="txt-copy">RECA © Derechos Reservados 2024</p>
         </div>
     </div>
-
-    <a href="https://wa.me/573105658621" class="whatsapp-float" target="_blank">
-        <span class="tooltip-wa">Escríbanos directamente</span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
 </footer>
 
-<script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
-
 <style>
-    .footer-reca {
-        background-color: var(--purpura-reca);
-        color: white;
-        padding: 80px 6% 40px;
+    .footer-reca-centrado {
+        background-color: #702A75; /* Púrpura institucional */
+        color: #ffffff;
+        padding: 60px 20px;
         font-family: 'Montserrat', sans-serif;
-        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
     .footer-container {
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    .footer-logo {
-        height: 60px;
-        filter: brightness(0) invert(1); /* Convierte el logo a blanco */
-        margin-bottom: 30px;
-    }
-
-    .footer-links {
+        width: 100%;
+        max-width: 800px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Redes Sociales */
+    .footer-redes {
+        display: flex;
+        gap: 20px;
         margin-bottom: 40px;
     }
 
-    .footer-links a {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 300;
-        transition: color 0.3s;
+    .footer-redes a {
+        color: #ffffff;
+        font-size: 18px;
+        transition: opacity 0.3s;
     }
 
-    .footer-links a:hover {
-        color: white;
-        text-decoration: underline;
-    }
+    .footer-redes a:hover { opacity: 0.7; }
 
-    .footer-social {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
+    /* Bloque Central: Logo y Enlaces */
+    .footer-brand-docs {
         margin-bottom: 50px;
     }
 
-    .footer-social a {
-        color: white;
-        font-size: 20px;
-        transition: transform 0.3s;
+    .footer-logo-wrapper {
+        margin-bottom: 25px;
     }
 
-    .footer-social a:hover {
-        transform: translateY(-5px);
+    .logo-footer-white {
+        height: 55px;
+        filter: brightness(0) invert(1); /* Logo en blanco */
     }
 
-    .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 40px;
+    .footer-doc-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
-    .sede-info {
+    .footer-doc-links a {
+        color: #ffffff;
+        text-decoration: none;
         font-size: 13px;
-        font-weight: 400;
-        letter-spacing: 0.5px;
-        margin-bottom: 20px;
+        font-weight: 300;
+        opacity: 0.9;
     }
 
-    .copyright {
-        font-size: 11px;
-        opacity: 0.6;
+    .footer-doc-links a:hover { text-decoration: underline; }
+
+    /* Información de base */
+    .footer-info-final {
+        padding-top: 30px;
+    }
+
+    .txt-sede {
+        font-size: 13px;
+        margin-bottom: 15px;
+        font-weight: 400;
+    }
+
+    .txt-copy {
+        font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 1px;
+        opacity: 0.6;
     }
 
-    /* --- WHATSAPP FLOTANTE --- */
-    .whatsapp-float {
-        position: fixed;
-        bottom: 40px;
-        right: 40px;
-        background-color: #25d366;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        z-index: 2000;
-        transition: all 0.3s;
+    /* Ajuste para móviles */
+    @media (max-width: 600px) {
+        .footer-reca-centrado { padding: 40px 15px; }
+        .logo-footer-white { height: 45px; }
     }
-
-    .whatsapp-float img { width: 35px; }
-
-    .tooltip-wa {
-        position: absolute;
-        right: 75px;
-        background: white;
-        color: #333;
-        padding: 8px 15px;
-        border-radius: 5px;
-        font-size: 12px;
-        font-weight: 600;
-        white-space: nowrap;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.3s;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .whatsapp-float:hover .tooltip-wa {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .whatsapp-float:hover {
-        transform: scale(1.1);
-    }
+</style>
 </style>
 
 
