@@ -310,32 +310,60 @@
 
         
 
-        <section class="seccion-aliados">
-    <div class="contenedor-texto-aliados">
-        <h2 class="titulo-aliados">Conéctamos talento con discapacidad con empresas que buscan <strong>impacto y legalidad.</strong></h2>
-        <div class="linea-decorativa-corta"></div>
-        <p class="subtitulo-aliados">Más de 15 años transformando la cultura organizacional inclusiva de grandes marcas.</p>
+<section class="aliados-carrusel">
+    <div class="texto-central-aliados">
+        <h2>Conectamos talento con discapacidad con empresas que buscan <strong>impacto y legalidad.</strong></h2>
+        <div class="divisor-purpura"></div>
+        <p>Más de 15 años transformando la cultura organizacional inclusiva de grandes marcas.</p>
     </div>
 
-    <div class="slider-logotipos">
-        <div class="track-logotipos">
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-femsa.png" alt="Coca-Cola FEMSA"></div>
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-ramo.png" alt="Ramo"></div>
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-envia.png" alt="Envia"></div>
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-claro.png" alt="Claro"></div>
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-femsa.png" alt="Coca-Cola FEMSA"></div>
+    <div class="marquesina-logos">
+        <div class="marquesina-track">
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Adidas"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="BBVA"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/claro.png" alt="Claro"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/envia.png" alt="Envia"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/femsa.png" alt="Coca-Cola FEMSA"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/gallager.png" alt="Gallager"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/ilunion.png" alt="Ilunion"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/ramo.png" alt="Ramo"></div>
             
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-femsa.png" alt="Coca-Cola FEMSA"></div>
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-ramo.png" alt="Ramo"></div>
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-envia.png" alt="Envia"></div>
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-claro.png" alt="Claro"></div>
-            <div class="logo-item"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo-femsa.png" alt="Coca-Cola FEMSA"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Adidas"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="BBVA"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/claro.png" alt="Claro"></div>
+            <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/envia.png" alt="Envia"></div>
         </div>
     </div>
 </section>
-    </div>
-</section>
 
+<style>
+    .aliados-carrusel { padding: 80px 0; background: #fff; overflow: hidden; border-top: 1px solid #eee; }
+    .texto-central-aliados { text-align: center; margin-bottom: 50px; padding: 0 10%; }
+    .texto-central-aliados h2 { color: #702A75; font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.3; }
+    .divisor-purpura { width: 50px; height: 3px; background: #702A75; margin: 25px auto; }
+    .texto-central-aliados p { color: #666; font-size: 14px; font-weight: 300; }
+    
+    .marquesina-logos { width: 100%; display: flex; }
+    .marquesina-track { 
+        display: flex; 
+        width: calc(250px * 12); 
+        animation: scroll-infinito 35s linear infinite; 
+    }
+    .logo-slide { width: 250px; padding: 0 40px; display: flex; align-items: center; justify-content: center; }
+    .logo-slide img { 
+        max-width: 160px; 
+        height: auto; 
+        filter: grayscale(100%); 
+        opacity: 0.6; 
+        transition: all 0.4s ease; 
+    }
+    .logo-slide img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+
+    @keyframes scroll-infinito {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-250px * 8)); }
+    }
+</style>
         
 
 <style>
