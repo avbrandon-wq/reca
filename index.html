@@ -25,7 +25,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN ESTILIZADA --- */
         .header-estilizado {
             display: flex;
             justify-content: space-between;
@@ -45,8 +45,6 @@
             text-decoration: none;
         }
 
-        .logo-box img { height: 45px; width: auto; }
-
         .tagline-marca {
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
@@ -62,6 +60,7 @@
             align-items: center;
             gap: 35px;
             margin: 0;
+            padding: 0;
         }
 
         .nav-estilizada a {
@@ -82,7 +81,7 @@
             font-weight: 700 !important;
         }
 
-        /* --- HERO --- */
+        /* --- HERO (TÍTULO) --- */
         .hero-container {
             padding: 100px 6% 60px;
             text-align: center;
@@ -95,13 +94,21 @@
             font-size: 52px;
             line-height: 1.1;
             letter-spacing: -2px;
+            margin-bottom: 20px;
         }
 
         .titulo-principal .light { font-weight: 300; }
         .titulo-principal .bold { font-weight: 800; color: var(--purpura-reca); }
 
-        /* --- SECCIÓN 1: BENEFICIOS (HORIZONTALES) --- */
-        .beneficios-grid {
+        .bajada-titulo {
+            font-size: 38px;
+            font-weight: 400;
+            color: var(--gris-suave);
+            letter-spacing: -1px;
+        }
+
+        /* --- SECCIÓN 1: BENEFICIOS (4 PUNTOS HORIZONTALES) --- */
+        .beneficios-seccion {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 40px;
@@ -133,13 +140,12 @@
 
         .card-beneficio h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 19px;
+            font-size: 18px;
             color: var(--purpura-reca);
             margin: 0;
             font-weight: 400;
+            line-height: 1.2;
         }
-
-        .card-beneficio h3 strong { font-weight: 800; }
 
         .linea-decorativa {
             width: 30px;
@@ -148,71 +154,90 @@
             margin: 15px 0;
         }
 
-        .card-beneficio p { font-size: 14px; color: var(--gris-suave); max-width: 200px; }
+        .card-beneficio p {
+            font-size: 14px;
+            color: var(--gris-suave);
+            max-width: 200px;
+            line-height: 1.4;
+        }
 
         /* --- SECCIÓN 2: SERVICIOS (DESPLEGABLES) --- */
-        .servicios-seccion {
+        .servicios-container {
             padding: 100px 6%;
             background-color: #fcfcfc;
         }
 
-        .servicios-header { text-align: center; margin-bottom: 60px; }
-
-        .servicio-item {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 0;
-            border-bottom: 1px solid #eeeeee;
-            display: flex;
-            gap: 30px;
+        .servicios-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
 
-        .servicio-num-small {
-            width: 35px;
-            height: 35px;
+        .titulo-servicios {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--purpura-reca);
+            margin: 0;
+        }
+
+        .servicio-item {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 35px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 25px;
+        }
+
+        .servicio-num-mini {
+            width: 32px;
+            height: 32px;
             border: 1px solid var(--purpura-reca);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--purpura-reca);
+            font-size: 13px;
             font-weight: 700;
             flex-shrink: 0;
         }
 
         .servicio-content h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
+            font-size: 21px;
             color: var(--purpura-reca);
             margin: 0;
             font-weight: 400;
         }
 
-        .servicio-content h3 .bold { font-weight: 800; }
-
-        .conozca-mas {
+        .conozca-mas-btn {
             font-family: 'Montserrat', sans-serif;
             font-size: 12px;
             font-weight: 700;
             color: var(--gris-suave);
-            margin: 10px 0;
             cursor: pointer;
             display: inline-block;
+            margin-top: 8px;
+            transition: 0.3s;
         }
 
-        .servicio-desc, .lista-individuales {
+        /* Lógica Desplegable */
+        .servicio-detalles {
             max-height: 0;
             overflow: hidden;
             transition: all 0.4s ease-in-out;
             opacity: 0;
         }
 
-        .servicio-item.active .servicio-desc, 
-        .servicio-item.active .lista-individuales {
-            max-height: 500px;
+        .servicio-item.active .servicio-detalles {
+            max-height: 400px;
             opacity: 1;
-            margin-top: 15px;
+            margin-top: 20px;
         }
+
+        .servicio-detalles p { font-size: 15px; color: var(--gris-suave); line-height: 1.6; margin: 5px 0; }
+        .servicio-detalles strong { color: var(--gris-premium); }
 
         @media (max-width: 768px) {
             .titulo-principal { font-size: 36px; }
@@ -224,7 +249,6 @@
 
     <header class="header-estilizado">
         <a href="#" class="logo-box">
-            <img src="logotipo.png" alt="RECA">
             <span class="tagline-marca">Red Empleo con Apoyo</span>
         </a>
         <nav class="nav-estilizada">
@@ -241,12 +265,12 @@
         <section class="hero-container">
             <h1 class="titulo-principal">
                 <span class="light">Inclusión laboral</span> <br>
-                <span class="bold">sostenible y efectiva</span> <br>
-                <span class="light" style="font-size: 38px;">en cumplimiento de la ley.</span>
+                <span class="bold">sostenible y efectiva</span>
             </h1>
+            <p class="bajada-titulo">en cumplimiento de la ley.</p>
         </section>
 
-        <section class="beneficios-grid">
+        <section class="beneficios-seccion">
             <div class="card-beneficio">
                 <div class="num-circulo">1</div>
                 <h3>Propósitos <br><strong>alineados</strong></h3>
@@ -273,63 +297,82 @@
             </div>
         </section>
 
-        <section class="servicios-seccion">
+        <section class="servicios-container">
             <div class="servicios-header">
-                <h2 style="font-family: 'Montserrat'; font-weight: 300; color: var(--purpura-reca); font-size: 32px;">Servicios</h2>
+                <h2 class="titulo-servicios">Servicios</h2>
                 <div class="linea-decorativa" style="margin: 15px auto;"></div>
             </div>
 
             <div class="servicio-item">
-                <div class="servicio-num-small">1</div>
+                <div class="servicio-num-mini">1</div>
                 <div class="servicio-content">
-                    <h3>Programa <span class="bold">Inclusión</span></h3>
-                    <div class="conozca-mas">Conozca más →</div>
-                    <div class="servicio-desc">
+                    <h3>Programa <strong>Inclusión</strong></h3>
+                    <div class="conozca-mas-btn">Conozca más →</div>
+                    <div class="servicio-detalles">
                         <p><strong>Inclusión laboral sostenible, efectiva y a costo cero.</strong></p>
                         <p>Acompañamiento profesional alineado con la Agencia de Empleo Compensar.</p>
                     </div>
+                </div>
+            </div>
 
             <div class="servicio-item">
-                <div class="servicio-num-small">2</div>
+                <div class="servicio-num-mini">2</div>
                 <div class="servicio-content">
-                    <h3>Programa <span class="bold">Aprendices</span></h3>
-                    <div class="conozca-mas">Conozca más →</div>
-                    <div class="servicio-desc">
+                    <h3>Programa <strong>Aprendices</strong></h3>
+                    <div class="conozca-mas-btn">Conozca más →</div>
+                    <div class="servicio-detalles">
                         <p><strong>Talento a la medida de su empresa.</strong></p>
                         <p>Convenio SENA para formación técnica adaptada.</p>
                     </div>
-                    
-           <div class="servicio-item">
-                <div class="servicio-num-small">3</div>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num-mini">3</div>
                 <div class="servicio-content">
-                    <h3>Capacitaciones<span class="bold"></h3>
-                    <div class="conozca-mas">Conozca más →</div>
-                    <div class="servicio-desc">
+                    <h3><strong>Capacitaciones</strong></h3>
+                    <div class="conozca-mas-btn">Conozca más →</div>
+                    <div class="servicio-detalles">
                         <p><strong>Cultura Organizacional.</strong></p>
                         <p>Talleres de sensibilización y protocolos de comunicación.</p>
                     </div>
+                </div>
+            </div>
 
             <div class="servicio-item">
-                <div class="servicio-num-small">4</div>
+                <div class="servicio-num-mini">4</div>
                 <div class="servicio-content">
-                    <h3>Servicios <span class="bold">individuales</span></h3>
-                    <div class="conozca-mas">Conozca más →</div>
-                    <ul class="lista-individuales" style="list-style: none; padding: 0;">
-                        <li>• Servicio de Intérpretes (LSC).</li>
-                        <li>• Asesoría en Ajustes Razonables.</li>
-                        <li>• Diseño de política inclusiva.</li>
-                    </ul>
+                    <h3>Servicios <strong>individuales</strong></h3>
+                    <div class="conozca-mas-btn">Conozca más →</div>
+                    <div class="servicio-detalles">
+                        <p>• Servicio de Intérpretes (LSC).</p>
+                        <p>• Asesoría en Ajustes Razonables.</p>
+                        <p>• Diseño de política inclusiva.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <script>
-        document.querySelectorAll('.conozca-mas').forEach(button => {
+        // Lógica corregida para desplegables
+        document.querySelectorAll('.conozca-mas-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.closest('.servicio-item');
+                
+                // Cierra otros (acordeón opcional)
+                document.querySelectorAll('.servicio-item').forEach(el => {
+                    if (el !== item) el.classList.remove('active');
+                });
+
                 item.classList.toggle('active');
-                button.textContent = item.classList.contains('active') ? 'Cerrar ↑' : 'Conozca más →';
+                
+                // Cambia el texto
+                if (item.classList.contains('active')) {
+                    button.textContent = 'Cerrar ↑';
+                } else {
+                    button.textContent = 'Conozca más →';
+                }
             });
         });
     </script>
