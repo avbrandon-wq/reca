@@ -3,130 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECA Colombia - Red Empleo con Apoyo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>RECA Colombia - Inclusión Laboral Sostenible</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --purpura-reca: #702A75;
-            --gris-texto: #444444;
-            --blanco: #ffffff;
+            --gris-oscuro: #333333;
+            --gris-suave: #666666;
+            --gris-borde: #eeeeee;
+            --blanco-trans: rgba(255, 255, 255, 0.9);
+            --fondo-hero: rgba(0, 0, 0, 0.5);
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
+            color: var(--gris-oscuro);
             background-color: #ffffff;
-            color: var(--gris-texto);
-            padding-top: 80px; /* Espacio para el menú fijo */
+            line-height: 1.6;
+            overflow-x: hidden; /* Evita scroll horizontal */
         }
 
-        /* --- MENÚ DE NAVEGACIÓN --- */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background-color: rgba(255, 255, 255, 0.98);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-            box-sizing: border-box;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-reca {
-            font-size: 32px;
-            font-weight: 800;
+        /* --- CONFIGURACIÓN DE TÍTULOS --- */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif; /* Usamos Poppins para títulos para mayor impacto */
+            font-weight: 700;
             color: var(--purpura-reca);
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
-
-        .logo-subtitle {
-            font-size: 16px;
-            color: var(--gris-texto);
-            font-weight: 400;
-            border-left: 1px solid #ccc;
-            padding-left: 15px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--gris-texto);
-            font-size: 15px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--purpura-reca);
-        }
-
-        .btn-asesoria {
-            background-color: var(--purpura-reca);
-            color: white !important;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            font-size: 14px !important;
-            letter-spacing: 1px;
-            transition: transform 0.2s, background 0.3s;
-        }
-
-        .btn-asesoria:hover {
-            background-color: #5a215e;
-            transform: scale(1.05);
-        }
-
-        /* --- SECCIÓN HERO --- */
-        .hero-section {
-            padding: 100px 20px;
-            text-align: center;
-            background-color: #f9f9f9;
+            margin: 0;
         }
 
         .main-title {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--purpura-reca);
-            max-width: 900px;
-            margin: 0 auto 20px;
-            line-height: 1.2;
+            font-size: 50px;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
         }
 
-        .main-subtitle {
-            font-size: 20px;
-            max-width: 700px;
+        .section-title {
+            font-size: 44px;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+
+        .title-underline {
+            width: 100px;
+            height: 4px;
+            background-color: var(--purpura-reca);
+            margin: 15px auto 40px;
+        }
+
+        /* --- SECCIÓN 1: HERO (IMAGEN Y TITULAR) --- */
+        .hero-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(var(--fondo-hero), var(--fondo-hero)), 
+                        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1920'); /* Imagen de fondo de RECA */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-container {
+            max-width: 1100px;
             margin: 0 auto;
-            color: #666;
+            background-color: var(--blanco-trans);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        /* --- SECCIÓN SERVICIOS --- */
+        .hero-text {
+            font-size: 20px;
+            color: var(--gris-suave);
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+
+        /* --- SECCIÓN 2: BENEFICIOS (NÚMEROS) --- */
+        .benefits-section {
+            padding: 80px 20px;
+            background-color: #ffffff;
+            border-top: 1px solid var(--gris-borde);
+        }
+
+        .benefits-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .benefit-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .number-circle {
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--purpura-reca);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--purpura-reca);
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-underline {
+            width: 60px;
+            height: 3px;
+            background-color: var(--purpura-reca);
+            margin: 0 auto 15px;
+        }
+
+        .benefit-text {
+            font-size: 16px;
+            color: var(--gris-suave);
+        }
+
+        /* --- SECCIÓN 3: SLIDER DE LOGOS --- */
+        .slider-section {
+            background-color: #fff;
+            padding: 40px 0;
+            border-top: 1px solid var(--gris-borde);
+            border-bottom: 1px solid var(--gris-borde);
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+
+        .logo-track {
+            display: flex;
+            /* Ancho calculado: (ancho logo + margen) * total de items (12) */
+            width: calc((160px + 60px) * 12);
+            animation: scroll 30s linear infinite;
+        }
+
+        .logo-item {
+            width: 160px;
+            height: 80px;
+            margin: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: 0.4s;
+        }
+
+        .logo-item img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc((-160px - 60px) * 6)); }
+        }
+
+        /* --- SECCIÓN 4: SERVICIOS (ACORDEONES) --- */
         .services-section {
-            max-width: 1000px;
-            margin: 60px auto;
+            max-width: 900px;
+            margin: 80px auto;
             padding: 0 20px;
         }
 
         .accordion-item {
-            border-top: 1px solid #eee;
+            border-top: 1px solid rgba(112, 42, 117, 0.2);
+        }
+
+        .accordion-item:last-child {
+            border-bottom: 1px solid rgba(112, 42, 117, 0.2);
         }
 
         .accordion-btn {
@@ -140,101 +211,182 @@
             text-align: left;
         }
 
-        .number-circle {
-            width: 40px;
-            height: 40px;
+        .acc-number {
+            width: 45px;
+            height: 45px;
             border: 2px solid var(--purpura-reca);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--purpura-reca);
-            font-weight: 700;
+            font-weight: 800;
             margin-right: 25px;
+            flex-shrink: 0;
         }
 
         .acc-title {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--purpura-reca);
+            display: block;
+        }
+
+        .acc-subtitle {
+            font-size: 16px;
+            color: #888;
         }
 
         .panel {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.4s ease-out;
         }
 
         .panel-content {
-            padding: 0 0 30px 65px;
-            font-size: 18px;
-            color: #555;
+            padding: 0 0 30px 70px; /* Alineado con el inicio del texto del título */
+            font-size: 19px;
+            color: #444;
         }
 
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .navbar { padding: 0 20px; }
-            .nav-links, .logo-subtitle { display: none; } /* Simplificación móvil */
-            .main-title { font-size: 32px; }
+            .main-title { font-size: 34px; }
+            .section-title { font-size: 30px; }
+            .acc-title { font-size: 22px; }
+            .panel-content { padding-left: 0; }
+            .hero-container { padding: 40px 20px; }
+            .number-circle { width: 40px; height: 40px; font-size: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo-container">
-            <a href="#" class="logo-reca">RECA</a>
-            <span class="logo-subtitle">Red Empleo con Apoyo</span>
-        </div>
-        <div class="nav-links">
-            <a href="#">Inicio</a>
-            <a href="#">Empresa</a>
-            <a href="#">Candidato</a>
-            <a href="#">Recursos</a>
-            <a href="#" class="btn-asesoria">Asesoría Ya</a>
-        </div>
-    </nav>
-
     <section class="hero-section">
-        <h1 class="main-title">Conéctamos talento con discapacidad con empresas que buscan impacto y legalidad.</h1>
-        <p class="main-subtitle">Más de 15 años transformando la cultura organizacional inclusiva de grandes marcas.</p>
+        <div class="hero-container">
+            <h1 class="main-title">Conectamos talento con discapacidad con empresas que buscan impacto y legalidad.</h1>
+            <div class="title-underline"></div>
+            <p class="hero-text">Más de 15 años transformando la cultura organizacional inclusiva de grandes marcas.</p>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <h2 class="section-title">Inclusión laboral sostenible y efectiva en cumplimiento de la ley.</h2>
+        <div class="title-underline"></div>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="number-circle">1</div>
+                <h3 class="benefit-title">Propósitos alineados</h3>
+                <div class="benefit-underline"></div>
+                <p class="benefit-text">Beneficios reales para la organización y el candidato.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="number-circle">2</div>
+                <h3 class="benefit-title">Una Red de Servicio</h3>
+                <div class="benefit-underline"></div>
+                <p class="benefit-text">Acompañamiento integral durante todo el proceso <strong>(SIN COSTO).</strong></p>
+            </div>
+            <div class="benefit-item">
+                <div class="number-circle">3</div>
+                <h3 class="benefit-title">Vinculación flexible</h3>
+                <div class="benefit-underline"></div>
+                <p class="benefit-text">Programas por tipo de contrato (directo y aprendices).</p>
+            </div>
+            <div class="benefit-item">
+                <div class="number-circle">4</div>
+                <h3 class="benefit-title">Solución y Oportunidad</h3>
+                <div class="benefit-underline"></div>
+                <p class="benefit-text">Cumplimiento de ley y beneficios tributarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider-section">
+        <div class="slider-wrapper">
+            <div class="logo-track">
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1On5U8__7xRf7q5864e_fvRCd2VH5EqLw&sz=w500" alt="Envia"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1eppcFPRWeBrTuk3MT-xAv86Gw7SxS5oO&sz=w500" alt="Claro"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1yPrEJZ3vZVkUObA9jMfjDEI7leticM_R&sz=w500" alt="BBVA"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1wphFmFJVzNT72_gzmHEphZsX2x1yBJYb&sz=w500" alt="Adidas"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1-ALY7oPHJ2xZv73Cc4UkKxfQxDvGVxz2&sz=w500" alt="Gallagher"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1lNQDLM7--4jql9YETFo3rDaGKMm6l3G5&sz=w500" alt="Ilunion"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1On5U8__7xRf7q5864e_fvRCd2VH5EqLw&sz=w500" alt="Envia"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1eppcFPRWeBrTuk3MT-xAv86Gw7SxS5oO&sz=w500" alt="Claro"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1yPrEJZ3vZVkUObA9jMfjDEI7leticM_R&sz=w500" alt="BBVA"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1wphFmFJVzNT72_gzmHEphZsX2x1yBJYb&sz=w500" alt="Adidas"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1-ALY7oPHJ2xZv73Cc4UkKxfQxDvGVxz2&sz=w500" alt="Gallagher"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1lNQDLM7--4jql9YETFo3rDaGKMm6l3G5&sz=w500" alt="Ilunion"></div>
+            </div>
+        </div>
     </section>
 
     <section class="services-section">
+        <div class="section-header">
+            <h2 class="section-title">Servicios</h2>
+            <div class="title-underline"></div>
+        </div>
+
         <div class="accordion-list">
             <div class="accordion-item">
                 <button class="accordion-btn">
-                    <div class="number-circle">1</div>
-                    <span class="acc-title">Programa Inclusión</span>
+                    <div class="acc-number">1</div>
+                    <div>
+                        <span class="acc-title">Programa Inclusión</span>
+                        <span class="acc-subtitle">Conozca más →</span>
+                    </div>
                 </button>
                 <div class="panel">
-                    <div class="panel-content">Inclusión laboral sostenible, efectiva y a costo cero.</div>
+                    <div class="panel-content">
+                        <strong>Inclusión laboral sostenible, efectiva y a costo cero.</strong><br>
+                        Acompañamiento profesional alineado con la Agencia de Empleo Compensar. Garantizamos procesos exitosos desde la selección hasta el seguimiento post-vinculación.
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-btn">
-                    <div class="number-circle">2</div>
-                    <span class="acc-title">Programa Aprendices</span>
+                    <div class="acc-number">2</div>
+                    <div>
+                        <span class="acc-title">Programa Aprendices</span>
+                        <span class="acc-subtitle">Conozca más →</span>
+                    </div>
                 </button>
                 <div class="panel">
-                    <div class="panel-content">Talento a la medida de su empresa a través del SENA.</div>
+                    <div class="panel-content">
+                        <strong>Talento a la medida de su empresa.</strong><br>
+                        A través de nuestro convenio con el SENA, desarrollamos programas de formación técnica adaptados a las necesidades reales de su operación.
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <button class="accordion-btn">
-                    <div class="number-circle">3</div>
-                    <span class="acc-title">Capacitaciones</span>
+                    <div class="acc-number">3</div>
+                    <div>
+                        <span class="acc-title">Capacitaciones</span>
+                        <span class="acc-subtitle">Conozca más →</span>
+                    </div>
                 </button>
                 <div class="panel">
-                    <div class="panel-content">Talleres de sensibilización y cultura organizacional.</div>
+                    <div class="panel-content">
+                        <strong>Cultura Organizacional: Inclusión y Diversidad.</strong><br>
+                        Talleres de sensibilización y protocolos de comunicación asertiva para transformar la cultura organizacional.
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-btn" style="border-bottom: 1px solid #eee;">
-                    <div class="number-circle">4</div>
-                    <span class="acc-title">Servicios individuales</span>
+                <button class="accordion-btn">
+                    <div class="acc-number">4</div>
+                    <div>
+                        <span class="acc-title">Servicios individuales</span>
+                        <span class="acc-subtitle">Conozca más →</span>
+                    </div>
                 </button>
                 <div class="panel">
-                    <div class="panel-content">Intérpretes LSC, asesoría legal y ajustes razonables.</div>
+                    <div class="panel-content">
+                        • Servicio de Intérpretes (LSC).<br>
+                        • Asesoría en Ajustes Razonables.<br>
+                        • Diseño de política inclusiva.<br>
+                        • Asesoría legal y cumplimiento.
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,7 +397,11 @@
         for (let i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
                 const panel = this.nextElementSibling;
-                panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
             });
         }
     </script>
