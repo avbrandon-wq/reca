@@ -25,14 +25,14 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- MENÚ TRASLÚCIDO CON EFECTOS DE HOVER --- */
+        /* --- NAVEGACIÓN TRASLÚCIDA --- */
         .header-estilizado {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 6%;
-            background: rgba(255, 255, 255, 0.85); /* Opacidad */
-            backdrop-filter: blur(12px); /* Efecto cristal */
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
@@ -47,19 +47,7 @@
             text-decoration: none;
         }
 
-        .logo-box img {
-            height: 48px;
-            width: auto;
-        }
-
-        .tagline-marca {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--purpura-reca);
-        }
+        .logo-box img { height: 48px; width: auto; }
 
         .nav-estilizada ul {
             list-style: none;
@@ -83,11 +71,8 @@
             transition: color 0.3s ease;
         }
 
-        /* Detalle profesional: Línea animada al pasar el mouse */
-        .nav-estilizada a:not(.btn-asesoria):hover {
-            color: var(--purpura-reca);
-        }
-
+        .nav-estilizada a:not(.btn-asesoria):hover { color: var(--purpura-reca); }
+        
         .nav-estilizada a:not(.btn-asesoria)::after {
             content: '';
             position: absolute;
@@ -99,51 +84,48 @@
             transition: width 0.3s ease;
         }
 
-        .nav-estilizada a:not(.btn-asesoria):hover::after {
-            width: 100%;
-        }
+        .nav-estilizada a:not(.btn-asesoria):hover::after { width: 100%; }
 
-        /* Botón de Asesoría Mejorado */
         .btn-asesoria {
             background-color: var(--purpura-reca);
             color: white !important;
             padding: 10px 22px;
             border-radius: 4px;
             font-weight: 700 !important;
-            transition: transform 0.2s ease, box-shadow 0.2s ease !important;
         }
 
-        .btn-asesoria:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(112, 42, 117, 0.3);
-        }
-
-        /* --- HERO --- */
-        .hero-container {
-            padding: 100px 6% 40px;
+        /* --- NUEVA SECCIÓN HERO (IMAGEN B/N) --- */
+        .seccion-hero-imagen {
+            position: relative;
+            height: 70vh;
+            background-image: url('https://raw.githubusercontent.com/avbrandon-wq/reca/main/inclusion-hero-bn.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
+            color: white;
         }
 
-        .titulo-principal {
+        .overlay-oscuro {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .contenido-hero { position: relative; z-index: 2; padding: 0 6%; }
+
+        .titulo-impacto {
             font-family: 'Montserrat', sans-serif;
-            font-size: 54px;
+            font-size: clamp(32px, 5vw, 64px);
             line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 15px;
+            margin: 0;
         }
 
-        .titulo-principal .light { font-weight: 300; }
-        .titulo-principal .bold { font-weight: 800; color: var(--purpura-reca); }
-
-        .bajada-titulo {
-            font-size: 36px;
-            font-weight: 300;
-            color: var(--gris-suave);
-            margin-top: 0;
-            letter-spacing: -1px;
-        }
+        .titulo-impacto .light { font-weight: 300; }
+        .titulo-impacto .bold { font-weight: 800; text-transform: uppercase; }
 
         /* --- BENEFICIOS --- */
         .beneficios-grid {
@@ -151,7 +133,7 @@
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px;
             max-width: 1150px;
-            margin: 50px auto 100px;
+            margin: 80px auto;
             padding: 0 6%;
         }
 
@@ -163,122 +145,41 @@
         }
 
         .num-circulo {
-            width: 42px;
-            height: 42px;
+            width: 42px; height: 42px;
             border: 1.5px solid var(--purpura-reca);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--purpura-reca);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--purpura-reca); font-weight: 700;
             margin-bottom: 20px;
         }
 
-        .card-beneficio h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 19px;
-            color: var(--purpura-reca);
-            margin: 0;
-            font-weight: 400;
-            line-height: 1.2;
-        }
+        .card-beneficio h3 { font-family: 'Montserrat', sans-serif; font-size: 19px; color: var(--purpura-reca); margin: 0; font-weight: 400; }
+        .linea-decorativa { width: 35px; height: 2px; background-color: var(--purpura-reca); margin: 15px 0; }
+        .card-beneficio p { font-size: 14px; color: var(--gris-suave); line-height: 1.5; }
 
-        .linea-decorativa {
-            width: 35px;
-            height: 2px;
-            background-color: var(--purpura-reca);
-            margin: 15px 0;
-        }
-
-        .card-beneficio p {
-            font-size: 14px;
-            color: var(--gris-suave);
-            line-height: 1.5;
-        }
-
-        /* --- SERVICIOS --- */
-        .servicios-seccion {
-            padding: 100px 6%;
-            background-color: #fcfcfc;
-        }
-
-        .servicios-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .titulo-servicios {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 38px;
-            font-weight: 300;
-            color: var(--purpura-reca);
-        }
+        /* --- SERVICIOS (DESPLEGABLES) --- */
+        .servicios-seccion { padding: 100px 6%; background-color: #fcfcfc; }
+        .servicios-header { text-align: center; margin-bottom: 60px; }
+        .titulo-servicios { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 300; color: var(--purpura-reca); }
 
         .servicio-item {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 35px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            gap: 25px;
+            max-width: 850px; margin: 0 auto; padding: 35px 0;
+            border-bottom: 1px solid #eee; display: flex; gap: 25px;
         }
 
         .servicio-num-small {
-            width: 32px;
-            height: 32px;
-            border: 1px solid var(--purpura-reca);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--purpura-reca);
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .servicio-content h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
-            color: var(--purpura-reca);
-            margin: 0;
-            font-weight: 400;
+            width: 32px; height: 32px; border: 1px solid var(--purpura-reca);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--purpura-reca); font-weight: 700; flex-shrink: 0;
         }
 
         .conozca-mas-btn {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--gris-suave);
-            cursor: pointer;
-            display: inline-block;
-            margin-top: 10px;
-            transition: 0.3s;
+            font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;
+            color: var(--gris-suave); cursor: pointer; display: inline-block; margin-top: 10px;
         }
 
-        .conozca-mas-btn:hover { color: var(--purpura-reca); }
-
-        .servicio-detalles {
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.4s ease-in-out;
-            opacity: 0;
-        }
-
-        .servicio-item.active .servicio-detalles {
-            max-height: 400px;
-            opacity: 1;
-            margin-top: 20px;
-        }
-
-        .servicio-detalles p { font-size: 15px; color: var(--gris-suave); line-height: 1.6; }
-
-        @media (max-width: 768px) {
-            .titulo-principal { font-size: 36px; }
-            .bajada-titulo { font-size: 24px; }
-            .servicio-item { flex-direction: column; gap: 15px; }
-        }
+        .servicio-detalles { max-height: 0; overflow: hidden; transition: all 0.4s ease-in-out; opacity: 0; }
+        .servicio-item.active .servicio-detalles { max-height: 400px; opacity: 1; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -286,28 +187,28 @@
     <header class="header-estilizado">
         <a href="#" class="logo-box">
             <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logotipo.png" alt="RECA Colombia">
-            <span class="tagline-marca">Red Empleo con Apoyo</span>
         </a>
         <nav class="nav-estilizada">
             <ul>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Empresa</a></li>
                 <li><a href="#">Candidato</a></li>
-                 <li><a href="#">Recursos</a></li>
                 <li><a href="#" class="btn-asesoria">ASESORÍA YA</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero-container">
-            <h1 class="titulo-principal">
-                <span class="light">Inclusión laboral</span> <br>
+    <section class="seccion-hero-imagen">
+        <div class="overlay-oscuro"></div>
+        <div class="contenido-hero">
+            <h1 class="titulo-impacto">
+                <span class="light">Inclusión laboral</span><br>
                 <span class="bold">sostenible y efectiva</span>
             </h1>
-            <p class="bajada-titulo">en cumplimiento de la ley.</p>
-        </section>
+        </div>
+    </section>
 
+    <main>
         <section class="beneficios-grid">
             <div class="card-beneficio">
                 <div class="num-circulo">1</div>
@@ -349,30 +250,6 @@
                     <div class="servicio-detalles">
                         <p><strong>Inclusión laboral sostenible, efectiva y a costo cero.</strong></p>
                         <p>Acompañamiento profesional alineado con la Agencia de Empleo Compensar.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="servicio-item">
-                <div class="servicio-num-small">2</div>
-                <div class="servicio-content">
-                    <h3>Programa <strong>Aprendices</strong></h3>
-                    <div class="conozca-mas-btn">Conozca más →</div>
-                    <div class="servicio-detalles">
-                        <p><strong>Talento a la medida de su empresa.</strong></p>
-                        <p>Convenio SENA para formación técnica adaptada.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="servicio-item">
-                <div class="servicio-num-small">3</div>
-                <div class="servicio-content">
-                    <h3><strong>Capacitaciones</strong></h3>
-                    <div class="conozca-mas-btn">Conozca más →</div>
-                    <div class="servicio-detalles">
-                        <p><strong>Cultura Organizacional.</strong></p>
-                        <p>Talleres de sensibilización y protocolos de comunicación.</p>
                     </div>
                 </div>
             </div>
