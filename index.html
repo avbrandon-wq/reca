@@ -1,117 +1,102 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECA Colombia – Inclusión Laboral Sostenible</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    
+<section class="servicios-seccion">
+        <div class="servicios-header">
+            <h2 class="titulo-seccion">Servicios</h2>
+            <div class="linea-titulo"></div>
+        </div>
+
+        <div class="servicios-lista">
+            <div class="servicio-item">
+                <div class="servicio-num">1</div>
+                <div class="servicio-content">
+                    <h3>Programa <span class="bold">Inclusión</span></h3>
+                    <a href="#" class="conozca-mas">Conozca más →</a>
+                    <div class="servicio-desc">
+                        <p class="tagline">Inclusión laboral sostenible, efectiva y a costo cero.</p>
+                        <p>Acompañamiento profesional alineado con la Agencia de Empleo Compensar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num">2</div>
+                <div class="servicio-content">
+                    <h3>Programa <span class="bold">Aprendices</span></h3>
+                    <a href="#" class="conozca-mas">Conozca más →</a>
+                    <div class="servicio-desc">
+                        <p class="tagline">Talento a la medida de su empresa.</p>
+                        <p>Convenio SENA para formación técnica adaptada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num">3</div>
+                <div class="servicio-content">
+                    <h3><span class="bold">Capacitaciones</span></h3>
+                    <a href="#" class="conozca-mas">Conozca más →</a>
+                    <div class="servicio-desc">
+                        <p class="tagline">Cultura Organizacional.</p>
+                        <p>Talleres de sensibilización y protocolos de comunicación.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num">4</div>
+                <div class="servicio-content">
+                    <h3>Servicios <span class="bold">individuales</span></h3>
+                    <a href="#" class="conozca-mas">Conozca más →</a>
+                    <ul class="lista-individuales">
+                        <li>Servicio de Intérpretes (LSC).</li>
+                        <li>Asesoría en Ajustes Razonables.</li>
+                        <li>Diseño de política inclusiva.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <style>
-        :root {
-            --purpura-reca: #702A75; 
-            --gris-premium: #2D2D2D;
-            --gris-suave: #666666;
-            --blanco: #ffffff;
-            --sombra-sutil: rgba(0, 0, 0, 0.05);
+        .servicios-seccion {
+            padding: 80px 6%;
+            background-color: #fcfcfc; /* Un gris casi blanco para diferenciar la sección */
         }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--blanco);
-            color: var(--gris-premium);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        /* --- NAVEGACIÓN --- */
-        .header-estilizado {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 6%;
-            background: var(--blanco);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px var(--sombra-sutil);
-        }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-        }
-
-        .logo-box img { height: 45px; width: auto; }
-
-        .tagline-marca {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: var(--purpura-reca);
-        }
-
-        .nav-estilizada ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 35px;
-            margin: 0;
-        }
-
-        .nav-estilizada a {
-            text-decoration: none;
-            color: var(--gris-suave);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .btn-asesoria {
-            background-color: var(--purpura-reca);
-            color: white !important;
-            padding: 12px 25px;
-            border-radius: 2px;
-            font-weight: 700 !important;
-        }
-
-        /* --- TÍTULO PRINCIPAL --- */
-        .hero-container {
-            padding: 100px 6% 60px;
+        .servicios-header {
             text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
+            margin-bottom: 60px;
         }
 
-        .titulo-principal {
+        .titulo-seccion {
             font-family: 'Montserrat', sans-serif;
-            font-size: 52px;
-            line-height: 1.1;
-            letter-spacing: -2px;
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--purpura-reca);
+            margin: 0;
+            letter-spacing: 1px;
         }
 
-        .titulo-principal .light { font-weight: 300; }
-        .titulo-principal .bold { font-weight: 800; color: var(--purpura-reca); }
+        .linea-titulo {
+            width: 50px;
+            height: 3px;
+            background-color: var(--purpura-reca);
+            margin: 15px auto 0;
+        }
 
-        /* --- SERVICIOS CON DESPLEGABLES --- */
-        .servicios-seccion { padding: 80px 6%; background: #fcfcfc; }
-
-        .servicio-item {
+        .servicios-lista {
             max-width: 900px;
             margin: 0 auto;
-            padding: 30px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            gap: 25px;
         }
+
+        .servicio-item {
+            display: flex;
+            gap: 30px;
+            padding: 40px 0;
+            border-bottom: 1px solid #eeeeee;
+            align-items: flex-start;
+        }
+
+        .servicio-item:last-child { border-bottom: none; }
 
         .servicio-num {
             width: 35px;
@@ -122,120 +107,70 @@
             align-items: center;
             justify-content: center;
             color: var(--purpura-reca);
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
             flex-shrink: 0;
         }
 
+        .servicio-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--purpura-reca);
+            margin: 0 0 5px 0;
+        }
+
+        .servicio-content h3 .bold { font-weight: 800; }
+
         .conozca-mas {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
             color: var(--gris-suave);
             text-decoration: none;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
             display: inline-block;
-            margin: 10px 0;
+            margin-bottom: 20px;
+            transition: color 0.3s;
         }
 
-        /* Lógica del Desplegable */
-        .servicio-desc, .lista-individuales {
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.4s ease-in-out;
-            opacity: 0;
+        .conozca-mas:hover { color: var(--purpura-reca); }
+
+        .servicio-desc p {
+            font-size: 15px;
+            color: var(--gris-suave);
+            margin: 5px 0;
+            line-height: 1.6;
         }
 
-        .servicio-item.active .servicio-desc, 
-        .servicio-item.active .lista-individuales {
-            max-height: 500px;
-            opacity: 1;
-            margin-top: 15px;
+        .servicio-desc p.tagline {
+            font-weight: 700;
+            color: var(--gris-premium);
         }
 
-        /* --- EMPRESAS --- */
-        .empresas-seccion { padding: 80px 6%; text-align: center; }
-        .logos-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            filter: grayscale(100%);
-            opacity: 0.6;
+        .lista-individuales {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
         }
-        .logos-grid img { height: 40px; }
 
-        /* --- FOOTER --- */
-        .main-footer {
-            background-color: var(--purpura-reca);
-            color: white;
-            padding: 60px 6% 20px;
-            text-align: center;
+        .lista-individuales li {
+            font-size: 15px;
+            color: var(--gris-suave);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .lista-individuales li::before {
+            content: "•";
+            color: var(--purpura-reca);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .servicio-item { flex-direction: column; gap: 15px; }
         }
     </style>
-</head>
-<body>
-
-    <header class="header-estilizado">
-        <a href="#" class="logo-box">
-            <img src="logotipo.png" alt="RECA">
-            <span class="tagline-marca">Red Empleo con Apoyo</span>
-        </a>
-        <nav class="nav-estilizada">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Empresa</a></li>
-                <li><a href="#">Candidato</a></li>
-                <li><a href="#" class="btn-asesoria">ASESORÍA YA</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero-container">
-            <h1 class="titulo-principal">
-                <span class="light">Inclusión laboral</span> <br>
-                <span class="bold">sostenible y efectiva</span>
-            </h1>
-        </section>
-
-        <section class="servicios-seccion">
-            <div class="servicio-item">
-                <div class="servicio-num">1</div>
-                <div class="servicio-content">
-                    <h3>Programa <span class="bold">Inclusión</span></h3>
-                    <div class="conozca-mas">Conozca más →</div>
-                    <div class="servicio-desc">
-                        <p><strong>Inclusión laboral sostenible, efectiva y a costo cero.</strong></p>
-                        <p>Acompañamiento profesional alineado con la Agencia de Empleo Compensar.</p>
-                    </div>
-                </div>
-            </div>
-            </section>
-
-        <section class="empresas-seccion">
-            <h2 class="light">Empresas que buscan <strong>impacto y legalidad</strong></h2>
-            <div class="logos-grid">
-                <img src="claro.png" alt="Claro">
-                <img src="bbva.png" alt="BBVA">
-                <img src="adidas.png" alt="Adidas">
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <img src="logotipo-blanco.png" alt="RECA" style="height: 50px;">
-        <p>Bogotá, Colombia | info@recacolombia.org</p>
-        <p style="font-size: 10px; margin-top: 40px;">RECA © Derechos Reservados 2024</p>
-    </footer>
-
-    <script>
-        document.querySelectorAll('.conozca-mas').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.closest('.servicio-item');
-                item.classList.toggle('active');
-                button.textContent = item.classList.contains('active') ? 'Cerrar ↑' : 'Conozca más →';
-            });
-        });
-    </script>
-</body>
-</html>
