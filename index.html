@@ -1,1 +1,326 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECA Colombia - Inclusión Laboral</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --purpura-reca: #702A75;
+            --gris-texto: #444444;
+            --blanco-trans: rgba(255, 255, 255, 0.85);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4; /* Fondo base suave */
+            color: var(--gris-texto);
+            line-height: 1.6;
+        }
+
+        /* --- SECCIÓN HERO (TÍTULOS) --- */
+        .hero-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1920'); /* Imagen de fondo opcional */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: var(--blanco-trans);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .main-title {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--purpura-reca);
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+
+        .title-underline {
+            width: 100px;
+            height: 4px;
+            background-color: var(--purpura-reca);
+            margin: 0 auto 30px;
+        }
+
+        .main-subtitle {
+            font-size: 22px;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- SECCIÓN SLIDER DE LOGOS --- */
+        .slider-section {
+            background-color: #fff;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+
+        .logo-track {
+            display: flex;
+            width: calc((160px + 60px) * 20);
+            animation: scroll 40s linear infinite;
+        }
+
+        .logo-item {
+            width: 160px;
+            height: 80px;
+            margin: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: 0.4s;
+        }
+
+        .logo-item img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc((-160px - 60px) * 10)); }
+        }
+
+        /* --- SECCIÓN SERVICIOS (ACORDEONES) --- */
+        .services-section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 44px;
+            color: var(--purpura-reca);
+            margin-bottom: 10px;
+        }
+
+        .accordion-item {
+            border-top: 1px solid rgba(112, 42, 117, 0.2);
+        }
+
+        .accordion-item:last-child {
+            border-bottom: 1px solid rgba(112, 42, 117, 0.2);
+        }
+
+        .accordion-btn {
+            width: 100%;
+            padding: 30px 0;
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .number {
+            width: 45px;
+            height: 45px;
+            border: 2px solid var(--purpura-reca);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--purpura-reca);
+            font-weight: 800;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .btn-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--purpura-reca);
+            display: block;
+        }
+
+        .btn-subtitle {
+            font-size: 16px;
+            color: #888;
+        }
+
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .panel-content {
+            padding: 0 0 30px 70px;
+            font-size: 19px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .main-title { font-size: 36px; }
+            .section-header h2 { font-size: 34px; }
+            .btn-title { font-size: 22px; }
+            .panel-content { padding-left: 0; }
+            .hero-container { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <h1 class="main-title">Conéctamos talento con discapacidad con empresas que buscan impacto y legalidad.</h1>
+            <div class="title-underline"></div>
+            <p class="main-subtitle">Más de 15 años transformando la cultura organizacional inclusiva de grandes marcas.</p>
+        </div>
+    </section>
+
+    <section class="slider-section">
+        <div class="slider-wrapper">
+            <div class="logo-track">
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1-ALY7oPHJ2xZv73Cc4UkKxfQxDvGVxz2&sz=w500" alt="Gallagher"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1lNQDLM7--4jql9YETFo3rDaGKMm6l3G5&sz=w500" alt="Femsa"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1lNQDLM7--4jql9YETFo3rDaGKMm6l3G5&sz=w500" alt="Cencosud"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1Fz0Rp98EJkWFTjPUjxAMn7SFsrZlMsfE&sz=w500" alt="Ramo"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1lNQDLM7--4jql9YETFo3rDaGKMm6l3G5&sz=w500" alt="ACO"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1On5U8__7xRf7q5864e_fvRCd2VH5EqLw&sz=w500" alt="Envia"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1eppcFPRWeBrTuk3MT-xAv86Gw7SxS5oO&sz=w500" alt="Claro"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1yPrEJZ3vZVkUObA9jMfjDEI7leticM_R&sz=w500" alt="BBVA"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1wphFmFJVzNT72_gzmHEphZsX2x1yBJYb&sz=w500" alt="Adidas"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1wphFmFJVzNT72_gzmHEphZsX2x1yBJYb&sz=w500" alt="Ilunion"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1-ALY7oPHJ2xZv73Cc4UkKxfQxDvGVxz2&sz=w500" alt="Gallagher"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1lNQDLM7--4jql9YETFo3rDaGKMm6l3G5&sz=w500" alt="Femsa"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1lNQDLM7--4jql9YETFo3rDaGKMm6l3G5&sz=w500" alt="Cencosud"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1Fz0Rp98EJkWFTjPUjxAMn7SFsrZlMsfE&sz=w500" alt="Ramo"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1lNQDLM7--4jql9YETFo3rDaGKMm6l3G5&sz=w500" alt="ACO"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1On5U8__7xRf7q5864e_fvRCd2VH5EqLw&sz=w500" alt="Envia"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1eppcFPRWeBrTuk3MT-xAv86Gw7SxS5oO&sz=w500" alt="Claro"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1yPrEJZ3vZVkUObA9jMfjDEI7leticM_R&sz=w500" alt="BBVA"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1wphFmFJVzNT72_gzmHEphZsX2x1yBJYb&sz=w500" alt="Adidas"></div>
+                <div class="logo-item"><img src="https://drive.google.com/thumbnail?id=1wphFmFJVzNT72_gzmHEphZsX2x1yBJYb&sz=w500" alt="Ilunion"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="section-header">
+            <h2>Servicios</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="accordion-list">
+            <div class="accordion-item">
+                <button class="accordion-btn">
+                    <div class="number">1</div>
+                    <div>
+                        <span class="btn-title">Programa Inclusión</span>
+                        <span class="btn-subtitle">Conozca más →</span>
+                    </div>
+                </button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <strong>Inclusión laboral sostenible, efectiva y a costo cero.</strong><br>
+                        Acompañamiento profesional alineado con la Agencia de Empleo Compensar.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-btn">
+                    <div class="number">2</div>
+                    <div>
+                        <span class="btn-title">Programa Aprendices</span>
+                        <span class="btn-subtitle">Conozca más →</span>
+                    </div>
+                </button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <strong>Talento a la medida de su empresa.</strong><br>
+                        Convenio SENA para formación técnica adaptada.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-btn">
+                    <div class="number">3</div>
+                    <div>
+                        <span class="btn-title">Capacitaciones</span>
+                        <span class="btn-subtitle">Conozca más →</span>
+                    </div>
+                </button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <strong>Cultura Organizacional.</strong><br>
+                        Talleres de sensibilización y protocolos de comunicación.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-btn">
+                    <div class="number">4</div>
+                    <div>
+                        <span class="btn-title">Servicios individuales</span>
+                        <span class="btn-subtitle">Conozca más →</span>
+                    </div>
+                </button>
+                <div class="panel">
+                    <div class="panel-content">
+                        • Servicio de Intérpretes (LSC).<br>
+                        • Asesoría en Ajustes Razonables.<br>
+                        • Diseño de política inclusiva.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion-btn");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+</body>
+</html>
