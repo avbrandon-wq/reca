@@ -185,6 +185,183 @@
             .nav-estilizada { display: none; }
         }
     </style>
+
+    <section class="servicios-seccion">
+        <div class="servicios-header">
+            <h2 class="titulo-seccion">Servicios</h2>
+            <div class="linea-titulo"></div>
+        </div>
+
+        <div class="servicios-lista">
+            <div class="servicio-item">
+                <div class="servicio-num">1</div>
+                <div class="servicio-content">
+                    <h3>Programa <span class="bold">Inclusión</span></h3>
+                    <a href="#" class="conozca-mas">Conozca más →</a>
+                    <div class="servicio-desc">
+                        <p class="tagline">Inclusión laboral sostenible, efectiva y a costo cero.</p>
+                        <p>Acompañamiento profesional alineado con la Agencia de Empleo Compensar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num">2</div>
+                <div class="servicio-content">
+                    <h3>Programa <span class="bold">Aprendices</span></h3>
+                    <a href="#" class="conozca-mas">Conozca más →</a>
+                    <div class="servicio-desc">
+                        <p class="tagline">Talento a la medida de su empresa.</p>
+                        <p>Convenio SENA para formación técnica adaptada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num">3</div>
+                <div class="servicio-content">
+                    <h3><span class="bold">Capacitaciones</span></h3>
+                    <a href="#" class="conozca-mas">Conozca más →</a>
+                    <div class="servicio-desc">
+                        <p class="tagline">Cultura Organizacional.</p>
+                        <p>Talleres de sensibilización y protocolos de comunicación.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num">4</div>
+                <div class="servicio-content">
+                    <h3>Servicios <span class="bold">individuales</span></h3>
+                    <a href="#" class="conozca-mas">Conozca más →</a>
+                    <ul class="lista-individuales">
+                        <li>Servicio de Intérpretes (LSC).</li>
+                        <li>Asesoría en Ajustes Razonables.</li>
+                        <li>Diseño de política inclusiva.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .servicios-seccion {
+            padding: 80px 6%;
+            background-color: #fcfcfc; /* Un gris casi blanco para diferenciar la sección */
+        }
+
+        .servicios-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .titulo-seccion {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--purpura-reca);
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .linea-titulo {
+            width: 50px;
+            height: 3px;
+            background-color: var(--purpura-reca);
+            margin: 15px auto 0;
+        }
+
+        .servicios-lista {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .servicio-item {
+            display: flex;
+            gap: 30px;
+            padding: 40px 0;
+            border-bottom: 1px solid #eeeeee;
+            align-items: flex-start;
+        }
+
+        .servicio-item:last-child { border-bottom: none; }
+
+        .servicio-num {
+            width: 35px;
+            height: 35px;
+            border: 1px solid var(--purpura-reca);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--purpura-reca);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .servicio-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--purpura-reca);
+            margin: 0 0 5px 0;
+        }
+
+        .servicio-content h3 .bold { font-weight: 800; }
+
+        .conozca-mas {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gris-suave);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+
+        .conozca-mas:hover { color: var(--purpura-reca); }
+
+        .servicio-desc p {
+            font-size: 15px;
+            color: var(--gris-suave);
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        .servicio-desc p.tagline {
+            font-weight: 700;
+            color: var(--gris-premium);
+        }
+
+        .lista-individuales {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        .lista-individuales li {
+            font-size: 15px;
+            color: var(--gris-suave);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .lista-individuales li::before {
+            content: "•";
+            color: var(--purpura-reca);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .servicio-item { flex-direction: column; gap: 15px; }
+        }
+    </style>
 </head>
 <body>
 
