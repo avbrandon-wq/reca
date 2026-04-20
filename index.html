@@ -248,3 +248,84 @@
 
         <section class="beneficios-grid">
             <div class="card-beneficio">
+                <div class="num-circulo">1</div>
+                <h3>Propósitos <br><strong>alineados</strong></h3>
+                <div class="linea-decorativa"></div>
+                <p>Beneficios reales para la organización y el candidato.</p>
+            </div>
+            <div class="card-beneficio">
+                <div class="num-circulo">2</div>
+                <h3>Una Red de <br><strong>Servicio</strong></h3>
+                <div class="linea-decorativa"></div>
+                <p>Acompañamiento integral durante todo el proceso <strong>(SIN COSTO)</strong>.</p>
+            </div>
+            <div class="card-beneficio">
+                <div class="num-circulo">3</div>
+                <h3>Vinculación <br><strong>flexible</strong></h3>
+                <div class="linea-decorativa"></div>
+                <p>Programas por tipo de contrato (directo y aprendices).</p>
+            </div>
+            <div class="card-beneficio">
+                <div class="num-circulo">4</div>
+                <h3>Solución y <br><strong>Oportunidad</strong></h3>
+                <div class="linea-decorativa"></div>
+                <p>Cumplimiento de ley y beneficios tributarios.</p>
+            </div>
+        </section>
+
+        <section class="servicios-seccion">
+            <div class="servicios-header">
+                <h2 style="font-family: 'Montserrat'; font-weight: 300; color: var(--purpura-reca); font-size: 32px;">Servicios</h2>
+                <div class="linea-decorativa" style="margin: 15px auto;"></div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num-small">1</div>
+                <div class="servicio-content">
+                    <h3>Programa <span class="bold">Inclusión</span></h3>
+                    <div class="conozca-mas">Conozca más →</div>
+                    <div class="servicio-desc">
+                        <p><strong>Inclusión laboral sostenible, efectiva y a costo cero.</strong></p>
+                        <p>Acompañamiento profesional alineado con la Agencia de Empleo Compensar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num-small">2</div>
+                <div class="servicio-content">
+                    <h3>Programa <span class="bold">Aprendices</span></h3>
+                    <div class="conozca-mas">Conozca más →</div>
+                    <div class="servicio-desc">
+                        <p><strong>Talento a la medida de su empresa.</strong></p>
+                        <p>Convenio SENA para formación técnica adaptada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div class="servicio-num-small">4</div>
+                <div class="servicio-content">
+                    <h3>Servicios <span class="bold">individuales</span></h3>
+                    <div class="conozca-mas">Conozca más →</div>
+                    <ul class="lista-individuales" style="list-style: none; padding: 0;">
+                        <li>• Servicio de Intérpretes (LSC).</li>
+                        <li>• Asesoría en Ajustes Razonables.</li>
+                        <li>• Diseño de política inclusiva.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('.conozca-mas').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.closest('.servicio-item');
+                item.classList.toggle('active');
+                button.textContent = item.classList.contains('active') ? 'Cerrar ↑' : 'Conozca más →';
+            });
+        });
+    </script>
+</body>
+</html>
