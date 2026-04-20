@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +19,14 @@
         body {
             margin: 0;
             padding: 0;
-            /* Aplicamos Open Sans para el cuerpo, buscando ligereza */
             font-family: 'Open Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
             color: var(--gris-premium);
             line-height: 1.8;
+            background-color: var(--blanco);
         }
 
-        /* --- HEADER ESTILIZADO --- */
+        /* --- HEADER --- */
         .main-header {
             display: flex;
             justify-content: space-between;
@@ -46,13 +48,12 @@
 
         .logo-container img {
             height: 48px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            width: auto;
         }
 
         .logo-tagline {
-            /* Montserrat con espaciado amplio para un toque de marca de lujo */
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -63,8 +64,9 @@
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 35px;
+            gap: 30px;
             margin: 0;
+            padding: 0;
         }
 
         .nav-menu a {
@@ -72,7 +74,7 @@
             color: var(--gris-suave);
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
-            font-size: 13px;
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
@@ -80,26 +82,62 @@
 
         .nav-menu a:hover {
             color: var(--purpura-reca);
-            transform: translateY(-1px);
         }
 
-        /* Botón de Asesoría Refinado */
         .btn-asesoria {
             background-color: var(--purpura-reca);
             color: white !important;
-            padding: 12px 28px;
-            border-radius: 4px; /* Menos redondeado para un look más arquitectónico */
-            font-size: 12px;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-size: 11px;
             font-weight: 700;
             letter-spacing: 1.5px;
-            box-shadow: 0 8px 15px rgba(112, 42, 117, 0.2);
+            text-transform: uppercase;
         }
 
-        /* Títulos de sección (Para cuando hagamos el Hero) */
-        h1, h2, h3 {
+        /* --- SECCIÓN DE PRUEBA (Para que no se vea blanca) --- */
+        .hero-test {
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        h1 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            font-weight: 300;
+            font-size: 2.5rem;
+            color: var(--purpura-reca);
+            letter-spacing: -1px;
         }
     </style>
 </head>
+<body>
+
+    <header class="main-header">
+        <a href="#" class="logo-container">
+            <img src="reca.png" alt="RECA Logo">
+            <span class="logo-tagline">Red Empleo con Apoyo</span>
+        </a>
+        
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Empresa</a></li>
+                <li><a href="#">Candidato</a></li>
+                <li><a href="#">Recursos</a></li>
+                <li><a href="#" class="btn-asesoria">Asesoría Ya</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-test">
+            <h1>Inclusión laboral <br><strong>sostenible y efectiva.</strong></h1>
+        </section>
+    </main>
+
+</body>
+</html>
