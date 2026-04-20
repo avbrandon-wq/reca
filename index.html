@@ -25,13 +25,15 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- NAVEGACIÓN ESTILIZADA --- */
+        /* --- MENÚ TRASLÚCIDO CON LOGOTIPO --- */
         .header-estilizado {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 6%;
-            background: var(--blanco);
+            padding: 15px 6%;
+            background: rgba(255, 255, 255, 0.85); /* Opacidad solicitada */
+            backdrop-filter: blur(10px); /* Efecto cristal */
+            -webkit-backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -45,12 +47,17 @@
             text-decoration: none;
         }
 
+        .logo-box img {
+            height: 45px;
+            width: auto;
+        }
+
         .tagline-marca {
             font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             color: var(--purpura-reca);
         }
 
@@ -58,7 +65,7 @@
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 35px;
+            gap: 30px;
             margin: 0;
             padding: 0;
         }
@@ -67,23 +74,24 @@
             text-decoration: none;
             color: var(--gris-suave);
             font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
         .btn-asesoria {
             background-color: var(--purpura-reca);
             color: white !important;
-            padding: 12px 25px;
-            border-radius: 2px;
+            padding: 10px 20px;
+            border-radius: 4px;
             font-weight: 700 !important;
         }
 
-        /* --- HERO (TÍTULO) --- */
+        /* --- HERO --- */
         .hero-container {
-            padding: 100px 6% 60px;
+            padding: 80px 6% 40px;
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
@@ -94,24 +102,24 @@
             font-size: 52px;
             line-height: 1.1;
             letter-spacing: -2px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .titulo-principal .light { font-weight: 300; }
         .titulo-principal .bold { font-weight: 800; color: var(--purpura-reca); }
 
         .bajada-titulo {
-            font-size: 38px;
-            font-weight: 400;
+            font-size: 32px;
+            font-weight: 300;
             color: var(--gris-suave);
-            letter-spacing: -1px;
+            margin-top: 0;
         }
 
-        /* --- SECCIÓN 1: BENEFICIOS (4 PUNTOS HORIZONTALES) --- */
-        .beneficios-seccion {
+        /* --- SECCIÓN BENEFICIOS (DISEÑO HORIZONTAL) --- */
+        .beneficios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
+            gap: 30px;
             max-width: 1100px;
             margin: 40px auto 100px;
             padding: 0 6%;
@@ -127,15 +135,15 @@
         .num-circulo {
             width: 40px;
             height: 40px;
-            border: 1px solid var(--purpura-reca);
+            border: 1.5px solid var(--purpura-reca);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--purpura-reca);
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            margin-bottom: 25px;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
 
         .card-beneficio h3 {
@@ -144,11 +152,10 @@
             color: var(--purpura-reca);
             margin: 0;
             font-weight: 400;
-            line-height: 1.2;
         }
 
         .linea-decorativa {
-            width: 30px;
+            width: 35px;
             height: 2px;
             background-color: var(--purpura-reca);
             margin: 15px 0;
@@ -157,12 +164,12 @@
         .card-beneficio p {
             font-size: 14px;
             color: var(--gris-suave);
-            max-width: 200px;
-            line-height: 1.4;
+            max-width: 220px;
+            line-height: 1.5;
         }
 
-        /* --- SECCIÓN 2: SERVICIOS (DESPLEGABLES) --- */
-        .servicios-container {
+        /* --- SECCIÓN SERVICIOS (DESPLEGABLES) --- */
+        .servicios-seccion {
             padding: 100px 6%;
             background-color: #fcfcfc;
         }
@@ -174,14 +181,13 @@
 
         .titulo-servicios {
             font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 300;
             color: var(--purpura-reca);
-            margin: 0;
         }
 
         .servicio-item {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 35px 0;
             border-bottom: 1px solid #eee;
@@ -189,7 +195,7 @@
             gap: 25px;
         }
 
-        .servicio-num-mini {
+        .servicio-num-small {
             width: 32px;
             height: 32px;
             border: 1px solid var(--purpura-reca);
@@ -198,14 +204,13 @@
             align-items: center;
             justify-content: center;
             color: var(--purpura-reca);
-            font-size: 13px;
             font-weight: 700;
             flex-shrink: 0;
         }
 
         .servicio-content h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 21px;
+            font-size: 22px;
             color: var(--purpura-reca);
             margin: 0;
             font-weight: 400;
@@ -218,11 +223,10 @@
             color: var(--gris-suave);
             cursor: pointer;
             display: inline-block;
-            margin-top: 8px;
+            margin-top: 10px;
             transition: 0.3s;
         }
 
-        /* Lógica Desplegable */
         .servicio-detalles {
             max-height: 0;
             overflow: hidden;
@@ -236,11 +240,10 @@
             margin-top: 20px;
         }
 
-        .servicio-detalles p { font-size: 15px; color: var(--gris-suave); line-height: 1.6; margin: 5px 0; }
-        .servicio-detalles strong { color: var(--gris-premium); }
+        .servicio-detalles p { font-size: 15px; color: var(--gris-suave); line-height: 1.6; margin: 8px 0; }
 
         @media (max-width: 768px) {
-            .titulo-principal { font-size: 36px; }
+            .titulo-principal { font-size: 34px; }
             .servicio-item { flex-direction: column; gap: 15px; }
         }
     </style>
@@ -249,6 +252,7 @@
 
     <header class="header-estilizado">
         <a href="#" class="logo-box">
+            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logotipo.png" alt="RECA Colombia">
             <span class="tagline-marca">Red Empleo con Apoyo</span>
         </a>
         <nav class="nav-estilizada">
@@ -270,7 +274,7 @@
             <p class="bajada-titulo">en cumplimiento de la ley.</p>
         </section>
 
-        <section class="beneficios-seccion">
+        <section class="beneficios-grid">
             <div class="card-beneficio">
                 <div class="num-circulo">1</div>
                 <h3>Propósitos <br><strong>alineados</strong></h3>
@@ -297,14 +301,14 @@
             </div>
         </section>
 
-        <section class="servicios-container">
+        <section class="servicios-seccion">
             <div class="servicios-header">
                 <h2 class="titulo-servicios">Servicios</h2>
                 <div class="linea-decorativa" style="margin: 15px auto;"></div>
             </div>
 
             <div class="servicio-item">
-                <div class="servicio-num-mini">1</div>
+                <div class="servicio-num-small">1</div>
                 <div class="servicio-content">
                     <h3>Programa <strong>Inclusión</strong></h3>
                     <div class="conozca-mas-btn">Conozca más →</div>
@@ -316,7 +320,7 @@
             </div>
 
             <div class="servicio-item">
-                <div class="servicio-num-mini">2</div>
+                <div class="servicio-num-small">2</div>
                 <div class="servicio-content">
                     <h3>Programa <strong>Aprendices</strong></h3>
                     <div class="conozca-mas-btn">Conozca más →</div>
@@ -328,7 +332,7 @@
             </div>
 
             <div class="servicio-item">
-                <div class="servicio-num-mini">3</div>
+                <div class="servicio-num-small">3</div>
                 <div class="servicio-content">
                     <h3><strong>Capacitaciones</strong></h3>
                     <div class="conozca-mas-btn">Conozca más →</div>
@@ -340,7 +344,7 @@
             </div>
 
             <div class="servicio-item">
-                <div class="servicio-num-mini">4</div>
+                <div class="servicio-num-small">4</div>
                 <div class="servicio-content">
                     <h3>Servicios <strong>individuales</strong></h3>
                     <div class="conozca-mas-btn">Conozca más →</div>
@@ -355,19 +359,19 @@
     </main>
 
     <script>
-        // Lógica corregida para desplegables
+        // Lógica de interacción para los servicios
         document.querySelectorAll('.conozca-mas-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.closest('.servicio-item');
                 
-                // Cierra otros (acordeón opcional)
+                // Efecto acordeón: cierra los demás
                 document.querySelectorAll('.servicio-item').forEach(el => {
                     if (el !== item) el.classList.remove('active');
                 });
 
                 item.classList.toggle('active');
                 
-                // Cambia el texto
+                // Cambio de texto dinámico
                 if (item.classList.contains('active')) {
                     button.textContent = 'Cerrar ↑';
                 } else {
