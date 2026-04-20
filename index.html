@@ -1,143 +1,61 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECA Colombia – Inclusión Laboral Sostenible</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --purpura-reca: #702A75; 
-            --gris-premium: #2D2D2D;
-            --gris-suave: #6B6B6B;
-            --blanco: #ffffff;
-            --sombra-elegante: rgba(0, 0, 0, 0.05);
-        }
+<section class="hero-title">
+        <div class="container">
+            <h1 class="main-heading">
+                Inclusión laboral <span class="highlight">sostenible y efectiva</span> <br>
+                <span class="sub-heading">en cumplimiento de la ley.</span>
+            </h1>
+            <div class="accent-line"></div>
+        </div>
+    </section>
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Open Sans', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            color: var(--gris-premium);
-            line-height: 1.8;
+    <style>
+        /* Estilos específicos para el título estilizado */
+        .hero-title {
+            padding: 100px 6%;
+            text-align: center;
             background-color: var(--blanco);
         }
 
-        /* --- HEADER --- */
-        .main-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 6%;
-            background: var(--blanco);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px var(--sombra-elegante);
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-        }
-
-        .logo-container img {
-            height: 48px;
-            width: auto;
-        }
-
-        .logo-tagline {
+        .main-heading {
             font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--purpura-reca);
-        }
-
-        .nav-menu ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 30px;
+            font-weight: 300; /* Peso ligero para elegancia */
+            font-size: 48px;
+            color: var(--gris-premium);
+            line-height: 1.2;
             margin: 0;
-            padding: 0;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--gris-suave);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: var(--purpura-reca);
-        }
-
-        .btn-asesoria {
-            background-color: var(--purpura-reca);
-            color: white !important;
-            padding: 12px 25px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        /* --- SECCIÓN DE PRUEBA (Para que no se vea blanca) --- */
-        .hero-test {
-            height: 60vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-        }
-
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            font-size: 2.5rem;
-            color: var(--purpura-reca);
             letter-spacing: -1px;
         }
+
+        .main-heading .highlight {
+            font-weight: 800; /* Peso extra bold para contraste */
+            color: var(--purpura-reca);
+        }
+
+        .sub-heading {
+            display: block;
+            font-size: 38px;
+            font-weight: 500;
+            color: var(--gris-suave);
+            margin-top: 10px;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--purpura-reca);
+            margin: 40px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Ajuste para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .main-heading { font-size: 32px; }
+            .sub-heading { font-size: 26px; }
+            .hero-title { padding: 60px 20px; }
+        }
     </style>
-</head>
-<body>
-
-    <header class="main-header">
-        <a href="#" class="logo-container">
-            <img src="reca.png" alt="RECA Logo">
-            <span class="logo-tagline">Red Empleo con Apoyo</span>
-        </a>
-        
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Empresa</a></li>
-                <li><a href="#">Candidato</a></li>
-                <li><a href="#">Recursos</a></li>
-                <li><a href="#" class="btn-asesoria">Asesoría Ya</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero-test">
-            <h1>Inclusión laboral <br><strong>sostenible y efectiva.</strong></h1>
-        </section>
-    </main>
-
-</body>
-</html>
