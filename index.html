@@ -1,43 +1,40 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECA Colombia – Inclusión Laboral Sostenible</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --purpura-reca: #702A75; /* Color corporativo principal */
-            --gris-oscuro: #333333;
-            --gris-texto: #444444;
+            --purpura-reca: #702A75; 
+            --gris-premium: #2D2D2D;
+            --gris-suave: #6B6B6B;
             --blanco: #ffffff;
-            --sombra: rgba(0, 0, 0, 0.1);
+            --sombra-elegante: rgba(0, 0, 0, 0.05);
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--blanco);
-            color: var(--gris-texto);
-            line-height: 1.6;
-            overflow-x: hidden;
+            /* Aplicamos Open Sans para el cuerpo, buscando ligereza */
+            font-family: 'Open Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            color: var(--gris-premium);
+            line-height: 1.8;
         }
 
-        /* --- HEADER Y NAVEGACIÓN --- */
+        /* --- HEADER ESTILIZADO --- */
         .main-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            padding: 20px 6%;
             background: var(--blanco);
-            border-bottom: 1px solid #eeeeee;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px var(--sombra);
+            box-shadow: 0 4px 20px var(--sombra-elegante);
         }
 
         .logo-container {
@@ -48,75 +45,61 @@
         }
 
         .logo-container img {
-            height: 50px; /* Tamaño del logo reca.png */
-            width: auto;
+            height: 48px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
         .logo-tagline {
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
+            /* Montserrat con espaciado amplio para un toque de marca de lujo */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
             font-weight: 500;
-            color: var(--gris-oscuro);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--purpura-reca);
         }
 
         .nav-menu ul {
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 35px;
             margin: 0;
-            padding: 0;
         }
 
         .nav-menu a {
             text-decoration: none;
-            color: var(--gris-oscuro);
-            font-weight: 600;
-            font-size: 14px;
-            transition: color 0.3s;
+            color: var(--gris-suave);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
         }
 
         .nav-menu a:hover {
             color: var(--purpura-reca);
+            transform: translateY(-1px);
         }
 
-        /* Botón Asesoría Ya */
+        /* Botón de Asesoría Refinado */
         .btn-asesoria {
             background-color: var(--purpura-reca);
             color: white !important;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-transform: uppercase;
-            font-size: 13px;
+            padding: 12px 28px;
+            border-radius: 4px; /* Menos redondeado para un look más arquitectónico */
+            font-size: 12px;
             font-weight: 700;
-            display: inline-block;
+            letter-spacing: 1.5px;
+            box-shadow: 0 8px 15px rgba(112, 42, 117, 0.2);
         }
 
-        /* Responsivo básico */
-        @media (max-width: 768px) {
-            .nav-menu { display: none; }
-            .logo-tagline { display: none; }
+        /* Títulos de sección (Para cuando hagamos el Hero) */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
     </style>
 </head>
-<body>
-
-    <header class="main-header">
-        <a href="/" class="logo-container">
-            <img src="reca.png" alt="RECA Logo">
-            <span class="logo-tagline">Red Empleo con Apoyo</span>
-        </a>
-        
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#empresa">Empresa</a></li>
-                <li><a href="#candidato">Candidato</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#asesoria" class="btn-asesoria">Asesoría Ya</a></li>
-            </ul>
-        </nav>
-    </header>
-
-</body>
-</html>
