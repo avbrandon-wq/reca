@@ -25,7 +25,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- NAVEGACIÓN ESTILIZADA --- */
+        /* --- MENÚ ESTILIZADO --- */
         .header-estilizado {
             display: flex;
             justify-content: space-between;
@@ -55,7 +55,7 @@
             font-size: 13px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 2.5px; /* Espaciado premium */
+            letter-spacing: 2.5px;
             color: var(--purpura-reca);
         }
 
@@ -81,28 +81,27 @@
 
         .nav-estilizada a:hover {
             color: var(--purpura-reca);
-            letter-spacing: 2px;
         }
 
-        .btn-premium {
+        .btn-asesoria {
             background-color: var(--purpura-reca);
             color: white !important;
             padding: 12px 25px;
-            border-radius: 2px; /* Look arquitectónico */
+            border-radius: 2px;
             font-weight: 700 !important;
             font-size: 10px !important;
-            box-shadow: 0 10px 20px rgba(112, 42, 117, 0.15);
+            letter-spacing: 1.5px;
         }
 
-        /* --- TÍTULO IMPACTO (HERO) --- */
+        /* --- TÍTULO ESTILIZADO --- */
         .hero-container {
-            padding: 120px 6% 80px;
+            padding: 100px 6% 60px;
             text-align: center;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .titulo-estilizado {
+        .titulo-principal {
             font-family: 'Montserrat', sans-serif;
             font-size: 52px;
             line-height: 1.1;
@@ -111,8 +110,8 @@
             letter-spacing: -2px;
         }
 
-        .titulo-estilizado span.light { font-weight: 300; }
-        .titulo-estilizado span.bold { font-weight: 800; color: var(--purpura-reca); }
+        .titulo-principal .light { font-weight: 300; }
+        .titulo-principal .bold { font-weight: 800; color: var(--purpura-reca); }
         
         .sub-titulo {
             display: block;
@@ -123,14 +122,14 @@
             letter-spacing: -1px;
         }
 
-        /* --- SECCIÓN BENEFICIOS ESTILIZADOS --- */
-        .beneficios-seccion {
-            padding: 80px 6%;
+        /* --- SECCIÓN BENEFICIOS --- */
+        .beneficios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 40px;
             max-width: 1100px;
-            margin: 0 auto;
+            margin: 40px auto 80px;
+            padding: 0 6%;
         }
 
         .card-beneficio {
@@ -157,15 +156,15 @@
         .card-beneficio h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 19px;
-            line-height: 1.2;
             color: var(--purpura-reca);
             margin: 0;
             font-weight: 400;
+            line-height: 1.2;
         }
 
         .card-beneficio h3 strong { font-weight: 800; }
 
-        .linea-corta {
+        .linea-decorativa {
             width: 30px;
             height: 2px;
             background-color: var(--purpura-reca);
@@ -177,10 +176,11 @@
             color: var(--gris-suave);
             max-width: 200px;
             margin: 0;
+            line-height: 1.5;
         }
 
         @media (max-width: 768px) {
-            .titulo-estilizado { font-size: 36px; }
+            .titulo-principal { font-size: 36px; }
             .sub-titulo { font-size: 24px; }
             .nav-estilizada { display: none; }
         }
@@ -190,7 +190,7 @@
 
     <header class="header-estilizado">
         <a href="#" class="logo-box">
-            <img src="reca.png" alt="RECA Logo">
+            <img src="logotipo.png" alt="RECA Logo">
             <span class="tagline-marca">Red Empleo con Apoyo</span>
         </a>
         <nav class="nav-estilizada">
@@ -199,43 +199,43 @@
                 <li><a href="#">Empresa</a></li>
                 <li><a href="#">Candidato</a></li>
                 <li><a href="#">Recursos</a></li>
-                <li><a href="#" class="btn-premium">Asesoría Ya</a></li>
+                <li><a href="#" class="btn-asesoria">Asesoría Ya</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="hero-container">
-            <h1 class="titulo-estilizado">
+            <h1 class="titulo-principal">
                 <span class="light">Inclusión laboral</span> <br>
                 <span class="bold">sostenible y efectiva</span> <br>
                 <span class="sub-titulo">en cumplimiento de la ley.</span>
             </h1>
         </section>
 
-        <section class="beneficios-seccion">
+        <section class="beneficios-grid">
             <div class="card-beneficio">
                 <div class="num-circulo">1</div>
                 <h3>Propósitos <br><strong>alineados</strong></h3>
-                <div class="linea-corta"></div>
+                <div class="linea-decorativa"></div>
                 <p>Beneficios reales para la organización y el candidato.</p>
             </div>
             <div class="card-beneficio">
                 <div class="num-circulo">2</div>
                 <h3>Una Red de <br><strong>Servicio</strong></h3>
-                <div class="linea-corta"></div>
+                <div class="linea-decorativa"></div>
                 <p>Acompañamiento integral durante todo el proceso <strong>(SIN COSTO)</strong>.</p>
             </div>
             <div class="card-beneficio">
                 <div class="num-circulo">3</div>
                 <h3>Vinculación <br><strong>flexible</strong></h3>
-                <div class="linea-corta"></div>
+                <div class="linea-decorativa"></div>
                 <p>Programas por tipo de contrato (directo y aprendices).</p>
             </div>
             <div class="card-beneficio">
                 <div class="num-circulo">4</div>
                 <h3>Solución y <br><strong>Oportunidad</strong></h3>
-                <div class="linea-corta"></div>
+                <div class="linea-decorativa"></div>
                 <p>Cumplimiento de ley y beneficios tributarios.</p>
             </div>
         </section>
