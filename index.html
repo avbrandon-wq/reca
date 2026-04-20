@@ -4,285 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECA Colombia – Inclusión Laboral Sostenible</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --purpura-reca: #702A75;
+            --purpura-reca: #702A75; /* Color corporativo principal */
             --gris-oscuro: #333333;
-            --gris-texto: #444444;
             --gris-suave: #666666;
-            --gris-borde: #eeeeee;
-            --blanco-trans: rgba(255, 255, 255, 0.9);
-            --fondo-hero: rgba(0, 0, 0, 0.5);
+            --blanco: #ffffff;
+            --sombra: rgba(0, 0, 0, 0.08);
         }
 
         body {
             margin: 0;
-            padding: 0;
             font-family: 'Inter', sans-serif;
-            color: var(--gris-texto);
-            background-color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-color: var(--blanco);
+            color: var(--gris-oscuro);
         }
 
-        /* --- HEADER Y NAVEGACIÓN --- */
-        header {
+        /* --- HEADER / NAVEGACIÓN --- */
+        .main-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
-            background: #fff;
-            border-bottom: 1px solid var(--gris-borde);
+            padding: 15px 6%;
+            background: var(--blanco);
+            box-shadow: 0 2px 10px var(--sombra);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo-container {
+        .logo-box {
             display: flex;
             align-items: center;
-            gap: 15px;
+            text-decoration: none;
+            gap: 12px;
         }
 
-        .logo-container img {
-            height: 45px;
+        .logo-box img {
+            height: 50px; /* Tamaño optimizado para el logo */
+            width: auto;
         }
 
-        nav ul {
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--purpura-reca);
+            line-height: 1.2;
+        }
+
+        .nav-menu ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            align-items: center;
+            gap: 30px;
             margin: 0;
             padding: 0;
-            align-items: center;
         }
 
-        nav a {
+        .nav-menu a {
             text-decoration: none;
             color: var(--gris-oscuro);
             font-weight: 600;
-            font-size: 14px;
+            font-size: 15px;
+            transition: color 0.3s;
         }
 
-        .btn-asesoria {
+        .nav-menu a:hover {
+            color: var(--purpura-reca);
+        }
+
+        /* Botón de Asesoría destacado */
+        .btn-cta {
             background-color: var(--purpura-reca);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
+            color: var(--blanco) !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 700 !important;
             text-transform: uppercase;
-            font-size: 13px;
+            letter-spacing: 0.5px;
+            font-size: 13px !important;
+            box-shadow: 0 4px 12px rgba(112, 42, 117, 0.2);
         }
 
-        /* --- SECCIÓN HERO --- */
-        .hero {
-            background: linear-gradient(var(--fondo-hero), var(--fondo-hero)), url('tu-imagen-hero.jpg'); /* Reemplazar con tu imagen real */
-            background-size: cover;
-            background-position: center;
-            height: 450px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-card {
-            background: var(--blanco-trans);
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 800px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .hero-card h1 {
-            color: var(--purpura-reca);
-            font-size: 32px;
-            margin-bottom: 15px;
-            font-weight: 800;
-        }
-
-        /* --- SECCIÓN SERVICIOS --- */
-        .servicios-section {
-            padding: 60px 10%;
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-
-        .servicios-section h2 {
-            color: var(--purpura-reca);
-            font-size: 28px;
-            position: relative;
-            display: inline-block;
-            margin-bottom: 40px;
-        }
-
-        .servicios-section h2::after {
-            content: '';
-            width: 50px;
-            height: 3px;
-            background: var(--purpura-reca);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .servicios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .servicio-item {
-            text-align: left;
-            background: white;
-            padding: 25px;
-            border-bottom: 1px solid var(--gris-borde);
-        }
-
-        .servicio-numero {
-            border: 1px solid var(--purpura-reca);
-            color: var(--purpura-reca);
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .servicio-item h3 {
-            color: var(--purpura-reca);
-            margin: 0 0 10px 0;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--purpura-reca);
-            color: white;
-            padding: 60px 10% 20px;
-            text-align: left;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .footer-logo img {
-            height: 50px;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            font-size: 14px;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 20px;
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .footer-info {
-            border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: 20px;
-            text-align: center;
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        .footer-sede {
-            font-weight: bold;
-            margin-top: 20px;
+        @media (max-width: 768px) {
+            .nav-menu { display: none; } /* Ocultar para móvil por ahora */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="Logo Reca Blanco.png" alt="RECA Logo">
-            <span style="font-size: 18px; font-weight: 500;">Red Empleo con Apoyo</span>
-        </div>
-        <nav>
+    <header class="main-header">
+        <a href="#" class="logo-box">
+            <img src="reca.png" alt="RECA Colombia">
+            <div class="logo-text">Red Empleo<br>con Apoyo</div>
+        </a>
+
+        <nav class="nav-menu">
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Empresa</a></li>
-                <li><a href="#">Candidato</a></li>
-                <li><a href="#">Recursos</a></li>
-                <li><a href="#" class="btn-asesoria">Asesoría Ya</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#empresa">Empresa</a></li>
+                <li><a href="#candidato">Candidato</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#asesoria" class="btn-cta">Asesoría Ya</a></li>
             </ul>
         </nav>
     </header>
-
-    <section class="hero">
-        <div class="hero-card">
-            <h1>Inclusión laboral sostenible y efectiva en cumplimiento de la ley.</h1>
-            <p style="color: var(--gris-texto);">Conectamos talento con discapacidad con empresas que buscan impacto y legalidad.</p>
-        </div>
-    </section>
-
-    <section class="servicios-section">
-        <h2>Servicios</h2>
-        <div class="servicios-grid">
-            <div class="servicio-item">
-                <div class="servicio-numero">1</div>
-                <h3>Programa Inclusión</h3>
-                <p>Acompañamiento profesional alineado con la Agencia de Empleo Compensar.</p>
-            </div>
-            <div class="servicio-item">
-                <div class="servicio-numero">2</div>
-                <h3>Programa Aprendices</h3>
-                <p>Convenio SENA para formación técnica adaptada.</p>
-            </div>
-            <div class="servicio-item">
-                <div class="servicio-numero">3</div>
-                <h3>Capacitaciones</h3>
-                <p>Talleres de sensibilización y protocolos de comunicación.</p>
-            </div>
-            <div class="servicio-item">
-                <div class="servicio-numero">4</div>
-                <h3>Servicios individuales</h3>
-                <p>Servicio de Intérpretes (LSC), Asesoría en Ajustes Razonables y Diseño de política inclusiva.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-social">
-            <span>f</span> <span>i</span> <span>y</span> </div>
-        
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="Logo Reca Blanco.png" alt="RECA Logo Footer">
-            </div>
-            <div class="footer-links">
-                <a href="#">Documentos legales 2025</a>
-                <a href="#">Política de tratamiento de datos</a>
-                <a href="mailto:info@recacolombia.org">info@recacolombia.org</a>
-            </div>
-        </div>
-
-        <div class="footer-sede">
-            Nueva sede: Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621
-        </div>
-
-        <div class="footer-info">
-            RECA © Derechos Reservados 2024
-        </div>
-    </footer>
 
 </body>
 </html>
