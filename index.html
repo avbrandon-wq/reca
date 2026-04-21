@@ -91,10 +91,23 @@
 
 .overlay-oscuro {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    /* Degradado sutil: más oscuro abajo y a los lados para resaltar las letras */
-    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Explicación del gradiente:
+       - Empieza con un 40% de negro arriba.
+       - Sube a un 65% de púrpura/negro en el centro para proteger el texto.
+       - Termina con un 50% de púrpura RECA abajo.
+    */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.65) 50%, 
+        rgba(112, 42, 117, 0.5) 100%
+    );
     z-index: 1;
+}
 }
 
 .titulo-impacto {
