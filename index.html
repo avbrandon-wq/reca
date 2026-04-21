@@ -61,21 +61,40 @@
             color: var(--gris-suave);
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 11px;
+            font-size: 10px; /* AJUSTE: Un poco más pequeño solicitado */
             text-transform: uppercase;
             letter-spacing: 1.5px;
+            position: relative; /* Necesario para la línea */
+            padding: 8px 0; /* Espacio para que el hover no "corte" la letra */
             transition: all 0.3s ease;
+        }
+
+        /* EFECTO DE LÍNEA ANIMADA EN HOVER */
+        .nav-estilizada a:not(.btn-asesoria)::after {
+            content: '';
+            position: absolute;
+            width: 0; /* Empieza con ancho cero */
+            height: 2px; /* Grosor de la línea */
+            bottom: 0; /* Pegada a la parte inferior del enlace */
+            left: 50%; /* Centrada */
+            background-color: var(--purpura-reca);
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%); /* Centra la línea */
+        }
+
+        .nav-estilizada a:not(.btn-asesoria):hover::after {
+            width: 100%; /* Se expande al 100% de la palabra */
         }
 
         .nav-estilizada a:not(.btn-asesoria):hover {
             color: var(--purpura-reca);
         }
 
-        /* BOTÓN DE CONTACTO CON ESPACIO MÁXIMO */
+        /* BOTÓN DE CONTACTO (Mantiene su estilo premium) */
         .btn-asesoria {
             background-color: var(--purpura-reca);
             color: white !important;
-            padding: 14px 60px !important; /* Espaciado extra lateral solicitado */
+            padding: 14px 60px !important; 
             border-radius: 8px;
             font-weight: 800 !important;
             letter-spacing: 2px;
@@ -84,6 +103,8 @@
             box-shadow: 0 4px 12px rgba(112, 42, 117, 0.2);
             text-align: center;
         }
+
+        .btn-asesoria::after { display: none !important; } /* Desactiva la línea en el botón */
 
         .btn-asesoria:hover {
             background-color: var(--purpura-hover);
