@@ -28,7 +28,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN REVISADA --- */
         .header-estilizado {
             display: flex;
             justify-content: space-between;
@@ -61,58 +61,58 @@
             color: var(--gris-suave);
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 10px; /* AJUSTE: Un poco más pequeño solicitado */
+            font-size: 10px; /* Tamaño refinado solicitado */
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            position: relative; /* Necesario para la línea */
-            padding: 8px 0; /* Espacio para que el hover no "corte" la letra */
+            position: relative;
+            padding: 8px 0;
             transition: all 0.3s ease;
         }
 
-        /* EFECTO DE LÍNEA ANIMADA EN HOVER */
+        /* EFECTO LÍNEA ANIMADA */
         .nav-estilizada a:not(.btn-asesoria)::after {
             content: '';
             position: absolute;
-            width: 0; /* Empieza con ancho cero */
-            height: 2px; /* Grosor de la línea */
-            bottom: 0; /* Pegada a la parte inferior del enlace */
-            left: 50%; /* Centrada */
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
             background-color: var(--purpura-reca);
             transition: all 0.3s ease-in-out;
-            transform: translateX(-50%); /* Centra la línea */
+            transform: translateX(-50%);
         }
 
         .nav-estilizada a:not(.btn-asesoria):hover::after {
-            width: 100%; /* Se expande al 100% de la palabra */
+            width: 100%;
         }
 
         .nav-estilizada a:not(.btn-asesoria):hover {
             color: var(--purpura-reca);
         }
 
-        /* BOTÓN DE CONTACTO (Mantiene su estilo premium) */
+        /* BOTÓN DE CONTACTO - ESPACIADO MÁXIMO */
         .btn-asesoria {
             background-color: var(--purpura-reca);
             color: white !important;
-            padding: 14px 60px !important; 
+            padding: 14px 60px !important; /* Espacio extra solicitado */
             border-radius: 8px;
             font-weight: 800 !important;
             letter-spacing: 2px;
             display: inline-block;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 4px 12px rgba(112, 42, 117, 0.2);
             text-align: center;
         }
 
-        .btn-asesoria::after { display: none !important; } /* Desactiva la línea en el botón */
+        .btn-asesoria::after { display: none !important; }
 
         .btn-asesoria:hover {
             background-color: var(--purpura-hover);
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.02);
             box-shadow: 0 6px 18px rgba(112, 42, 117, 0.3);
         }
 
-        /* --- HERO --- */
+        /* --- SECCIÓN HERO --- */
         .seccion-hero-imagen {
             position: relative;
             height: 75vh;
@@ -146,7 +146,7 @@
         .titulo-impacto .light { font-weight: 300; font-size: 0.8em; }
         .titulo-impacto .bold { font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
 
-        /* --- BENEFICIOS (1, 2, 3) --- */
+        /* --- BLOQUES DE VALOR (1, 2, 3) --- */
         .beneficios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -182,7 +182,7 @@
             line-height: 1.2;
         }
         
-        .card-beneficio h3 strong { font-weight: 700; display: block; text-transform: none; }
+        .card-beneficio h3 strong { font-weight: 700; display: block; }
 
         .linea-decorativa { width: 40px; height: 2px; background-color: var(--purpura-reca); margin: 15px 0; }
         
@@ -193,7 +193,7 @@
             max-width: 280px;
         }
 
-        /* --- SERVICIOS --- */
+        /* --- SECCIÓN SERVICIOS --- */
         .servicios-premium { padding: 100px 10%; background-color: #fcfcfc; }
         .servicios-header { text-align: center; margin-bottom: 70px; }
         .titulo-seccion-servicios { 
@@ -207,8 +207,8 @@
         .titulo-seccion-servicios strong { font-weight: 800; }
 
         .servicios-lista-container { max-width: 1000px; margin: 0 auto; }
-        .servicio-bloque { border-bottom: 1px solid #eee; padding: 35px 0; }
-        .servicio-encabezado { display: flex; align-items: center; gap: 30px; cursor: pointer; position: relative; }
+        .servicio-bloque { border-bottom: 1px solid #eee; padding: 35px 0; transition: all 0.3s ease; }
+        .servicio-encabezado { display: flex; align-items: center; gap: 30px; cursor: pointer; }
 
         .num-indicador {
             width: 50px; height: 50px; border: 1px solid var(--purpura-reca);
@@ -250,7 +250,6 @@
             color: var(--purpura-reca);
             line-height: 1.3;
         }
-        .texto-aliados strong { font-weight: 800; }
 
         .logos-container {
             display: flex;
@@ -258,19 +257,19 @@
             align-items: center;
             gap: 60px;
             flex-wrap: wrap;
-            opacity: 0.7;
         }
-        .logos-container img { height: 45px; width: auto; filter: grayscale(100%); transition: 0.3s; }
+        .logos-container img { height: 45px; width: auto; filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
         .logos-container img:hover { filter: grayscale(0%); opacity: 1; }
 
-        /* --- FOOTER --- */
-        .footer-reca { background-color: var(--purpura-footer); color: white; padding: 60px 10% 30px; position: relative; }
+        /* --- FOOTER REVISADO --- */
+        .footer-reca { background-color: var(--purpura-footer); color: white; padding: 60px 10% 30px; }
         .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
         .footer-logo { height: 40px; filter: brightness(0) invert(1); margin-bottom: 20px; }
         .footer-links { display: flex; gap: 20px; font-size: 12px; font-weight: 300; }
         .footer-links a { color: white; text-decoration: underline; opacity: 0.8; }
         .social-icons { display: flex; gap: 15px; font-size: 20px; }
-        .social-icons a { color: white; }
+        .social-icons a { color: white; transition: transform 0.3s ease; }
+        .social-icons a:hover { transform: translateY(-3px); }
         
         .footer-info-central { 
             border-top: 1px solid rgba(255,255,255,0.2); 
@@ -284,7 +283,6 @@
             .nav-estilizada { display: none; }
             .header-estilizado { padding: 15px 5%; }
             .footer-top { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
-            .footer-links { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -353,10 +351,9 @@
                     <div class="conozca-mas-btn">Conozca más →</div>
                 </div>
                 <div class="servicio-contenido-oculto">
-                    <p>Acompañamiento profesional en la vinculación de talento humano con discapacidad, optimizando beneficios tributarios y sociales.</p>
+                    <p>Brindamos acompañamiento profesional en la vinculación de talento humano con discapacidad, optimizando procesos internos y capturando beneficios tributarios.</p>
                 </div>
             </div>
-
             <div class="servicio-bloque">
                 <div class="servicio-encabezado" onclick="toggleServicio(this)">
                     <div class="num-indicador">2</div>
@@ -367,48 +364,9 @@
                     <div class="conozca-mas-btn">Conozca más →</div>
                 </div>
                 <div class="servicio-contenido-oculto">
-                    <p>Gestión de cuota de aprendizaje mediante la formación técnica de personas con discapacidad alineada a su operación.</p>
+                    <p>Gestión estratégica de la cuota de aprendizaje para integrar jóvenes talentos en formación técnica o tecnológica.</p>
                 </div>
             </div>
-
-            <div class="servicio-bloque">
-                <div class="servicio-encabezado" onclick="toggleServicio(this)">
-                    <div class="num-indicador">3</div>
-                    <div class="servicio-info">
-                        <h3>Sensibilización y <strong>Capacitaciones</strong></h3>
-                        <p class="servicio-tagline">Cultura Organizacional e Inclusiva.</p>
-                    </div>
-                    <div class="conozca-mas-btn">Conozca más →</div>
-                </div>
-                <div class="servicio-contenido-oculto">
-                    <p>Talleres vivenciales para equipos de trabajo y líderes sobre comunicación asertiva y trato digno.</p>
-                </div>
-            </div>
-
-            <div class="servicio-bloque">
-                <div class="servicio-encabezado" onclick="toggleServicio(this)">
-                    <div class="num-indicador">4</div>
-                    <div class="servicio-info">
-                        <h3>Servicios <strong>Individuales</strong></h3>
-                        <p class="servicio-tagline">Soluciones técnicas especializadas.</p>
-                    </div>
-                    <div class="conozca-mas-btn">Conozca más →</div>
-                </div>
-                <div class="servicio-contenido-oculto">
-                    <p>Servicios de interpretación en LSC, ajustes razonables en puestos de trabajo y consultoría legal específica.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="aliados-seccion">
-        <h2 class="texto-aliados">Conectamos talento con discapacidad con empresas que buscan <strong>impacto y legalidad.</strong></h2>
-        <div class="logos-container">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Aliado">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="Aliado">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/claro.png" alt="Aliado">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/envia.png" alt="Aliado">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/femsa.png" alt="Aliado">
         </div>
     </section>
 
@@ -429,7 +387,7 @@
             </div>
         </div>
         <div class="footer-info-central">
-            <p style="font-weight: 300; font-size: 14px;"><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
+            <p><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
         </div>
         <div class="footer-copy">RECA © Derechos Reservados 2024</div>
     </footer>
@@ -440,7 +398,6 @@
             const btn = element.querySelector('.conozca-mas-btn');
             const isActive = bloque.classList.contains('active');
             
-            // Cerrar otros
             document.querySelectorAll('.servicio-bloque').forEach(b => {
                 b.classList.remove('active');
                 b.querySelector('.conozca-mas-btn').innerText = 'Conozca más →';
