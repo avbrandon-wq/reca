@@ -75,19 +75,32 @@
         }
 
         /* --- HERO --- */
-     .seccion-hero-imagen {
+    .seccion-hero-imagen {
     position: relative;
     height: 70vh;
-    /* Usamos el nombre exacto de tu archivo en GitHub */
-    background-image: url('https://raw.githubusercontent.com/avbrandon-wq/reca/main/imagen1.png'); 
+    /* Cambiamos a una ruta relativa si estás en GitHub Pages o Vercel */
+    background-image: url('imagen1.png'); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Cambiado de fixed a scroll para evitar bugs en Chrome */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+}
+
+.overlay-oscuro {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Un tinte púrpura muy sutil en lugar de negro sólido */
+    background: rgba(112, 42, 117, 0.2); 
+    z-index: 1;
+}
 }
 }
         }
