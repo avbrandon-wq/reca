@@ -287,6 +287,26 @@
             font-weight: 700 !important;
         }
 
+.btn-asesoria {
+    background-color: var(--purpura-reca);
+    color: white !important;
+    padding: 10px 22px;       /* El primer número da aire arriba/abajo, el segundo a los lados */
+    border-radius: 6px;       /* Bordes redondeados sutiles */
+    display: inline-flex;     /* Ayuda a centrar mejor el texto internamente */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    text-transform: uppercase; /* Opcional: si quieres que mantenga el estilo de la captura */
+    font-size: 12px;          /* Un poco más que los 11px de los otros para resaltar */
+}
+
+.btn-asesoria:hover {
+    background-color: #55265e; /* Un tono más oscuro del púrpura */
+    transform: translateY(-1px); /* Un pequeño salto al pasar el mouse lo hace sentir interactivo */
+}
+
+        
+
         /* --- NUEVA SECCIÓN HERO (IMAGEN B/N) --- */
    .seccion-hero-imagen {
     position: relative;
