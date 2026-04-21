@@ -24,9 +24,10 @@
             background-color: var(--blanco);
             color: var(--gris-premium);
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* --- NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN PREMIUM --- */
         .header-estilizado {
             display: flex;
             justify-content: space-between;
@@ -59,7 +60,7 @@
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            transition: color 0.3s;
+            transition: 0.3s;
         }
 
         .nav-estilizada a:hover:not(.btn-asesoria) { color: var(--purpura-reca); }
@@ -72,11 +73,11 @@
             font-weight: 700 !important;
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO CON ALTO CONTRASTE --- */
         .seccion-hero-imagen {
             position: relative;
-            height: 70vh;
-            background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop'); /* Placeholder profesional */
+            height: 75vh;
+            background-image: url('https://raw.githubusercontent.com/avbrandon-wq/reca/main/hero_bg.jpg'); /* Asegúrate de tener esta imagen */
             background-size: cover;
             background-position: center;
             display: flex;
@@ -89,7 +90,10 @@
         .overlay-oscuro {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(112,42,117,0.5) 100%);
+            /* Gradiente mejorado para legibilidad máxima */
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.6) 0%, 
+                rgba(112,42,117,0.45) 100%);
             z-index: 1;
         }
 
@@ -99,18 +103,18 @@
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(32px, 5vw, 64px);
             line-height: 1.1;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
-        .titulo-impacto .bold { font-weight: 800; text-transform: uppercase; }
+        .titulo-impacto .bold { font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
 
-        /* --- BENEFICIOS --- */
+        /* --- BENEFICIOS GRID --- */
         .beneficios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            gap: 40px;
             max-width: 1150px;
-            margin: 80px auto;
+            margin: 100px auto;
             padding: 0 6%;
         }
 
@@ -119,93 +123,104 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: transform 0.3s ease;
         }
 
         .num-circulo {
-            width: 42px; height: 42px;
+            width: 45px; height: 45px;
             border: 1.5px solid var(--purpura-reca);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             color: var(--purpura-reca); font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .linea-decorativa { width: 35px; height: 2px; background-color: var(--purpura-reca); margin: 15px 0; }
+        .card-beneficio h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; color: var(--purpura-reca); font-weight: 400; margin: 0; }
+        .linea-decorativa { width: 40px; height: 2px; background-color: var(--purpura-reca); margin: 20px 0; }
+        .card-beneficio p { font-size: 14px; color: var(--gris-suave); line-height: 1.6; }
 
-        /* --- SERVICIOS --- */
-        .servicios-premium { padding: 80px 10%; background: #fcfcfc; }
-        .servicios-header { text-align: center; margin-bottom: 60px; }
-        .titulo-seccion-servicios { font-family: 'Montserrat', sans-serif; font-size: 28px; color: var(--purpura-reca); text-transform: uppercase; letter-spacing: 2px; }
+        /* --- SERVICIOS ACORDEÓN --- */
+        .servicios-premium { padding: 100px 6%; background-color: #ffffff; }
+        .servicios-header { text-align: center; margin-bottom: 80px; }
+        .titulo-seccion-servicios { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 300; color: var(--purpura-reca); text-transform: uppercase; letter-spacing: 2px; }
 
         .servicio-bloque {
             max-width: 900px;
             margin: 0 auto;
             border-bottom: 1px solid #eee;
-            padding: 30px 0;
+            padding: 40px 0;
+            transition: 0.3s;
         }
 
         .servicio-encabezado {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 30px;
             cursor: pointer;
         }
 
         .num-indicador {
-            width: 40px; height: 40px; border: 1px solid var(--purpura-reca);
+            width: 45px; height: 45px; border: 1px solid var(--purpura-reca);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             color: var(--purpura-reca); font-weight: 700; flex-shrink: 0;
         }
 
-        .servicio-info { flex-grow: 1; }
-        .servicio-info h3 { font-family: 'Montserrat', sans-serif; margin: 0; color: var(--purpura-reca); }
-        .servicio-tagline { font-size: 14px; color: #777; margin: 5px 0 0; }
+        .servicio-info h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; margin: 0; color: var(--purpura-reca); font-weight: 400; }
+        .servicio-tagline { font-size: 15px; color: #888; margin: 5px 0 0; }
 
-        .conozca-mas-btn { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--purpura-reca); text-transform: uppercase; }
+        .conozca-mas-btn { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--purpura-reca); text-transform: uppercase; letter-spacing: 1px; }
 
         .servicio-contenido-oculto {
             max-height: 0;
             overflow: hidden;
-            transition: all 0.5s ease-in-out;
-            padding-left: 65px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding-left: 75px;
             opacity: 0;
         }
 
         .servicio-bloque.active .servicio-contenido-oculto {
-            max-height: 300px;
+            max-height: 500px;
             opacity: 1;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
-        /* --- ALIADOS (MARQUESINA) --- */
-        .aliados-carrusel { padding: 80px 0; background: #fff; overflow: hidden; border-top: 1px solid #eee; }
-        .texto-central-aliados { text-align: center; margin-bottom: 50px; padding: 0 10%; }
-        .marquesina-logos { width: 100%; display: flex; }
+        /* --- ALIADOS (MARQUESINA INFINITA) --- */
+        .aliados-seccion { padding: 80px 0; background: #fdfdfd; border-top: 1px solid #f0f0f0; overflow: hidden; }
+        .marquesina-logos { display: flex; width: 100%; overflow: hidden; position: relative; }
         .marquesina-track { 
             display: flex; 
-            width: calc(250px * 12); 
-            animation: scroll-infinito 30s linear infinite; 
+            width: calc(250px * 16); 
+            animation: scroll-infinito 40s linear infinite; 
         }
-        .logo-slide { width: 250px; display: flex; align-items: center; justify-content: center; padding: 0 30px; }
-        .logo-slide img { max-width: 140px; filter: grayscale(100%); opacity: 0.5; transition: 0.3s; }
-        .logo-slide img:hover { filter: grayscale(0%); opacity: 1; }
+        .logo-slide { width: 250px; display: flex; align-items: center; justify-content: center; padding: 0 40px; }
+        .logo-slide img { max-width: 150px; filter: grayscale(100%); opacity: 0.6; transition: 0.4s; }
+        .logo-slide img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
         @keyframes scroll-infinito {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(-250px * 8)); }
         }
 
-        /* --- FOOTER --- */
+        /* --- FOOTER INSTITUCIONAL --- */
         .footer-reca-centrado {
             background-color: var(--purpura-reca);
             color: #ffffff;
-            padding: 60px 20px;
+            padding: 80px 20px 40px;
             text-align: center;
+            font-family: 'Montserrat', sans-serif;
         }
-        .logo-footer-white { height: 50px; filter: brightness(0) invert(1); margin-bottom: 20px; }
-        .footer-doc-links a { color: white; text-decoration: none; font-size: 13px; display: block; margin: 5px 0; opacity: 0.8; }
-        .footer-redes { margin-bottom: 30px; display: flex; justify-content: center; gap: 20px; }
-        .txt-copy { font-size: 10px; margin-top: 20px; opacity: 0.5; text-transform: uppercase; }
+
+        .footer-redes { display: flex; justify-content: center; gap: 25px; margin-bottom: 40px; }
+        .footer-redes a { color: white; font-size: 20px; transition: 0.3s; }
+        .footer-redes a:hover { opacity: 0.7; transform: translateY(-3px); }
+
+        .logo-footer-white { height: 60px; filter: brightness(0) invert(1); margin-bottom: 30px; }
+
+        .footer-doc-links a { color: white; text-decoration: none; font-size: 13px; font-weight: 300; display: block; margin: 8px 0; opacity: 0.9; }
+        .footer-doc-links a:hover { text-decoration: underline; }
+
+        .txt-sede { font-size: 13px; margin: 30px 0 15px; font-weight: 400; }
+        .txt-copy { font-size: 10px; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; }
     </style>
 </head>
 <body>
@@ -216,19 +231,18 @@
         </a>
         <nav class="nav-estilizada">
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Empresa</a></li>
-                <li><a href="#">Candidato</a></li>
-                <li><a href="#" class="btn-asesoria">CONTACTO</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto" class="btn-asesoria">CONTACTO</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="seccion-hero-imagen">
+    <section class="seccion-hero-imagen" id="inicio">
         <div class="overlay-oscuro"></div>
         <div class="contenido-hero">
             <h1 class="titulo-impacto">
-                <span class="light" style="font-weight: 300;">Inclusión laboral</span><br>
+                <span style="font-weight: 300;">Inclusión laboral</span><br>
                 <span class="bold">sostenible y efectiva</span>
             </h1>
         </div>
@@ -240,29 +254,29 @@
                 <div class="num-circulo">1</div>
                 <h3>Propósitos <br><strong>alineados</strong></h3>
                 <div class="linea-decorativa"></div>
-                <p>Beneficios reales para la organización y el candidato.</p>
+                <p>Equilibrio real entre los objetivos de la empresa y el bienestar del candidato.</p>
             </div>
             <div class="card-beneficio">
                 <div class="num-circulo">2</div>
-                <h3>Una Red de <br><strong>Servicio</strong></h3>
+                <h3>Red de <br><strong>Servicio</strong></h3>
                 <div class="linea-decorativa"></div>
-                <p>Acompañamiento integral <strong>(SIN COSTO)</strong>.</p>
+                <p>Acompañamiento profesional y humano <strong>sin costo adicional</strong>.</p>
             </div>
             <div class="card-beneficio">
                 <div class="num-circulo">3</div>
                 <h3>Vinculación <br><strong>flexible</strong></h3>
                 <div class="linea-decorativa"></div>
-                <p>Programas por tipo de contrato y aprendices.</p>
+                <p>Modelos de contratación adaptados: directos y cuota de aprendices.</p>
             </div>
             <div class="card-beneficio">
                 <div class="num-circulo">4</div>
                 <h3>Solución y <br><strong>Oportunidad</strong></h3>
                 <div class="linea-decorativa"></div>
-                <p>Cumplimiento de ley y beneficios tributarios.</p>
+                <p>Optimización de beneficios tributarios y cumplimiento legal efectivo.</p>
             </div>
         </section>
 
-        <section class="servicios-premium">
+        <section class="servicios-premium" id="servicios">
             <div class="servicios-header">
                 <h2 class="titulo-seccion-servicios">Nuestros <strong>Servicios</strong></h2>
             </div>
@@ -273,12 +287,12 @@
                         <div class="num-indicador">1</div>
                         <div class="servicio-info">
                             <h3>Programa <strong>Inclusión</strong></h3>
-                            <p class="servicio-tagline">Acompañamiento profesional a costo cero.</p>
+                            <p class="servicio-tagline">Sostenibilidad laboral a costo cero.</p>
                         </div>
-                        <div class="conozca-mas-btn">Conozca más <span>↓</span></div>
+                        <div class="conozca-mas-btn">Ver más <span>↓</span></div>
                     </div>
                     <div class="servicio-contenido-oculto">
-                        <p>Brindamos un acompañamiento profesional de principio a fin, alineado con la Agencia de Empleo Compensar para garantizar procesos exitosos.</p>
+                        <p>Brindamos un acompañamiento profesional de principio a fin, alineado con la Agencia de Empleo Compensar para garantizar procesos inclusivos exitosos y duraderos.</p>
                     </div>
                 </div>
 
@@ -287,67 +301,91 @@
                         <div class="num-indicador">2</div>
                         <div class="servicio-info">
                             <h3>Programa <strong>Aprendices</strong></h3>
-                            <p class="servicio-tagline">Talento a la medida de su empresa.</p>
+                            <p class="servicio-tagline">Formación de talento a medida.</p>
                         </div>
-                        <div class="conozca-mas-btn">Conozca más <span>↓</span></div>
+                        <div class="conozca-mas-btn">Ver más <span>↓</span></div>
                     </div>
                     <div class="servicio-contenido-oculto">
-                        <p>Gestionamos convenios con el SENA para facilitar la formación técnica adaptada a las necesidades de su organización.</p>
+                        <p>Gestionamos convenios estratégicos con el SENA para facilitar la formación técnica adaptada a las necesidades específicas de su organización.</p>
+                    </div>
+                </div>
+
+                <div class="servicio-bloque" onclick="toggleServicio(this)">
+                    <div class="servicio-encabezado">
+                        <div class="num-indicador">3</div>
+                        <div class="servicio-info">
+                            <h3>Sensibilización y <strong>Capacitación</strong></h3>
+                            <p class="servicio-tagline">Cultura organizacional inclusiva.</p>
+                        </div>
+                        <div class="conozca-mas-btn">Ver más <span>↓</span></div>
+                    </div>
+                    <div class="servicio-contenido-oculto">
+                        <p>Talleres diseñados para equipos de trabajo, líderes y RRHH, enfocados en eliminar sesgos y preparar el entorno laboral.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="aliados-carrusel">
-            <div class="texto-central-aliados">
-                <h2 style="color: #702A75; font-family: 'Montserrat';">Empresas que confían en <strong>nosotros</strong></h2>
-            </div>
+        <section class="aliados-seccion">
             <div class="marquesina-logos">
                 <div class="marquesina-track">
                     <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Adidas"></div>
                     <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="BBVA"></div>
                     <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/claro.png" alt="Claro"></div>
                     <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/envia.png" alt="Envia"></div>
-                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/femsa.png" alt="Femsa"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/femsa.png" alt="Coca-Cola FEMSA"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/ilunion.png" alt="Ilunion"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/ramo.png" alt="Ramo"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/gallager.png" alt="Gallager"></div>
                     <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Adidas"></div>
                     <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="BBVA"></div>
                     <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/claro.png" alt="Claro"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/envia.png" alt="Envia"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/femsa.png" alt="Coca-Cola FEMSA"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/ilunion.png" alt="Ilunion"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/ramo.png" alt="Ramo"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/gallager.png" alt="Gallager"></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer-reca-centrado">
+    <footer class="footer-reca-centrado" id="contacto">
         <div class="footer-redes">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
         </div>
+        
         <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logotipo.png" alt="RECA" class="logo-footer-white">
+        
         <div class="footer-doc-links">
+            <a href="#">Documentos legales 2026</a>
             <a href="#">Política de tratamiento de datos</a>
             <a href="mailto:info@recacolombia.org">info@recacolombia.org</a>
-            <p>Cra. 21a # 83 - 12 Bogotá, Colombia</p>
         </div>
-        <p class="txt-copy">RECA © 2026 | Desarrollado por Alvaro Vargas Briceño</p>
+
+        <p class="txt-sede"><strong>Sede Bogotá:</strong> Cra. 21a # 83 - 12 | Cel: (310) 565 8621</p>
+        <p class="txt-copy">RECA © Todos los derechos reservados 2026 | Desarrollado por Alvaro Vargas Briceño</p>
     </footer>
 
     <script>
         function toggleServicio(element) {
             const isActive = element.classList.contains('active');
             
-            // Cerrar todos primero
+            // Cerrar todos los demás bloques primero
             document.querySelectorAll('.servicio-bloque').forEach(b => {
                 b.classList.remove('active');
                 b.querySelector('span').textContent = '↓';
             });
             
-            // Si no estaba activo, abrirlo
+            // Si el que clicamos no estaba abierto, lo abrimos
             if (!isActive) {
                 element.classList.add('active');
                 element.querySelector('span').textContent = '↑';
             }
         }
     </script>
+
 </body>
 </html>
