@@ -75,15 +75,22 @@
         }
 
         /* --- HERO --- */
-        .seccion-hero-imagen {
-            position: relative;
-            height: 60vh;
-            background: url('https://raw.githubusercontent.com/avbrandon-wq/reca/main/inclusion-hero-bn.jpg') center/cover fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
+       .seccion-hero-imagen {
+    position: relative;
+    height: 75vh; /* Un poco más alto para mejor impacto */
+    background-color: #2D2D2D; /* Color de respaldo mientras carga */
+    background-image: url('https://raw.githubusercontent.com/avbrandon-wq/reca/main/inclusion-hero-bn.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* Si el fondo sigue saliendo gris, quita la línea de abajo temporalmente */
+    background-attachment: fixed; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
         }
 
         .overlay-oscuro {
