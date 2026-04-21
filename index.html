@@ -34,18 +34,22 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 6%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 15px var(--sombra-sutil);
+            box-shadow: 0 4px 20px var(--sombra-sutil);
         }
 
-        .logo-box img { 
-            height: 45px; 
-            width: auto; 
+        .logo-box {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
         }
+
+        .logo-box img { height: 35px; width: auto; }
 
         .nav-estilizada ul {
             list-style: none;
@@ -60,42 +64,39 @@
             text-decoration: none;
             color: var(--gris-suave);
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s ease;
+            letter-spacing: 1.2px;
+            transition: color 0.3s ease;
         }
 
-        .nav-estilizada a:not(.btn-asesoria):hover {
-            color: var(--purpura-reca);
-        }
+        .nav-estilizada a:not(.btn-asesoria):hover { color: var(--purpura-reca); }
 
-        /* BOTÓN DE CONTACTO CON ESPACIO MÁXIMO */
+        /* MEJORA DEL BOTÓN DE CONTACTO */
         .btn-asesoria {
             background-color: var(--purpura-reca);
             color: white !important;
-            padding: 14px 60px !important; /* Espaciado extra lateral solicitado */
-            border-radius: 8px;
-            font-weight: 800 !important;
-            letter-spacing: 2px;
+            padding: 12px 35px; /* Espacio generoso a los lados */
+            border-radius: 6px;
+            font-weight: 700 !important;
+            letter-spacing: 1px;
             display: inline-block;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 12px rgba(112, 42, 117, 0.2);
-            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(112, 42, 117, 0.2);
         }
 
         .btn-asesoria:hover {
             background-color: var(--purpura-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(112, 42, 117, 0.3);
+            box-shadow: 0 6px 15px rgba(112, 42, 117, 0.3);
         }
 
         /* --- HERO --- */
         .seccion-hero-imagen {
             position: relative;
             height: 75vh;
-            background-image: url('https://raw.githubusercontent.com/avbrandon-wq/reca/main/hero_bg.jpg'); 
+            background-image: url('imagen1.png'); 
             background-size: cover;
             background-position: center;
             display: flex;
@@ -108,30 +109,30 @@
         .overlay-oscuro {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(112, 42, 117, 0.4) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.65) 50%, rgba(112, 42, 117, 0.5) 100%);
             z-index: 1;
         }
 
-        .contenido-hero { position: relative; z-index: 2; padding: 0 5%; }
+        .contenido-hero { position: relative; z-index: 2; padding: 0 6%; }
 
         .titulo-impacto {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(30px, 5vw, 60px);
+            font-size: clamp(32px, 5vw, 64px);
             line-height: 1.1;
             margin: 0;
-            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
         }
 
-        .titulo-impacto .light { font-weight: 300; font-size: 0.8em; }
+        .titulo-impacto .light { font-weight: 300; }
         .titulo-impacto .bold { font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
 
-        /* --- BENEFICIOS (1, 2, 3) --- */
+        /* --- BENEFICIOS --- */
         .beneficios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            max-width: 1100px;
-            margin: 100px auto;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1150px;
+            margin: 80px auto;
             padding: 0 6%;
         }
 
@@ -143,127 +144,78 @@
         }
 
         .num-circulo {
-            width: 45px; height: 45px;
-            border: 1px solid var(--purpura-reca);
+            width: 42px; height: 42px;
+            border: 1.5px solid var(--purpura-reca);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            color: var(--purpura-reca); font-weight: 400;
-            margin-bottom: 25px;
-            font-size: 16px;
+            color: var(--purpura-reca); font-weight: 700;
+            margin-bottom: 20px;
         }
 
-        .card-beneficio h3 { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 18px; 
-            color: var(--purpura-reca); 
-            margin: 0; 
-            font-weight: 400; 
-            line-height: 1.2;
-        }
-        
-        .card-beneficio h3 strong { font-weight: 700; display: block; text-transform: none; }
-
-        .linea-decorativa { width: 40px; height: 2px; background-color: var(--purpura-reca); margin: 15px 0; }
-        
-        .card-beneficio p { 
-            font-size: 14px; 
-            color: var(--gris-suave); 
-            line-height: 1.6; 
-            max-width: 280px;
-        }
+        .card-beneficio h3 { font-family: 'Montserrat', sans-serif; font-size: 19px; color: var(--purpura-reca); margin: 0; font-weight: 400; }
+        .linea-decorativa { width: 35px; height: 2px; background-color: var(--purpura-reca); margin: 15px 0; }
+        .card-beneficio p { font-size: 14px; color: var(--gris-suave); line-height: 1.5; }
 
         /* --- SERVICIOS --- */
-        .servicios-premium { padding: 100px 10%; background-color: #fcfcfc; }
-        .servicios-header { text-align: center; margin-bottom: 70px; }
-        .titulo-seccion-servicios { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 32px; 
-            font-weight: 300; 
-            color: var(--purpura-reca); 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-        }
-        .titulo-seccion-servicios strong { font-weight: 800; }
+        .servicios-premium { padding: 100px 10%; background-color: #ffffff; }
+        .servicios-header { text-align: center; margin-bottom: 80px; }
+        .titulo-seccion-servicios { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 300; color: var(--purpura-reca); text-transform: uppercase; letter-spacing: 2px; }
+        .linea-central { width: 50px; height: 3px; background-color: var(--purpura-reca); margin: 20px auto; }
 
-        .servicios-lista-container { max-width: 1000px; margin: 0 auto; }
-        .servicio-bloque { border-bottom: 1px solid #eee; padding: 35px 0; }
-        .servicio-encabezado { display: flex; align-items: center; gap: 30px; cursor: pointer; position: relative; }
+        .servicios-lista-container { max-width: 900px; margin: 0 auto; }
+        .servicio-bloque { border-bottom: 1px solid #e0e0e0; padding: 40px 0; transition: all 0.3s ease; }
+        .servicio-encabezado { display: flex; align-items: center; gap: 30px; cursor: pointer; }
 
         .num-indicador {
-            width: 50px; height: 50px; border: 1px solid var(--purpura-reca);
+            width: 45px; height: 45px; border: 1px solid var(--purpura-reca);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            color: var(--purpura-reca); font-weight: 600; flex-shrink: 0;
+            color: var(--purpura-reca); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; flex-shrink: 0;
         }
 
+        .servicio-info { flex-grow: 1; }
         .servicio-info h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: var(--purpura-reca); margin: 0 0 5px 0; font-weight: 400; }
-        .servicio-info h3 strong { font-weight: 700; }
-        .servicio-tagline { font-size: 14px; color: #888; margin: 0; }
+        .servicio-tagline { font-family: 'Open Sans', sans-serif; font-size: 15px; color: #777; margin: 0; }
 
-        .conozca-mas-btn { 
-            margin-left: auto;
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 10px; 
-            font-weight: 800; 
-            color: var(--purpura-reca); 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-        }
+        .conozca-mas-btn { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--purpura-reca); text-transform: uppercase; letter-spacing: 1px; }
 
-        .servicio-contenido-oculto { 
-            max-height: 0; 
-            overflow: hidden; 
-            transition: all 0.5s ease; 
-            padding-left: 80px; 
-            color: var(--gris-suave);
-            font-size: 15px;
-        }
-        .servicio-bloque.active .servicio-contenido-oculto { max-height: 300px; margin-top: 20px; }
+        .servicio-contenido-oculto { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); padding-left: 75px; }
+        .servicio-bloque.active .servicio-contenido-oculto { max-height: 1000px; transition: max-height 0.8s ease-in-out; margin-top: 20px; }
 
-        /* --- ALIADOS --- */
-        .aliados-seccion { padding: 80px 10%; text-align: center; }
-        .texto-aliados { 
-            max-width: 800px; 
-            margin: 0 auto 50px; 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 26px; 
-            color: var(--purpura-reca);
-            line-height: 1.3;
-        }
-        .texto-aliados strong { font-weight: 800; }
+        /* --- ALIADOS (MARQUESINA) --- */
+        .aliados-carrusel { padding: 80px 0; background: #fff; overflow: hidden; border-top: 1px solid #eee; }
+        .texto-central-aliados { text-align: center; margin-bottom: 50px; padding: 0 10%; }
+        .texto-central-aliados h2 { color: var(--purpura-reca); font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.3; }
+        .divisor-purpura { width: 50px; height: 3px; background: var(--purpura-reca); margin: 25px auto; }
+        
+        .marquesina-logos { width: 100%; display: flex; }
+        .marquesina-track { display: flex; width: calc(250px * 16); animation: scroll-infinito 40s linear infinite; }
+        .logo-slide { width: 250px; padding: 0 40px; display: flex; align-items: center; justify-content: center; }
+        .logo-slide img { max-width: 150px; height: auto; filter: grayscale(100%); opacity: 0.6; transition: all 0.4s ease; }
+        .logo-slide img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
 
-        .logos-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-            opacity: 0.7;
+        @keyframes scroll-infinito {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 8)); }
         }
-        .logos-container img { height: 45px; width: auto; filter: grayscale(100%); transition: 0.3s; }
-        .logos-container img:hover { filter: grayscale(0%); opacity: 1; }
 
         /* --- FOOTER --- */
-        .footer-reca { background-color: var(--purpura-footer); color: white; padding: 60px 10% 30px; position: relative; }
-        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
-        .footer-logo { height: 40px; filter: brightness(0) invert(1); margin-bottom: 20px; }
-        .footer-links { display: flex; gap: 20px; font-size: 12px; font-weight: 300; }
-        .footer-links a { color: white; text-decoration: underline; opacity: 0.8; }
-        .social-icons { display: flex; gap: 15px; font-size: 20px; }
-        .social-icons a { color: white; }
-        
-        .footer-info-central { 
-            border-top: 1px solid rgba(255,255,255,0.2); 
-            padding-top: 30px; 
-            text-align: center; 
-            margin-bottom: 30px;
-        }
-        .footer-copy { text-align: center; font-size: 11px; opacity: 0.5; letter-spacing: 1px; }
+        .reca-footer-wrapper { background-color: var(--purpura-footer); color: #ffffff; font-family: 'Montserrat', sans-serif; padding: 60px 10% 40px; }
+        .reca-container { max-width: 1100px; margin: 0 auto; }
+        .reca-socials { display: flex; justify-content: flex-end; gap: 20px; margin-bottom: 30px; }
+        .reca-socials a { color: white; font-size: 1.5rem; transition: transform 0.3s ease; }
+        .reca-socials a:hover { transform: translateY(-3px); }
+        .reca-main { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 50px; }
+        .reca-logo-footer { max-width: 120px; height: auto; margin-bottom: 25px; filter: brightness(0) invert(1); }
+        .reca-links { display: flex; flex-direction: column; gap: 8px; }
+        .reca-links a { color: white; text-decoration: underline; font-size: 0.9rem; font-weight: 300; opacity: 0.9; }
+        .reca-location { text-align: center; font-size: 1rem; margin-bottom: 40px; font-weight: 300; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; }
+        .reca-copy { text-align: center; font-size: 0.8rem; opacity: 0.6; }
 
         @media (max-width: 768px) {
-            .nav-estilizada { display: none; }
+            .nav-estilizada ul { display: none; } /* Podrías agregar un menú hamburguesa aquí luego */
             .header-estilizado { padding: 15px 5%; }
-            .footer-top { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
-            .footer-links { flex-direction: column; gap: 10px; }
+            .reca-socials { justify-content: center; }
+            .reca-main { align-items: center; text-align: center; }
         }
     </style>
 </head>
@@ -289,145 +241,160 @@
         <div class="contenido-hero">
             <h1 class="titulo-impacto">
                 <span class="light">Inclusión laboral</span><br>
-                <span class="bold">Sostenible y Efectiva</span>
+                <span class="bold">sostenible y efectiva</span>
             </h1>
         </div>
     </section>
 
-    <section class="beneficios-grid">
-        <div class="card-beneficio">
-            <div class="num-circulo">1</div>
-            <h3>Propósitos <br><strong>compartidos</strong></h3>
-            <div class="linea-decorativa"></div>
-            <p>La inclusión laboral es una oportunidad de crecimiento empresarial y de país.</p>
-        </div>
-        <div class="card-beneficio">
-            <div class="num-circulo">2</div>
-            <h3>Vinculación <br><strong>flexible</strong></h3>
-            <div class="linea-decorativa"></div>
-            <p>Sin barreras por tipo de discapacidad y con programas que se ajustan a la política laboral.</p>
-        </div>
-        <div class="card-beneficio">
-            <div class="num-circulo">3</div>
-            <h3>Trabajo <br><strong>y Legalidad</strong></h3>
-            <div class="linea-decorativa"></div>
-            <p>Acuerdos institucionales que garantizan el cumplimiento de normativas vigentes.</p>
-        </div>
-    </section>
+    <main>
+        <section class="beneficios-grid">
+            <div class="card-beneficio">
+                <div class="num-circulo">1</div>
+                <h3>Propósitos <br><strong>compartidos</strong></h3>
+                <div class="linea-decorativa"></div>
+                <p>La inclusión laboral es una oportunidad de crecimiento empresarial y de país.</p>
+            </div>
+            <div class="card-beneficio">
+                <div class="num-circulo">2</div>
+                <h3>Vinculación <br><strong>flexible</strong></h3>
+                <div class="linea-decorativa"></div>
+                <p>Sin barreras por tipo de discapacidad y con programas que se ajustan a la política laboral.</p>
+            </div>
+            <div class="card-beneficio">
+                <div class="num-circulo">3</div>
+                <h3>Trabajo <br><strong>y Legalidad</strong></h3>
+                <div class="linea-decorativa"></div>
+                <p>Cumplimiento de estándares legales con impacto social medible.</p>
+            </div>
+        </section>
 
-    <section class="servicios-premium">
-        <div class="servicios-header">
-            <h2 class="titulo-seccion-servicios">Nuestros <strong>Servicios</strong></h2>
-            <div class="linea-decorativa" style="margin: 20px auto; width: 60px;"></div>
-        </div>
-
-        <div class="servicios-lista-container">
-            <div class="servicio-bloque">
-                <div class="servicio-encabezado" onclick="toggleServicio(this)">
-                    <div class="num-indicador">1</div>
-                    <div class="servicio-info">
-                        <h3>Programa <strong>Inclusión</strong></h3>
-                        <p class="servicio-tagline">Inclusión laboral sostenible, efectiva y a costo cero.</p>
-                    </div>
-                    <div class="conozca-mas-btn">Conozca más →</div>
-                </div>
-                <div class="servicio-contenido-oculto">
-                    <p>Acompañamiento profesional en la vinculación de talento humano con discapacidad, optimizando beneficios tributarios y sociales.</p>
-                </div>
+        <section class="servicios-premium">
+            <div class="servicios-header">
+                <h2 class="titulo-seccion-servicios">Nuestros <strong>Servicios</strong></h2>
+                <div class="linea-central"></div>
             </div>
 
-            <div class="servicio-bloque">
-                <div class="servicio-encabezado" onclick="toggleServicio(this)">
-                    <div class="num-indicador">2</div>
-                    <div class="servicio-info">
-                        <h3>Programa <strong>Aprendices</strong></h3>
-                        <p class="servicio-tagline">Talento a la medida de su empresa.</p>
+            <div class="servicios-lista-container">
+                <div class="servicio-bloque">
+                    <div class="servicio-encabezado" onclick="toggleServicio(this)">
+                        <div class="num-indicador">1</div>
+                        <div class="servicio-info">
+                            <h3>Programa <strong>Inclusión</strong></h3>
+                            <p class="servicio-tagline">Inclusión laboral sostenible, efectiva y a costo cero.</p>
+                        </div>
+                        <div class="conozca-mas-btn">Conozca más <span class="flecha">→</span></div>
                     </div>
-                    <div class="conozca-mas-btn">Conozca más →</div>
+                    <div class="servicio-contenido-oculto">
+                        <p>Brindamos un acompañamiento profesional de principio a fin, alineado estratégicamente con la Agencia de Empleo Compensar para garantizar procesos exitosos.</p>
+                    </div>
                 </div>
-                <div class="servicio-contenido-oculto">
-                    <p>Gestión de cuota de aprendizaje mediante la formación técnica de personas con discapacidad alineada a su operación.</p>
+
+                <div class="servicio-bloque">
+                    <div class="servicio-encabezado" onclick="toggleServicio(this)">
+                        <div class="num-indicador">2</div>
+                        <div class="servicio-info">
+                            <h3>Programa <strong>Aprendices</strong></h3>
+                            <p class="servicio-tagline">Talento a la medida de su empresa.</p>
+                        </div>
+                        <div class="conozca-mas-btn">Conozca más <span class="flecha">→</span></div>
+                    </div>
+                    <div class="servicio-contenido-oculto">
+                        <p>Gestionamos convenios con el SENA para facilitar la formación técnica adaptada a las necesidades específicas de su organización.</p>
+                    </div>
+                </div>
+
+                <div class="servicio-bloque">
+                    <div class="servicio-encabezado" onclick="toggleServicio(this)">
+                        <div class="num-indicador">3</div>
+                        <div class="servicio-info">
+                            <h3>Sensibilización y <strong>Capacitaciones</strong></h3>
+                            <p class="servicio-tagline">Cultura Organizacional e Inclusiva.</p>
+                        </div>
+                        <div class="conozca-mas-btn">Conozca más <span class="flecha">→</span></div>
+                    </div>
+                    <div class="servicio-contenido-oculto">
+                        <p>Realizamos talleres de sensibilización y diseñamos protocolos de comunicación interna para equipos de trabajo.</p>
+                    </div>
+                </div>
+
+                <div class="servicio-bloque">
+                    <div class="servicio-encabezado" onclick="toggleServicio(this)">
+                        <div class="num-indicador">4</div>
+                        <div class="servicio-info">
+                            <h3>Servicios <strong>Individuales</strong></h3>
+                            <p class="servicio-tagline">Soluciones técnicas especializadas.</p>
+                        </div>
+                        <div class="conozca-mas-btn">Conozca más <span class="flecha">→</span></div>
+                    </div>
+                    <div class="servicio-contenido-oculto">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li>• Servicio de Intérpretes (LSC).</li>
+                            <li>• Asesoría en Ajustes Razonables.</li>
+                            <li>• Diseño de política inclusiva personalizada.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="servicio-bloque">
-                <div class="servicio-encabezado" onclick="toggleServicio(this)">
-                    <div class="num-indicador">3</div>
-                    <div class="servicio-info">
-                        <h3>Sensibilización y <strong>Capacitaciones</strong></h3>
-                        <p class="servicio-tagline">Cultura Organizacional e Inclusiva.</p>
-                    </div>
-                    <div class="conozca-mas-btn">Conozca más →</div>
-                </div>
-                <div class="servicio-contenido-oculto">
-                    <p>Talleres vivenciales para equipos de trabajo y líderes sobre comunicación asertiva y trato digno.</p>
+        <section class="aliados-carrusel">
+            <div class="texto-central-aliados">
+                <h2>Conectamos talento con discapacidad con empresas que buscan <strong>impacto y legalidad.</strong></h2>
+                <div class="divisor-purpura"></div>
+                <p>Más de 15 años transformando la cultura organizacional de grandes marcas en Colombia.</p>
+            </div>
+            <div class="marquesina-logos">
+                <div class="marquesina-track">
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Adidas"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="BBVA"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/claro.png" alt="Claro"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/envia.png" alt="Envia"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/femsa.png" alt="Femsa"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/ramo.png" alt="Ramo"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Adidas"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="BBVA"></div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div class="servicio-bloque">
-                <div class="servicio-encabezado" onclick="toggleServicio(this)">
-                    <div class="num-indicador">4</div>
-                    <div class="servicio-info">
-                        <h3>Servicios <strong>Individuales</strong></h3>
-                        <p class="servicio-tagline">Soluciones técnicas especializadas.</p>
-                    </div>
-                    <div class="conozca-mas-btn">Conozca más →</div>
-                </div>
-                <div class="servicio-contenido-oculto">
-                    <p>Servicios de interpretación en LSC, ajustes razonables en puestos de trabajo y consultoría legal específica.</p>
-                </div>
+    <footer class="reca-footer-wrapper">
+        <div class="reca-container">
+            <div class="reca-socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-        </div>
-    </section>
-
-    <section class="aliados-seccion">
-        <h2 class="texto-aliados">Conectamos talento con discapacidad con empresas que buscan <strong>impacto y legalidad.</strong></h2>
-        <div class="logos-container">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Aliado">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="Aliado">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/claro.png" alt="Aliado">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/envia.png" alt="Aliado">
-            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/femsa.png" alt="Aliado">
-        </div>
-    </section>
-
-    <footer class="footer-reca">
-        <div class="footer-top">
-            <div>
-                <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA" class="footer-logo">
-                <div class="footer-links">
+            <div class="reca-main">
+                <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Logo" class="reca-logo-footer">
+                <div class="reca-links">
                     <a href="#">Documentos legales 2025</a>
                     <a href="#">Política de tratamiento de datos</a>
                     <a href="mailto:info@recacolombia.org">info@recacolombia.org</a>
                 </div>
             </div>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+            <div class="reca-location">
+                <p><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
             </div>
+            <div class="reca-copy">RECA © Derechos Reservados 2024</div>
         </div>
-        <div class="footer-info-central">
-            <p style="font-weight: 300; font-size: 14px;"><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
-        </div>
-        <div class="footer-copy">RECA © Derechos Reservados 2024</div>
     </footer>
 
     <script>
         function toggleServicio(element) {
-            const bloque = element.parentElement;
+            const bloque = element.closest('.servicio-bloque');
             const btn = element.querySelector('.conozca-mas-btn');
             const isActive = bloque.classList.contains('active');
             
-            // Cerrar otros
             document.querySelectorAll('.servicio-bloque').forEach(b => {
                 b.classList.remove('active');
-                b.querySelector('.conozca-mas-btn').innerText = 'Conozca más →';
+                const otherBtn = b.querySelector('.conozca-mas-btn');
+                if(otherBtn) otherBtn.innerHTML = 'Conozca más <span class="flecha">→</span>';
             });
             
             if (!isActive) {
                 bloque.classList.add('active');
-                btn.innerText = 'Cerrar ↑';
+                btn.innerHTML = 'Cerrar <span class="flecha">↑</span>';
             }
         }
     </script>
