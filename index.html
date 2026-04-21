@@ -44,34 +44,38 @@
 
         .logo-box img { height: 48px; width: auto; }
 
-        .nav-estilizada ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
+     .nav-estilizada ul li {
+    position: relative; /* Contenedor para la línea */
+}
 
-        .nav-estilizada a {
-            text-decoration: none;
-            color: var(--gris-suave);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            transition: color 0.3s ease;
-        }
+.nav-estilizada a:not(.btn-asesoria) {
+    position: relative;
+    padding-bottom: 5px; /* Espacio para que la línea no toque el texto */
+    color: var(--gris-premium);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        .nav-estilizada a:not(.btn-asesoria):hover { color: var(--purpura-reca); }
+/* Creación de la línea */
+.nav-estilizada a:not(.btn-asesoria)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--purpura-reca);
+    transition: width 0.3s ease; /* Esto hace que la línea "crezca" */
+}
 
-        .btn-asesoria {
-            background-color: var(--purpura-reca);
-            color: white !important;
-            padding: 10px 22px;
-            border-radius: 4px;
-            font-weight: 700 !important;
+/* Animación al pasar el mouse */
+.nav-estilizada a:not(.btn-asesoria):hover::after {
+    width: 100%;
+}
+
+.nav-estilizada a:not(.btn-asesoria):hover {
+    color: var(--purpura-reca);
+}
         }
 
         /* --- HERO --- */
