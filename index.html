@@ -880,7 +880,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
     .reca-footer-wrapper {
-        background-color: #833883; /* Púrpura institucional */
+        background-color: #833883; 
         color: #ffffff;
         font-family: 'Montserrat', sans-serif;
         padding: 40px 10%;
@@ -904,11 +904,11 @@
         color: white;
         text-decoration: none;
         font-size: 1.4rem;
-        transition: opacity 0.3s;
+        transition: transform 0.3s ease;
     }
 
     .reca-socials a:hover {
-        opacity: 0.7;
+        transform: scale(1.1);
     }
 
     /* Sección Media: Logo y Links */
@@ -919,24 +919,11 @@
         margin-bottom: 60px;
     }
 
-    .reca-logo-placeholder {
-        font-size: 2.5rem;
-        font-weight: 300;
-        letter-spacing: 5px;
+    /* Ajuste para la imagen del logo */
+    .reca-logo {
+        max-width: 200px; /* Ajusta según el tamaño de tu imagen */
+        height: auto;
         margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .reca-circle {
-        border: 2px solid white;
-        border-radius: 50%;
-        padding: 5px 8px;
-        font-size: 0.8rem;
-        font-weight: bold;
-        text-align: center;
-        line-height: 1;
     }
 
     .reca-links {
@@ -952,26 +939,24 @@
         font-weight: 300;
     }
 
-    /* Información de Sede */
     .reca-location {
         text-align: center;
         font-size: 1rem;
         margin-bottom: 40px;
         font-weight: 300;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 20px;
     }
 
-    /* Copyright */
     .reca-copy {
         text-align: center;
         font-size: 0.85rem;
         opacity: 0.8;
     }
 
-    /* Ajustes para móviles */
     @media (max-width: 768px) {
         .reca-socials { justify-content: center; }
         .reca-main { align-items: center; text-align: center; }
-        .reca-location { font-size: 0.9rem; }
     }
 </style>
 
@@ -981,15 +966,14 @@
     <div class="reca-container">
         
         <div class="reca-socials">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://facebook.com/tu-usuario" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/tu-usuario" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/tu-canal" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
 
         <div class="reca-main">
-            <div class="reca-logo-placeholder">
-                RECA <div class="reca-circle">15<br><small style="font-size: 8px;">AÑOS</small></div>
-            </div>
+            <img src="tu-logotipo.png" alt="RECA Logo" class="reca-logo">
+            
             <div class="reca-links">
                 <a href="#">Documentos legales 2025</a>
                 <a href="#">Política de tratamiento de datos</a>
