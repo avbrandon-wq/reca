@@ -876,228 +876,134 @@
     </script>
 </body>
 
-<footer class="footer-reca-centrado">
-    <div class="footer-container">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+    .reca-footer-wrapper {
+        background-color: #833883; /* Púrpura institucional */
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        padding: 40px 10%;
+        line-height: 1.6;
+    }
+
+    .reca-container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* Redes Sociales - Superior Derecha */
+    .reca-socials {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .reca-socials a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.4rem;
+        transition: opacity 0.3s;
+    }
+
+    .reca-socials a:hover {
+        opacity: 0.7;
+    }
+
+    /* Sección Media: Logo y Links */
+    .reca-main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 60px;
+    }
+
+    .reca-logo-placeholder {
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: 5px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .reca-circle {
+        border: 2px solid white;
+        border-radius: 50%;
+        padding: 5px 8px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .reca-links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .reca-links a {
+        color: white;
+        text-decoration: underline;
+        font-size: 0.95rem;
+        font-weight: 300;
+    }
+
+    /* Información de Sede */
+    .reca-location {
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 40px;
+        font-weight: 300;
+    }
+
+    /* Copyright */
+    .reca-copy {
+        text-align: center;
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+
+    /* Ajustes para móviles */
+    @media (max-width: 768px) {
+        .reca-socials { justify-content: center; }
+        .reca-main { align-items: center; text-align: center; }
+        .reca-location { font-size: 0.9rem; }
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<footer class="reca-footer-wrapper">
+    <div class="reca-container">
         
-        <div class="footer-redes">
-            <a href="https://www.facebook.com/reca.reddeempleoconapoyo" target="_blank" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/reca.redempleoconapoyo/" target="_blank" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com/channel/UCvparD8sPMnxOj311WrVRig" target="_blank" aria-label="YouTube">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
+        <div class="reca-socials">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
 
-        <div class="footer-brand-docs">
-            <div class="footer-logo-wrapper">
-                <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logotipo.png" alt="RECA 15 Años" class="logo-footer-white">
+        <div class="reca-main">
+            <div class="reca-logo-placeholder">
+                RECA <div class="reca-circle">15<br><small style="font-size: 8px;">AÑOS</small></div>
             </div>
-            
-            <div class="footer-doc-links">
+            <div class="reca-links">
                 <a href="#">Documentos legales 2025</a>
                 <a href="#">Política de tratamiento de datos</a>
                 <a href="mailto:info@recacolombia.org">info@recacolombia.org</a>
             </div>
         </div>
 
-        <div class="footer-info-final">
-            <p class="txt-sede"><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
-            <p class="txt-copy">RECA © Derechos Reservados 2026   |   Desarrollador: Alvaro Vargas Briceño</p>
+        <div class="reca-location">
+            <p><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
         </div>
+
+        <div class="reca-copy">
+            RECA © Derechos Reservados 2024
+        </div>
+
     </div>
 </footer>
-
-<style>
-    .footer-reca-centrado {
-        background-color: #702A75; /* Púrpura institucional */
-        color: #ffffff;
-        padding: 60px 40px;
-        font-family: 'Montserrat', sans-serif;
-        display: flex;
-        justify-content: center;
-    }
-
-    .footer-container {
-        width: 100%;
-        max-width: 800px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    /* Redes Sociales */
-    .footer-redes {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 60px;
-    }
-
-    .footer-redes a {
-        color: #ffffff;
-        font-size: 22px;
-        transition: opacity 0.3s;
-    }
-
-    .footer-redes a:hover { opacity: 0.7; }
-
-    /* Bloque Central: Logo y Enlaces */
-    .footer-brand-docs {
-        margin-bottom: 40px;
-    }
-
-    .footer-logo-wrapper {
-        margin-bottom: 25px;
-    }
-
-    .logo-footer-white {
-        height: 55px;
-        filter: brightness(0) invert(1); /* Logo en blanco */
-    }
-
-    .footer-doc-links {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .footer-doc-links a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 300;
-        opacity: 0.9;
-    }
-
-    .footer-doc-links a:hover { text-decoration: underline; }
-
-    /* Información de base */
-    .footer-info-final {
-        padding-top: 30px;
-    }
-
-    .txt-sede {
-        font-size: 13px;
-        margin-bottom: 15px;
-        font-weight: 400;
-    }
-
-    .txt-copy {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        opacity: 0.6;
-    }
-
-    /* Ajuste para móviles */
-    @media (max-width: 600px) {
-        .footer-reca-centrado { padding: 40px 15px; }
-        .logo-footer-white { height: 45px; }
-    }
-</style>
-
-<style>
-    .footer-reca-centrado {
-        background-color: #702A75; /* Púrpura institucional */
-        color: #ffffff;
-        padding: 60px 20px;
-        font-family: 'Montserrat', sans-serif;
-        display: flex;
-        justify-content: center;
-    }
-
-    .footer-container {
-        width: 100%;
-        max-width: 800px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    /* Redes Sociales */
-    .footer-redes {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 40px;
-    }
-
-    .footer-redes a {
-        color: #ffffff;
-        font-size: 18px;
-        transition: opacity 0.3s;
-    }
-
-    .footer-redes a:hover { opacity: 0.7; }
-
-    /* Bloque Central: Logo y Enlaces */
-    .footer-brand-docs {
-        margin-bottom: 50px;
-    }
-
-    .footer-logo-wrapper {
-        margin-bottom: 25px;
-    }
-
-    .logo-footer-white {
-        height: 55px;
-        filter: brightness(0) invert(1); /* Logo en blanco */
-    }
-
-    .footer-doc-links {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .footer-doc-links a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 300;
-        opacity: 0.9;
-    }
-
-    .footer-doc-links a:hover { text-decoration: underline; }
-
-    /* Información de base */
-    .footer-info-final {
-        padding-top: 30px;
-    }
-
-    .txt-sede {
-        font-size: 13px;
-        margin-bottom: 15px;
-        font-weight: 400;
-    }
-
-    .txt-copy {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        opacity: 0.6;
-    }
-
-    /* Ajuste para móviles */
-    @media (max-width: 600px) {
-        .footer-reca-centrado { padding: 40px 15px; }
-        .logo-footer-white { height: 45px; }
-    }
-</style>
-</style>
-
-
-        
-</html>
-
-        }
-
-</style>
-</style>
-
-
-        
-</html>
