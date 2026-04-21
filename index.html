@@ -97,18 +97,32 @@
         }
 
         /* --- NUEVA SECCIÓN HERO (IMAGEN B/N) --- */
-        .seccion-hero-imagen {
-            position: relative;
-            height: 70vh;
-            background-image: url('https://raw.githubusercontent.com/avbrandon-wq/reca/main/inclusion-hero-bn.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
+      .seccion-hero-imagen {
+    position: relative;
+    height: 70vh;
+    /* Cambiamos a una ruta relativa si estás en GitHub Pages o Vercel */
+    background-image: url('imagen1.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Cambiado de fixed a scroll para evitar bugs en Chrome */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.overlay-oscuro {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Un tinte púrpura muy sutil en lugar de negro sólido */
+    background: rgba(112, 42, 117, 0.2); 
+    z-index: 1;
+}
         }
 
         .overlay-oscuro {
