@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>Empresa - RECA Colombia</title>
 
- 
- <style>
+  <style>
         :root {
             --purpura-reca: #702A75; 
             --purpura-hover: #55265e;
@@ -74,7 +73,7 @@
         }
 
         .nav-estilizada a:not(.btn-asesoria):hover { color: var(--purpura-reca); }
-      .nav-estilizada a:not(.btn-asesoria)::after {
+         .nav-estilizada a:not(.btn-asesoria)::after {
             content: '';
             position: absolute;
             width: 0;
@@ -108,7 +107,8 @@
 
         /* --- HERO --- */
         .seccion-hero-imagen {
-            position: relative;height: 75vh;
+            position: relative;
+            height: 75vh;
             background-image: url('imagen1.png'); 
             background-size: cover;
             background-position: center;
@@ -138,7 +138,8 @@
 
         .titulo-impacto .light { font-weight: 300; }
         .titulo-impacto .bold { font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
-       /* --- BENEFICIOS --- */
+
+        /* --- BENEFICIOS --- */
         .beneficios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -154,8 +155,7 @@
             flex-direction: column;
             align-items: center;
         }
-
-        .num-circulo {
+ .num-circulo {
             width: 42px; height: 42px;
             border: 1.5px solid var(--purpura-reca);
             border-radius: 50%;
@@ -167,7 +167,8 @@
         .card-beneficio h3 { font-family: 'Montserrat', sans-serif; font-size: 19px; color: var(--purpura-reca); margin: 0; font-weight: 400; }
         .linea-decorativa { width: 35px; height: 2px; background-color: var(--purpura-reca); margin: 15px 0; }
         .card-beneficio p { font-size: 14px; color: var(--gris-suave); line-height: 1.5; }
-     /* --- SERVICIOS --- */
+
+        /* --- SERVICIOS --- */
         .servicios-premium { padding: 100px 10%; background-color: #ffffff; }
         .servicios-header { text-align: center; margin-bottom: 80px; }
         .titulo-seccion-servicios { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 300; color: var(--purpura-reca); text-transform: uppercase; letter-spacing: 2px; }
@@ -230,3 +231,33 @@
             .nav-estilizada ul { gap: 15px; }
         }
     </style>
+
+    
+    </head>
+<body>
+
+    <header class="header-estilizado">
+        <a href="index.html" class="logo-box">
+            <img src="logo_color.png" alt="RECA Colombia">
+        </a>
+        <nav class="nav-estilizada">
+           <nav class="nav-estilizada">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="empresa.html">Empresa</a></li>
+        <li><a href="candidato.html">Candidato</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="https://wa.me/tu-numero" class="btn-asesoria">CONTACTO</a></li>
+    </ul>
+</nav>
+        </nav>
+    </header>
+
+    <section class="seccion-empresa-hero">
+        <div class="contenido-hero">
+            <h1 class="titulo-impacto">Pagina CANDIDATO 11:51AM</h1>
+        </div>
+    </section>
+
+    </body>
+</html>
