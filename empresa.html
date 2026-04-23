@@ -2,9 +2,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Empresa - RECA Colombia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECA Colombia – Inclusión Laboral Sostenible</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <style>
+    <style>
         :root {
             --purpura-reca: #702A75; 
             --purpura-hover: #55265e;
@@ -26,9 +30,6 @@
         }
 
         /* --- NAVEGACIÓN --- */
-      html {
-    scrollbar-gutter: stable;
-}
    .header-estilizado {
             display: flex;
             justify-content: space-between;
@@ -76,7 +77,8 @@
         }
 
         .nav-estilizada a:not(.btn-asesoria):hover { color: var(--purpura-reca); }
-         .nav-estilizada a:not(.btn-asesoria)::after {
+        
+        .nav-estilizada a:not(.btn-asesoria)::after {
             content: '';
             position: absolute;
             width: 0;
@@ -158,7 +160,8 @@
             flex-direction: column;
             align-items: center;
         }
- .num-circulo {
+
+        .num-circulo {
             width: 42px; height: 42px;
             border: 1.5px solid var(--purpura-reca);
             border-radius: 50%;
@@ -234,31 +237,133 @@
             .nav-estilizada ul { gap: 15px; }
         }
     </style>
+</head>
+
 
     
-    </head>
 <body>
 
- <header class="header-estilizado">
-    <a href="index.html" class="logo-box">
-        <img src="logo_color.png" alt="RECA Colombia">
-    </a>
-    <nav class="nav-estilizada">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="empresa.html">Empresa</a></li>
-            <li><a href="candidato.html">Candidato</a></li>
-            <li><a href="#recursos">Recursos</a></li>
-            <li><a href="https://wa.me/tu-numero" class="btn-asesoria">CONTACTO</a></li>
-        </ul>
-    </nav>
-</header>
+    <header class="header-estilizado">
+        <a href="#" class="logo-box">
+            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Colombia">
+        </a>
+        <nav class="nav-estilizada">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="empresa.html">Empresa</a></li>
+        <li><a href="candidato.html">Candidato</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="https://wa.me/tu-numero" class="btn-asesoria">CONTACTO</a></li>
+    </ul>
+</nav>
+    </header>
 
-    <section class="seccion-empresa-hero">
-        <div class="contenido-hero">
-            <h1 class="titulo-impacto">Pagina EMPRESA</h1>
+   
+
+
+
+
+     
+
+                    
+        
+ 
+    <script>
+        function toggleServicio(element) {
+            const bloque = element.closest('.servicio-bloque');
+            const flecha = element.querySelector('.flecha');
+            const isActive = bloque.classList.contains('active');
+            
+            // Cerrar todos los demás
+            document.querySelectorAll('.servicio-bloque').forEach(b => {
+                b.classList.remove('active');
+                const bBtn = b.querySelector('.conozca-mas-btn');
+                if(bBtn) bBtn.innerHTML = 'Conozca más <span class="flecha">→</span>';
+            });
+            
+            // Abrir el actual si no estaba activo
+            if (!isActive) {
+                bloque.classList.add('active');
+                element.querySelector('.conozca-mas-btn').innerHTML = 'Cerrar <span class="flecha">↑</span>';
+            }
+        }
+    </script>
+</body>
+
+                            
+</html>
+            
+                        </ul>
+            </div>
+        </section>
+
+        <section class="aliados-carrusel">
+            <div class="texto-central-aliados">
+                <h2>Conectamos talento con discapacidad con empresas que buscan <strong>impacto y legalidad.</strong></h2>
+                <div class="divisor-purpura"></div>
+                <p>Más de 15 años transformando la cultura organizacional inclusiva de grandes marcas.</p>
+            </div>
+            <div class="marquesina-logos">
+                <div class="marquesina-track">
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Adidas"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="BBVA"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/claro.png" alt="Claro"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/envia.png" alt="Envia"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/femsa.png" alt="Femsa"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/gallager.png" alt="Gallagher"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/adidas.png" alt="Adidas"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/bbva.png" alt="BBVA"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/claro.png" alt="Claro"></div>
+                    <div class="logo-slide"><img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/envia.png" alt="Envia"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+                            
+    <footer class="reca-footer-wrapper">
+        <div class="reca-container">
+            <div class="reca-socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="reca-main">
+                <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Logo" class="reca-logo-footer" style="filter: brightness(0) invert(1);">
+                <div class="reca-links">
+                    <a href="#">Documentos legales 2025</a>
+                    <a href="#">Política de tratamiento de datos</a>
+                    <a href="mailto:info@recacolombia.org">info@recacolombia.org</a>
+                </div>
+            </div>
+            <div class="reca-location">
+                <p><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
+            </div>
+            <div class="reca-copy">RECA © Derechos Reservados 2024</div>
         </div>
-    </section>
+    </footer>
 
-    </body>
+    <script>
+        function toggleServicio(element) {
+            const bloque = element.closest('.servicio-bloque');
+            const flecha = element.querySelector('.flecha');
+            const isActive = bloque.classList.contains('active');
+            
+            // Cerrar todos los demás
+            document.querySelectorAll('.servicio-bloque').forEach(b => {
+                b.classList.remove('active');
+                const bBtn = b.querySelector('.conozca-mas-btn');
+                if(bBtn) bBtn.innerHTML = 'Conozca más <span class="flecha">→</span>';
+            });
+            
+            // Abrir el actual si no estaba activo
+            if (!isActive) {
+                bloque.classList.add('active');
+                element.querySelector('.conozca-mas-btn').innerHTML = 'Cerrar <span class="flecha">↑</span>';
+            }
+        }
+    </script>
+</body>
 </html>
