@@ -20,8 +20,6 @@
         }
 
         /* --- BASE --- */
-        html { scrollbar-gutter: stable; } /* Evita salto horizontal */
-        
         body {
             margin: 0; padding: 0;
             font-family: 'Open Sans', sans-serif;
@@ -41,7 +39,7 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             position: sticky;
-            top: 0; /* Corregido de 5 a 0 */
+            top: 0; /* CORREGIDO: De 5 a 0 para eliminar el salto */
             z-index: 1000;
             box-shadow: 0 4px 20px var(--sombra-sutil);
         }
@@ -64,6 +62,7 @@
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1.2px;
+            position: relative;
             transition: color 0.3s ease;
         }
 
@@ -77,11 +76,24 @@
             font-weight: 800 !important;
         }
 
-        /* --- ESTILOS DE RECURSOS --- */
+        /* --- SECCIÓN RECURSOS --- */
         .recursos-wrapper { padding: 60px 10%; text-align: center; }
-        .recursos-header h1 { font-family: 'Montserrat', sans-serif; color: var(--purpura-reca); }
         
-        .recursos-tabs { margin: 40px 0; display: flex; justify-content: center; gap: 15px; }
+        .recursos-header h1 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 300; 
+            color: var(--purpura-reca); 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .recursos-tabs { 
+            margin: 40px 0; 
+            display: flex; 
+            justify-content: center; 
+            gap: 10px; 
+        }
+
         .tab-link {
             padding: 12px 25px;
             border: 1px solid var(--purpura-reca);
@@ -90,19 +102,50 @@
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
             border-radius: 4px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
-        .tab-link.active { background: var(--purpura-reca); color: white; }
 
-        .tab-content { display: none; padding: 40px 0; }
-        .active-content { display: block; }
+        .tab-link.active { 
+            background: var(--purpura-reca); 
+            color: white; 
+        }
+
+        .tab-content { 
+            display: none; 
+            padding: 40px 0; 
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         /* --- FOOTER --- */
-        .reca-footer-wrapper { background-color: var(--purpura-footer); color: #ffffff; padding: 40px 10%; margin-top: 60px; }
+        .reca-footer-wrapper { 
+            background-color: var(--purpura-footer); 
+            color: #ffffff; 
+            padding: 40px 10%; 
+            margin-top: 60px;
+        }
+
         .reca-container { max-width: 1100px; margin: 0 auto; text-align: center; }
-        .reca-logo-footer { max-width: 120px; filter: brightness(0) invert(1); margin-bottom: 20px; }
-        .reca-links a { color: white; margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
+        .reca-logo-footer { 
+            max-width: 120px; 
+            filter: brightness(0) invert(1); 
+            margin-bottom: 25px; 
+        }
+
+        .reca-links a { 
+            color: white; 
+            margin: 0 15px; 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            font-weight: 300;
+        }
     </style>
 </head>
 <body>
@@ -125,7 +168,7 @@
     <main class="recursos-wrapper">
         <div class="recursos-header">
             <h1>Recursos Educativos</h1>
-            <p>Selecciona tu perfil para ver contenido a tu medida.</p>
+            <p>Selecciona tu perfil para acceder a materiales exclusivos.</p>
         </div>
 
         <div class="recursos-tabs">
@@ -134,19 +177,19 @@
             <button class="tab-link" onclick="cambiarPestaña(event, 'lsc')">Curso LSC</button>
         </div>
 
-        <div id="empresas" class="tab-content active-content">
-            <h3>Contenido para Empresas</h3>
-            <p>Guías de inclusión laboral y normativa 2026.</p>
+        <div id="empresas" class="tab-content" style="display: block;">
+            <h3>Recursos para Empresas</h3>
+            <p>Guías para líderes inclusivos y normativa legal 2026.</p>
         </div>
 
         <div id="candidatos" class="tab-content">
-            <h3>Contenido para Candidatos</h3>
-            <p>Tips para entrevistas y hojas de vida accesibles.</p>
+            <h3>Recursos para Candidatos</h3>
+            <p>Consejos para tu hoja de vida y preparación de entrevistas.</p>
         </div>
 
         <div id="lsc" class="tab-content">
-            <h3>Curso LSC</h3>
-            <p>Módulos de Lengua de Señas Colombiana.</p>
+            <h3>Curso de Lengua de Señas</h3>
+            <p>Módulos básicos y protocolos de buen trato.</p>
         </div>
     </main>
 
@@ -158,7 +201,7 @@
                 <a href="#">Privacidad</a>
                 <a href="mailto:info@recacolombia.org">info@recacolombia.org</a>
             </div>
-            <p style="margin-top:20px; font-size: 0.8rem;">RECA © Derechos Reservados 2026</p>
+            <p style="margin-top:30px; font-size: 0.8rem; opacity: 0.8;">RECA © Derechos Reservados 2026</p>
         </div>
     </footer>
 
