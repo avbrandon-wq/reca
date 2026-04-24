@@ -243,7 +243,29 @@
 
     
 <body>
+<script>
+function cambiarPestaña(evt, nombrePestaña) {
+    var i, tabContent, tabLinks;
 
+    // Ocultar todos los contenidos de las pestañas
+    tabContent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+        tabContent[i].classList.remove("active");
+    }
+
+    // Quitar la clase "active" de todos los botones
+    tabLinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove("active");
+    }
+
+    // Mostrar la pestaña actual y añadir clase active
+    document.getElementById(nombrePestaña).style.display = "block";
+    document.getElementById(nombrePestaña).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
     <header class="header-estilizado">
         <a href="#" class="logo-box">
             <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Colombia">
