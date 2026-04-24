@@ -363,7 +363,127 @@
                 bloque.classList.add('active');
                 element.querySelector('.conozca-mas-btn').innerHTML = 'Cerrar <span class="flecha">↑</span>';
             }
+     <header class="header-estilizado">
+        <a href="index.html" class="logo-box">
+            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Colombia">
+        </a>
+        <nav class="nav-estilizada">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="candidato.html">Candidato</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="https://wa.me/3105658621" class="btn-asesoria">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="recursos-wrapper">
+        <div class="recursos-header">
+            <h1>Recursos Educativos</h1>
+            <p>Selecciona tu perfil para ver contenido a tu medida.</p>
+        </div>
+
+        <div class="recursos-tabs">
+            <button class="tab-link active" onclick="cambiarPestaña(event, 'empresas')">Empresas</button>
+            <button class="tab-link" onclick="cambiarPestaña(event, 'candidatos')">Candidatos</button>
+            <button class="tab-link" onclick="cambiarPestaña(event, 'lsc')">Curso LSC</button>
+        </div>
+
+        <div id="empresas" class="tab-content active">
+            <div class="recursos-grid">
+                <div class="card-recurso">
+                    <div class="card-media"><img src="thumb_video.jpg" alt="Video"></div>
+                    <div class="card-info">
+                        <h3>Cómo ser un Líder Inclusivo</h3>
+                        <p>Gestión de equipos diversos y herramientas para jefes de área.</p>
+                        <a href="#" class="btn-recurso">Ver Video</a>
+                    </div>
+                </div>
+                <div class="card-recurso">
+                    <div class="card-media"><img src="thumb_adidas.jpg" alt="Adidas"></div>
+                    <div class="card-info">
+                        <h3>Caso Adidas: Inclusión Retail</h3>
+                        <p>Descubre cómo Adidas implementó su estrategia junto a RECA.</p>
+                        <a href="#" class="btn-recurso">Ver Caso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="candidatos" class="tab-content">
+            <div class="recursos-grid">
+                <div class="card-recurso">
+                    <div class="card-media"><img src="thumb_tips.jpg" alt="Tips"></div>
+                    <div class="card-info">
+                        <h3>Tips para tu Video-Entrevista</h3>
+                        <p>Aprende a comunicar tus habilidades de forma efectiva.</p>
+                        <a href="#" class="btn-recurso">Ver Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lsc" class="tab-content">
+            <div class="recursos-grid">
+                <div class="card-recurso">
+                    <div class="card-media"><img src="thumb_lsc.jpg" alt="LSC"></div>
+                    <div class="card-info">
+                        <h3>Curso LSC: Módulo 1</h3>
+                        <p>Introducción a la Lengua de Señas Colombiana.</p>
+                        <a href="#" class="btn-recurso">Ir al Curso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="aliados-carrusel">
+        <div class="texto-central-aliados">
+            <h2>Conectamos talento con discapacidad con empresas que buscan <strong>impacto y legalidad.</strong></h2>
+            <div class="divisor-purpura"></div>
+        </div>
+    </section>
+
+    <footer class="reca-footer-wrapper">
+        <div class="reca-container">
+            <div class="reca-socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="reca-main">
+                <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Logo" class="reca-logo-footer" style="filter: brightness(0) invert(1);">
+                <div class="reca-links">
+                    <a href="#">Documentos legales 2026</a>
+                    <a href="#">Política de tratamiento de datos</a>
+                    <a href="mailto:info@recacolombia.org">info@recacolombia.org</a>
+                </div>
+            </div>
+            <div class="reca-location">
+                <p>Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
+            </div>
+            <div class="reca-copy">RECA © Derechos Reservados 2026</div>
+        </div>
+    </footer>
+
+    <script>
+        function cambiarPestaña(evt, nombrePestaña) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(nombrePestaña).style.display = "block";
+            document.getElementById(nombrePestaña).classList.add("active");
+            evt.currentTarget.classList.add("active");
         }
+    </script>
     </script>
 </body>
 </html>
