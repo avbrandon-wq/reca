@@ -236,6 +236,22 @@
             .header-estilizado { padding: 10px 4%; }
             .nav-estilizada ul { gap: 15px; }
         }
+
+        /* --- TOOLBOX RECA STYLES --- */
+        .toolbox-section { padding: 60px 5%; background-color: var(--blanco); }
+        .container-toolbox { max-width: 1200px; margin: 0 auto; }
+        .header-toolbox { text-align: center; margin-bottom: 40px; }
+        .toolbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .reca-card { background: white; border-radius: 12px; box-shadow: 0 4px 15px var(--sombra-sutil); overflow: hidden; border: 1px solid #eee; display: flex; flex-direction: column; }
+        .reca-card-header { background-color: var(--purpura-reca); color: white; padding: 20px; text-align: center; }
+        .reca-card-header h2 { margin: 0; font-size: 1.3rem; font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+        .reca-card-content { padding: 20px; flex-grow: 1; }
+        .reca-resource-list { list-style: none; padding: 0; margin: 0; }
+        .reca-resource-list li { padding: 12px 0; border-bottom: 1px solid #f5f5f5; display: flex; align-items: baseline; }
+        .reca-resource-list li::before { content: "→"; color: var(--purpura-reca); margin-right: 10px; font-weight: bold; }
+        .reca-resource-link { text-decoration: none; color: var(--gris-premium); font-size: 0.95rem; transition: all 0.3s ease; }
+        .reca-resource-link:hover { color: var(--purpura-reca); transform: translateX(5px); }
+        .sondeo-box { margin-top: 50px; padding: 40px; border-radius: 15px; color: white; text-align: center; background: linear-gradient(135deg, var(--purpura-reca), var(--purpura-footer)); }
     </style>
 </head>
 
@@ -330,7 +346,65 @@
             <div class="reca-copy">RECA © Derechos Reservados 2024</div>
         </div>
     </footer>
+<main>
+    <section class="toolbox-section">
+        <div class="container-toolbox">
+            <header class="header-toolbox">
+                <h1 style="color: var(--purpura-reca); font-family: 'Montserrat', sans-serif; text-align: center;">"El conocimiento es la base de una inclusión sin barreras"</h1>
+                <p style="color: var(--gris-suave); font-size: 1.1rem; text-align: center;">Recursos especializados para organizaciones y candidatos.</p>
+            </header>
 
+            <div class="toolbox-grid">
+                <article class="reca-card">
+                    <div class="reca-card-header"><h2>Empresa</h2></div>
+                    <div class="reca-card-content">
+                        <ul class="reca-resource-list">
+                            <li><a href="#" class="reca-resource-link">Cómo ser un líder inclusivo</a></li>
+                            <li><a href="#" class="reca-resource-link">Presentación de la Experiencia RECA</a></li>
+                            <li><a href="#" class="reca-resource-link">Gerentes: Alianzas que Derriban Barreras</a></li>
+                            <li><a href="#" class="reca-resource-link">Caso El Corral / Adidas / Falabella</a></li>
+                            <li><a href="#" class="reca-resource-link">Caso Cencosud (Jumbo/Metro)</a></li>
+                            <li><a href="#" class="reca-resource-link">Mujeres Empoderadas</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="reca-card">
+                    <div class="reca-card-header"><h2>Candidatos</h2></div>
+                    <div class="reca-card-content">
+                        <ul class="reca-resource-list">
+                            <li><a href="#" class="reca-resource-link">Certificado de discapacidad</a></li>
+                            <li><a href="#" class="reca-resource-link">Elaboración de Hoja de Vida</a></li>
+                            <li><a href="#" class="reca-resource-link">Inscripción SPE y Compensar</a></li>
+                            <li><a href="#" class="reca-resource-link">Prevención Violencia de Género</a></li>
+                            <li><a href="#" class="reca-resource-link">Habilidades Digitales y Ofimática</a></li>
+                            <li><a href="#" class="reca-resource-link">Rol Ocupacional y Familia</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="reca-card">
+                    <div class="reca-card-header"><h2>Curso LSC</h2></div>
+                    <div class="reca-card-content">
+                        <ul class="reca-resource-list">
+                            <li><a href="#" class="reca-resource-link">Redefiniendo la discapacidad</a></li>
+                            <li><a href="#" class="reca-resource-link">Protocolo de buen trato</a></li>
+                            <li><a href="#" class="reca-resource-link">LSC: Abecedario y Saludos</a></li>
+                            <li><a href="#" class="reca-resource-link">LSC: Calendario y Pronombres</a></li>
+                            <li><a href="#" class="reca-resource-link">Historia de la comunidad sorda</a></li>
+                            <li><a href="#" class="reca-resource-link">Vocabulario Laboral LSC</a></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <div class="sondeo-box">
+                <h3 style="margin-bottom: 10px;">Sondeo: Barreras para la inclusión</h3>
+                <p>Ayúdenos a identificar los retos del mercado laboral en Colombia.</p>
+            </div>
+        </div>
+    </section>
+</main>
     <script>
         function toggleServicio(element) {
             const bloque = element.closest('.servicio-bloque');
