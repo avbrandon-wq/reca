@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECA Colombia – Inclusión Laboral Sostenible</title>
+    <title>Candidatos – RECA Colombia</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -19,281 +19,110 @@
             --sombra-sutil: rgba(0, 0, 0, 0.05);
         }
 
-        /* --- BASE --- */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--blanco);
-            color: var(--gris-premium);
-            -webkit-font-smoothing: antialiased;
-        }
+        body { margin: 0; font-family: 'Open Sans', sans-serif; color: var(--gris-premium); background-color: var(--blanco); }
 
         /* --- NAVEGACIÓN --- */
         .header-estilizado {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 6%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 6%; background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000;
             box-shadow: 0 4px 20px var(--sombra-sutil);
         }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-decoration: none;
-        }
-
         .logo-box img { height: 32px; width: auto; }
-
-        .nav-estilizada ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
+        .nav-estilizada ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+        .nav-estilizada a { 
+            text-decoration: none; color: var(--gris-suave); font-family: 'Montserrat', sans-serif; 
+            font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; 
         }
+        .nav-estilizada a:hover, .nav-active { color: var(--purpura-reca) !important; }
 
-        .nav-estilizada a {
-            text-decoration: none;
-            color: var(--gris-suave);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            position: relative;
-            padding: 8px 0;
-            transition: color 0.3s ease;
-        }
-
-        .nav-estilizada a:not(.btn-asesoria):hover { color: var(--purpura-reca); }
-        
-        .nav-estilizada a:not(.btn-asesoria)::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--purpura-reca);
-            transition: width 0.3s ease;
-        }
-
-        .nav-estilizada a:not(.btn-asesoria):hover::after { width: 100%; }
-
-        /* --- HERO --- */
-        .seccion-hero-imagen {
-            position: relative;
-            height: 75vh;
-            background-image: url('imagen1.png'); 
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* --- HERO CANDIDATO --- */
+        .hero-candidato {
+            padding: 120px 6% 80px 6%;
             text-align: center;
-            color: white;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
         }
-
-        .overlay-oscuro {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.65) 50%, rgba(112, 42, 117, 0.5) 100%);
-            z-index: 1;
-        }
-
-        .contenido-hero { position: relative; z-index: 2; padding: 0 6%; }
-
-        .titulo-impacto {
+        .hero-candidato h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(32px, 5vw, 64px);
-            line-height: 1.1;
-            margin: 0;
-            text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
-        }
-
-        .titulo-impacto .light { font-weight: 300; }
-        .titulo-impacto .bold { font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
-
-        /* --- BENEFICIOS --- */
-        .beneficios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            max-width: 1150px;
-            margin: 80px auto;
-            padding: 0 6%;
-        }
-
-        .card-beneficio {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .num-circulo {
-            width: 42px; height: 42px;
-            border: 1.5px solid var(--purpura-reca);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--purpura-reca); font-weight: 700;
+            font-size: clamp(28px, 4vw, 48px);
+            color: var(--purpura-reca);
             margin-bottom: 20px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+        .hero-candidato h1 strong { font-weight: 800; text-transform: uppercase; }
+        .hero-candidato p {
+            max-width: 750px; margin: 0 auto;
+            font-size: 18px; line-height: 1.6; color: var(--gris-suave);
         }
 
-        .card-beneficio h3 { font-family: 'Montserrat', sans-serif; font-size: 19px; color: var(--purpura-reca); margin: 0; font-weight: 400; }
-        .linea-decorativa { width: 35px; height: 2px; background-color: var(--purpura-reca); margin: 15px 0; }
-        .card-beneficio p { font-size: 14px; color: var(--gris-suave); line-height: 1.5; }
-
-        /* --- SERVICIOS --- */
-        .servicios-premium { padding: 100px 10%; background-color: #ffffff; }
-        .servicios-header { text-align: center; margin-bottom: 80px; }
-        .titulo-seccion-servicios { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 300; color: var(--purpura-reca); text-transform: uppercase; letter-spacing: 2px; }
-        .linea-central { width: 50px; height: 3px; background-color: var(--purpura-reca); margin: 20px auto; }
-
-        .servicios-lista-container { max-width: 900px; margin: 0 auto; }
-        .servicio-bloque { border-bottom: 1px solid #e0e0e0; padding: 40px 0; transition: all 0.3s ease; }
-        .servicio-encabezado { display: flex; align-items: center; gap: 30px; cursor: pointer; }
-
-        .num-indicador {
-            width: 45px; height: 45px; border: 1px solid var(--purpura-reca);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            color: var(--purpura-reca); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; flex-shrink: 0;
+        /* --- SECCIÓN FAQ --- */
+        .seccion-faq { padding: 100px 6%; background-color: var(--blanco); }
+        .faq-header { text-align: center; margin-bottom: 60px; }
+        .faq-header h2 { 
+            font-family: 'Montserrat', sans-serif; color: var(--purpura-reca); 
+            font-size: 32px; font-weight: 300; text-transform: uppercase; 
         }
-
-        .servicio-info { flex-grow: 1; }
-        .servicio-info h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: var(--purpura-reca); margin: 0 0 5px 0; font-weight: 400; }
-        .servicio-tagline { font-family: 'Open Sans', sans-serif; font-size: 15px; color: #777; margin: 0; }
-
-        .conozca-mas-btn { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: var(--purpura-reca); text-transform: uppercase; letter-spacing: 1px; }
-
-        .servicio-contenido-oculto { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); padding-left: 75px; }
-        .servicio-bloque.active .servicio-contenido-oculto { max-height: 1000px; transition: max-height 0.5s ease; margin-top: 20px; }
-        .lista-detalles { list-style: none; padding: 0; }
-        .lista-detalles li { margin-bottom: 8px; color: var(--gris-suave); font-size: 14px; }
-
-        /* --- ALIADOS --- */
-        .aliados-carrusel { padding: 80px 0; background: #fff; overflow: hidden; border-top: 1px solid #eee; }
-        .texto-central-aliados { text-align: center; margin-bottom: 50px; padding: 0 10%; }
-        .texto-central-aliados h2 { color: var(--purpura-reca); font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.3; }
-        .divisor-purpura { width: 50px; height: 3px; background: var(--purpura-reca); margin: 25px auto; }
         
-        .marquesina-logos { width: 100%; display: flex; }
-        .marquesina-track { display: flex; width: calc(250px * 12); animation: scroll-infinito 35s linear infinite; }
-        .logo-slide { width: 250px; padding: 0 40px; display: flex; align-items: center; justify-content: center; }
-        .logo-slide img { max-width: 160px; height: auto; filter: grayscale(100%); opacity: 0.6; transition: all 0.4s ease; }
-        .logo-slide img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
-
-        @keyframes scroll-infinito {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 8)); }
+        .faq-container { max-width: 850px; margin: 0 auto; }
+        .faq-item { 
+            border: 1px solid #eee; border-radius: 12px; margin-bottom: 15px; 
+            padding: 20px 30px; transition: all 0.3s ease; cursor: pointer;
         }
-
-        /* --- ESTILOS FORMULARIO EMPRESAS --- */
-        .seccion-formulario-empresas {
-            padding: 80px 6%;
-            background-color: #f4f4f4;
-            clear: both;
+        .faq-item:hover { border-color: var(--purpura-reca); box-shadow: 0 5px 15px var(--sombra-sutil); }
+        
+        .faq-pregunta { 
+            display: flex; justify-content: space-between; align-items: center; 
+            font-family: 'Montserrat', sans-serif; font-size: 17px; 
+            font-weight: 600; color: var(--gris-premium);
         }
-
-        .container-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--blanco);
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px var(--sombra-sutil);
+        .faq-respuesta { 
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease, margin-top 0.3s ease; 
+            color: var(--gris-suave); font-size: 15px; line-height: 1.6;
         }
-
-        .header-form { text-align: center; margin-bottom: 40px; }
-        .ante-titulo { display: block; font-family: 'Montserrat', sans-serif; color: var(--purpura-reca); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
-        .titulo-form { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 300; line-height: 1.3; color: var(--gris-premium); margin-bottom: 15px; }
-        .subtitulo-form { font-family: 'Open Sans', sans-serif; font-size: 18px; color: var(--purpura-reca); font-weight: 600; }
-
-        .grid-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .grupo-input { display: flex; flex-direction: column; gap: 8px; text-align: left; }
-        .grupo-input label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--gris-suave); }
-        .grupo-input input { padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px; font-family: 'Open Sans', sans-serif; font-size: 14px; }
-        .grupo-input input:focus { outline: none; border-color: var(--purpura-reca); }
-
-        .btn-enviar-reca {
-            background-color: var(--purpura-reca);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 30px;
-            transition: background 0.3s ease;
-        }
-        .btn-enviar-reca:hover { background-color: var(--purpura-hover); }
+        
+        /* Estado Activo FAQ */
+        .faq-item.active { border-color: var(--purpura-reca); background-color: #fcf8fd; }
+        .faq-item.active .faq-respuesta { max-height: 300px; margin-top: 15px; }
+        .faq-item i { transition: transform 0.3s ease; color: var(--purpura-reca); }
+        .faq-item.active i { transform: rotate(180deg); }
 
         /* --- FOOTER --- */
-        .reca-footer-wrapper { background-color: var(--purpura-footer); color: #ffffff; font-family: 'Montserrat', sans-serif; padding: 40px 10%; line-height: 1.6; }
+        .reca-footer-wrapper { background-color: var(--purpura-footer); color: #ffffff; font-family: 'Montserrat', sans-serif; padding: 60px 10% 40px 10%; }
         .reca-container { max-width: 1100px; margin: 0 auto; }
-        .reca-socials { display: flex; justify-content: flex-end; gap: 20px; margin-bottom: 20px; }
-        .reca-socials a { color: white; font-size: 1.4rem; transition: transform 0.3s ease; }
-        .reca-main { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 60px; }
-        .reca-logo-footer { max-width: 120px; height: auto; margin-bottom: 25px; }
-        .reca-links { display: flex; flex-direction: column; gap: 5px; }
-        .reca-links a { color: white; text-decoration: underline; font-size: 0.95rem; font-weight: 300; }
-        .reca-location { text-align: center; font-size: 1rem; margin-bottom: 40px; font-weight: 300; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; }
-        .reca-copy { text-align: center; font-size: 0.85rem; opacity: 0.8; }
+        .reca-main { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 40px; }
+        .reca-logo-footer { max-width: 120px; margin-bottom: 25px; filter: brightness(0) invert(1); }
+        .reca-links { display: flex; flex-direction: column; gap: 8px; }
+        .reca-links a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 300; border-bottom: 1px solid transparent; width: fit-content; }
+        .reca-links a:hover { border-bottom: 1px solid white; }
+        .reca-location { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; text-align: center; font-weight: 300; font-size: 0.95rem; }
+        .reca-copy { text-align: center; margin-top: 20px; font-size: 0.8rem; opacity: 0.7; }
 
         /* Botón WhatsApp */
         .btn-flotante-reca {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--purpura-reca);
-            color: #ffffff !important;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            z-index: 9999;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: var(--purpura-reca); color: white !important;
+            padding: 12px 25px; border-radius: 50px; text-decoration: none;
+            font-family: 'Montserrat', sans-serif; font-weight: 700; z-index: 9999;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px;
         }
 
         @media (max-width: 768px) {
-            .grid-inputs { grid-template-columns: 1fr; }
-            .reca-socials { justify-content: center; }
-            .reca-main { align-items: center; text-align: center; }
-            .nav-estilizada ul { gap: 15px; }
-            .btn-flotante-reca span { display: none; }
-            .btn-flotante-reca { padding: 15px; border-radius: 50%; }
+            .nav-estilizada { display: none; }
+            .hero-candidato { padding-top: 80px; }
         }
     </style>
 </head>
-
 <body>
 
     <header class="header-estilizado">
-        <a href="#" class="logo-box">
+        <a href="index.html" class="logo-box">
             <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Colombia">
         </a>
         <nav class="nav-estilizada">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="candidato.html">Candidato</a></li>
+                <li><a href="candidato.html" class="nav-active">Candidato</a></li>
                 <li><a href="recursos.html">Recursos</a></li>
             </ul>
         </nav>
@@ -313,58 +142,32 @@
 
             <div class="faq-container">
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-pregunta">
-                        ¿Tiene algún costo?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-respuesta">
-                        No. Nuestros servicios son 100% gratuitos para ti. En RECA trabajamos para que el talento siempre tenga las puertas abiertas.
-                    </div>
+                    <div class="faq-pregunta">¿Tiene algún costo? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-respuesta">No. Nuestros servicios son 100% gratuitos para ti. En RECA trabajamos para que el talento siempre tenga las puertas abiertas.</div>
                 </div>
 
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-pregunta">
-                        ¿Me garantizan empleo?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-respuesta">
-                        Somos un puente. Te preparamos y te postulamos a vacantes reales, acompañándote en todo el proceso para que tengas éxito en tu vinculación laboral.
-                    </div>
+                    <div class="faq-pregunta">¿Me garantizan empleo? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-respuesta">Somos un puente. Te preparamos y te postulamos a vacantes reales, acompañándote en todo el proceso para que tengas éxito en tu vinculación laboral.</div>
                 </div>
 
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-pregunta">
-                        ¿Sin experiencia puedo participar?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-respuesta">
-                        ¡Claro que sí! Tenemos opciones para primer empleo y modalidades como Contrato de Aprendiz (SENA) para que empieces tu vida profesional desde cero.
-                    </div>
+                    <div class="faq-pregunta">¿Sin experiencia puedo participar? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-respuesta">¡Claro que sí! Tenemos opciones para primer empleo y modalidades como Contrato de Aprendiz (SENA) para que empieces tu vida profesional desde cero.</div>
                 </div>
 
                 <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-pregunta">
-                        ¿Y si necesito ajustes en el puesto?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-respuesta">
-                        No te preocupes. Nosotros asesoramos directamente a la empresa para que implemente las herramientas o apoyos necesarios para que trabajes con total comodidad y seguridad.
-                    </div>
+                    <div class="faq-pregunta">¿Y si necesito ajustes en el puesto? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-respuesta">No te preocupes. Nosotros asesoramos directamente a la empresa para que implemente las herramientas o apoyos necesarios para que trabajes con total comodidad y seguridad.</div>
                 </div>
             </div>
         </section>
     </main>
 
-
     <footer class="reca-footer-wrapper">
         <div class="reca-container">
-            <div class="reca-socials">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
             <div class="reca-main">
-                <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Logo" class="reca-logo-footer" style="filter: brightness(0) invert(1);">
+                <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Logo" class="reca-logo-footer">
                 <div class="reca-links">
                     <a href="#">Documentos legales 2025</a>
                     <a href="#">Política de tratamiento de datos</a>
@@ -374,29 +177,27 @@
             <div class="reca-location">
                 <p><strong>Nueva sede:</strong> Cra. 21a # 83 - 12 Bogotá - Colombia. | Celular (310) 565 8621</p>
             </div>
-            <div class="reca-copy">RECA © Derechos Reservados 2024</div>
+            <div class="reca-copy">RECA © Derechos Reservados 2026</div>
         </div>
     </footer>
 
-    <a href="https://wa.me/3105658621" class="btn-flotante-reca" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/3105658621" class="btn-flotante-reca" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span>Contactar</span>
     </a>
 
     <script>
-        function toggleServicio(element) {
-            const bloque = element.closest('.servicio-bloque');
-            const isActive = bloque.classList.contains('active');
+        function toggleFaq(elemento) {
+            const isActive = elemento.classList.contains('active');
             
-            document.querySelectorAll('.servicio-bloque').forEach(b => {
-                b.classList.remove('active');
-                const btn = b.querySelector('.conozca-mas-btn');
-                if(btn) btn.innerHTML = 'Conozca más <span class="flecha">→</span>';
+            // Cerrar otros
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
             });
-            
+
+            // Si no estaba activo, abrirlo
             if (!isActive) {
-                bloque.classList.add('active');
-                element.querySelector('.conozca-mas-btn').innerHTML = 'Cerrar <span class="flecha">↑</span>';
+                elemento.classList.add('active');
             }
         }
     </script>
