@@ -36,56 +36,46 @@
         }
         .nav-estilizada a:hover, .nav-active { color: var(--purpura-reca) !important; }
 
-        /* --- HERO CANDIDATO --- */
+        /* --- HERO --- */
         .hero-candidato {
             padding: 120px 6% 80px 6%;
             text-align: center;
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
         }
         .hero-candidato h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(28px, 4vw, 48px);
-            color: var(--purpura-reca);
-            margin-bottom: 20px;
-            font-weight: 300;
-            line-height: 1.2;
+            font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 4vw, 48px);
+            color: var(--purpura-reca); margin-bottom: 20px; font-weight: 300; line-height: 1.2;
         }
         .hero-candidato h1 strong { font-weight: 800; text-transform: uppercase; }
-        .hero-candidato p {
-            max-width: 750px; margin: 0 auto;
-            font-size: 18px; line-height: 1.6; color: var(--gris-suave);
-        }
+        .hero-candidato p { max-width: 750px; margin: 0 auto; font-size: 18px; line-height: 1.6; color: var(--gris-suave); }
 
-        /* --- SECCIÓN FAQ --- */
+        /* --- FAQ --- */
         .seccion-faq { padding: 100px 6%; background-color: var(--blanco); }
         .faq-header { text-align: center; margin-bottom: 60px; }
-        .faq-header h2 { 
-            font-family: 'Montserrat', sans-serif; color: var(--purpura-reca); 
-            font-size: 32px; font-weight: 300; text-transform: uppercase; 
-        }
-        
+        .faq-header h2 { font-family: 'Montserrat', sans-serif; color: var(--purpura-reca); font-size: 32px; font-weight: 300; text-transform: uppercase; }
         .faq-container { max-width: 850px; margin: 0 auto; }
-        .faq-item { 
-            border: 1px solid #eee; border-radius: 12px; margin-bottom: 15px; 
-            padding: 20px 30px; transition: all 0.3s ease; cursor: pointer;
-        }
+        .faq-item { border: 1px solid #eee; border-radius: 12px; margin-bottom: 15px; padding: 20px 30px; transition: all 0.3s ease; cursor: pointer; }
         .faq-item:hover { border-color: var(--purpura-reca); box-shadow: 0 5px 15px var(--sombra-sutil); }
-        
-        .faq-pregunta { 
-            display: flex; justify-content: space-between; align-items: center; 
-            font-family: 'Montserrat', sans-serif; font-size: 17px; 
-            font-weight: 600; color: var(--gris-premium);
-        }
-        .faq-respuesta { 
-            max-height: 0; overflow: hidden; transition: max-height 0.4s ease, margin-top 0.3s ease; 
-            color: var(--gris-suave); font-size: 15px; line-height: 1.6;
-        }
-        
-        /* Estado Activo FAQ */
+        .faq-pregunta { display: flex; justify-content: space-between; align-items: center; font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 600; color: var(--gris-premium); }
+        .faq-respuesta { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, margin-top 0.3s ease; color: var(--gris-suave); font-size: 15px; line-height: 1.6; }
         .faq-item.active { border-color: var(--purpura-reca); background-color: #fcf8fd; }
         .faq-item.active .faq-respuesta { max-height: 300px; margin-top: 15px; }
         .faq-item i { transition: transform 0.3s ease; color: var(--purpura-reca); }
         .faq-item.active i { transform: rotate(180deg); }
+
+        /* --- FORMULARIO --- */
+        .seccion-formulario-candidato { padding: 80px 6%; background-color: #f9f9f9; }
+        .container-form { max-width: 700px; margin: 0 auto; background: #fff; padding: 50px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .ante-titulo { display: block; color: var(--purpura-reca); font-family: 'Montserrat'; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .titulo-form { font-family: 'Montserrat'; font-size: 24px; color: var(--gris-premium); margin-bottom: 10px; line-height: 1.3; }
+        .subtitulo-form { color: var(--purpura-reca); font-weight: 600; margin-bottom: 40px; }
+        .grupo-input { display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; }
+        .grupo-input label { font-family: 'Montserrat'; font-size: 12px; font-weight: 700; color: var(--gris-suave); text-transform: uppercase; }
+        .grupo-input input, .grupo-input select { padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px; font-family: 'Open Sans'; }
+        .opciones-radio { display: flex; gap: 30px; margin-top: 10px; }
+        .radio-label { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+        .btn-enviar-reca { background: var(--purpura-reca); color: white; border: none; padding: 18px; border-radius: 6px; font-family: 'Montserrat'; font-weight: 800; text-transform: uppercase; width: 100%; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+        .btn-enviar-reca:hover { background: var(--purpura-hover); }
 
         /* --- FOOTER --- */
         .reca-footer-wrapper { background-color: var(--purpura-footer); color: #ffffff; font-family: 'Montserrat', sans-serif; padding: 60px 10% 40px 10%; }
@@ -93,24 +83,17 @@
         .reca-main { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 40px; }
         .reca-logo-footer { max-width: 120px; margin-bottom: 25px; filter: brightness(0) invert(1); }
         .reca-links { display: flex; flex-direction: column; gap: 8px; }
-        .reca-links a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 300; border-bottom: 1px solid transparent; width: fit-content; }
-        .reca-links a:hover { border-bottom: 1px solid white; }
+        .reca-links a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 300; }
         .reca-location { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; text-align: center; font-weight: 300; font-size: 0.95rem; }
         .reca-copy { text-align: center; margin-top: 20px; font-size: 0.8rem; opacity: 0.7; }
 
-        /* Botón WhatsApp */
         .btn-flotante-reca {
-            position: fixed; bottom: 30px; right: 30px;
-            background-color: var(--purpura-reca); color: white !important;
-            padding: 12px 25px; border-radius: 50px; text-decoration: none;
-            font-family: 'Montserrat', sans-serif; font-weight: 700; z-index: 9999;
+            position: fixed; bottom: 30px; right: 30px; background-color: var(--purpura-reca); color: white !important;
+            padding: 12px 25px; border-radius: 50px; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; z-index: 9999;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px;
         }
 
-        @media (max-width: 768px) {
-            .nav-estilizada { display: none; }
-            .hero-candidato { padding-top: 80px; }
-        }
+        @media (max-width: 768px) { .nav-estilizada { display: none; } .hero-candidato { padding-top: 80px; } .opciones-radio { flex-direction: column; gap: 15px; } }
     </style>
 </head>
 <body>
@@ -139,91 +122,59 @@
                 <h2>Preguntas <strong>Frecuentes</strong></h2>
                 <div style="width: 50px; height: 3px; background: var(--purpura-reca); margin: 20px auto;"></div>
             </div>
-
             <div class="faq-container">
                 <div class="faq-item" onclick="toggleFaq(this)">
                     <div class="faq-pregunta">¿Tiene algún costo? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-respuesta">No. Nuestros servicios son 100% gratuitos para ti. En RECA trabajamos para que el talento siempre tenga las puertas abiertas.</div>
                 </div>
-
                 <div class="faq-item" onclick="toggleFaq(this)">
                     <div class="faq-pregunta">¿Me garantizan empleo? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-respuesta">Somos un puente. Te preparamos y te postulamos a vacantes reales, acompañándote en todo el proceso para que tengas éxito en tu vinculación laboral.</div>
+                    <div class="faq-respuesta">Somos un puente. Te preparamos y te postulamos a vacantes reales, acompañándote en todo el proceso.</div>
                 </div>
-
                 <div class="faq-item" onclick="toggleFaq(this)">
                     <div class="faq-pregunta">¿Sin experiencia puedo participar? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-respuesta">¡Claro que sí! Tenemos opciones para primer empleo y modalidades como Contrato de Aprendiz (SENA) para que empieces tu vida profesional desde cero.</div>
-                </div>
-
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-pregunta">¿Y si necesito ajustes en el puesto? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-respuesta">No te preocupes. Nosotros asesoramos directamente a la empresa para que implemente las herramientas o apoyos necesarios para que trabajes con total comodidad y seguridad.</div>
+                    <div class="faq-respuesta">¡Claro que sí! Tenemos opciones para primer empleo y modalidades como Contrato de Aprendiz (SENA).</div>
                 </div>
             </div>
         </section>
 
-
-
-        </section> <section class="seccion-formulario-candidato">
-        <div class="container-form">
-            <div class="header-form">
-                <span class="ante-titulo">Registro de Talento</span>
-                <h2 class="titulo-form">Deseo iniciar el proceso para postularme en un trabajo de <strong>empleo laboral inclusivo.</strong></h2>
-                <p class="subtitulo-form">Es primera vez que me registro.</p>
-            </div>
-
-            <form action="#" method="POST">
-                <div class="grupo-input">
-                    <label for="nombre">Candidato (Nombre Completo)</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required>
+        <section class="seccion-formulario-candidato">
+            <div class="container-form">
+                <div class="header-form">
+                    <span class="ante-titulo">Registro de Talento</span>
+                    <h2 class="titulo-form">Deseo iniciar el proceso para postularme en un trabajo de <strong>empleo laboral inclusivo.</strong></h2>
+                    <p class="subtitulo-form">Es primera vez que me registro.</p>
                 </div>
 
-                <div class="grupo-input-radio">
-                    <label>¿Cuentas con certificado de discapacidad?</label>
-                    <div class="opciones-radio">
-                        <label class="radio-label"><input type="radio" name="certificado" value="si" required> Sí</label>
-                        <label class="radio-label"><input type="radio" name="certificado" value="no"> No</label>
+                <form action="#" method="POST">
+                    <div class="grupo-input">
+                        <label for="nombre">Candidato (Nombre Completo)</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required>
                     </div>
-                </div>
 
-                <div class="grupo-input">
-                    <label for="tipo-discapacidad">Tipo de discapacidad</label>
-                    <select id="tipo-discapacidad" name="tipo-discapacidad" required>
-                        <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="fisica">Física</option>
-                        <option value="auditiva">Auditiva</option>
-                        <option value="visual">Visual</option>
-                        <option value="intelectual">Intelectual</option>
-                    </select>
-                </div>
+                    <div class="grupo-input">
+                        <label>¿Cuentas con certificado de discapacidad?</label>
+                        <div class="opciones-radio">
+                            <label class="radio-label"><input type="radio" name="certificado" value="si" required> Sí</label>
+                            <label class="radio-label"><input type="radio" name="certificado" value="no"> No</label>
+                        </div>
+                    </div>
 
-                <div class="contenedor-boton">
+                    <div class="grupo-input">
+                        <label for="tipo-discapacidad">Tipo de discapacidad</label>
+                        <select id="tipo-discapacidad" name="tipo-discapacidad" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="fisica">Física</option>
+                            <option value="auditiva">Auditiva</option>
+                            <option value="visual">Visual</option>
+                            <option value="intelectual">Intelectual</option>
+                        </select>
+                    </div>
+
                     <button type="submit" class="btn-enviar-reca">Iniciar proceso</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-</main> ```
-
----
-
-### 2. El CSS (Estilos)
-Para que se vea bien, copia los estilos del formulario y pégalos al final de tu sección `<style>`, justo antes de que se cierre la etiqueta `</style>` en el encabezado (`<head>`).
-
-```css
-    /* Estilos del Formulario de Candidatos */
-    .seccion-formulario-candidato { padding: 80px 6%; background-color: #f9f9f9; }
-    .container-form { max-width: 700px; margin: 0 auto; background: #fff; padding: 50px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    .titulo-form { font-family: 'Montserrat'; font-size: 24px; color: var(--gris-premium); margin-bottom: 10px; }
-    .subtitulo-form { color: var(--purpura-reca); font-weight: 600; margin-bottom: 40px; }
-    .grupo-input { display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; }
-    .grupo-input label { font-family: 'Montserrat'; font-size: 12px; font-weight: 700; color: var(--gris-suave); text-transform: uppercase; }
-    .grupo-input input, .grupo-input select { padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px; }
-    .opciones-radio { display: flex; gap: 30px; margin-top: 10px; }
-    .radio-label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
-    .btn-enviar-reca { background: var(--purpura-reca); color: white; border: none; padding: 15px; border-radius: 6px; font-weight: 800; text-transform: uppercase; width: 100%; cursor: pointer; }
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer class="reca-footer-wrapper">
@@ -244,23 +195,14 @@ Para que se vea bien, copia los estilos del formulario y pégalos al final de tu
     </footer>
 
     <a href="https://wa.me/3105658621" class="btn-flotante-reca" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <span>Contactar</span>
+        <i class="fab fa-whatsapp"></i> <span>Contactar</span>
     </a>
 
     <script>
         function toggleFaq(elemento) {
             const isActive = elemento.classList.contains('active');
-            
-            // Cerrar otros
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
-            });
-
-            // Si no estaba activo, abrirlo
-            if (!isActive) {
-                elemento.classList.add('active');
-            }
+            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            if (!isActive) elemento.classList.add('active');
         }
     </script>
 </body>
