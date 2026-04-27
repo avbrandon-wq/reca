@@ -236,6 +236,55 @@
             .header-estilizado { padding: 10px 4%; }
             .nav-estilizada ul { gap: 15px; }
         }
+        /* Estilos Botón Fijo RECA */
+.btn-flotante-reca {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--purpura-reca);
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 9999;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-flotante-reca i {
+    font-size: 20px;
+}
+
+.btn-flotante-reca:hover {
+    background-color: var(--purpura-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsivo: En móvil se vuelve circular para no tapar contenido */
+@media (max-width: 768px) {
+    .btn-flotante-reca span {
+        display: none;
+    }
+    .btn-flotante-reca {
+        padding: 15px;
+        right: 20px;
+        bottom: 20px;
+        border-radius: 50%;
+    }
+    .btn-flotante-reca i {
+        margin: 0;
+        font-size: 24px;
+    }
+    
     </style>
 </head>
 
@@ -387,6 +436,16 @@
             }
         }
     </script>
+
+
+                            
+                            <a href="https://wa.me/3105658621" class="btn-flotante-reca" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+    <span>Contactar</span>
+</a>
+
+
+                            
 </body>
 
                             
