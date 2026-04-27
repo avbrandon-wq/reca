@@ -1,1 +1,118 @@
-DHDHDHDHD MDJFDKFEF
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECA Colombia – Recursos de Inclusión</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --purpura-reca: #702A75; 
+            --purpura-hover: #55265e;
+            --purpura-footer: #833883;
+            --gris-premium: #2D2D2D;
+            --gris-suave: #666666;
+            --blanco: #ffffff;
+            --sombra-sutil: rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- BASE --- */
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--blanco);
+            color: var(--gris-premium);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        .header-estilizado {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 6%; background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 20px var(--sombra-sutil);
+        }
+
+        .logo-box img { height: 32px; width: auto; }
+
+        .nav-estilizada ul {
+            list-style: none; display: flex; align-items: center; gap: 30px; margin: 0; padding: 0;
+        }
+
+        .nav-estilizada a {
+            text-decoration: none; color: var(--gris-suave);
+            font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 11px;
+            text-transform: uppercase; letter-spacing: 1.2px; transition: color 0.3s ease;
+        }
+
+        .nav-estilizada a:hover:not(.btn-asesoria) { color: var(--purpura-reca); }
+
+        .btn-asesoria {
+            background-color: var(--purpura-reca); color: white !important;
+            padding: 10px 22px; border-radius: 6px; font-weight: 800 !important;
+        }
+
+        /* --- TOOLBOX --- */
+        .toolbox-section { padding: 80px 6%; background-color: #f9f9f9; }
+        .container-toolbox { max-width: 1200px; margin: 0 auto; }
+        .header-toolbox { text-align: center; margin-bottom: 50px; }
+        .header-toolbox h1 { font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--purpura-reca); font-size: 2.2rem; }
+
+        .toolbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .reca-card { background: white; border-radius: 12px; box-shadow: 0 10px 30px var(--sombra-sutil); overflow: hidden; display: flex; flex-direction: column; }
+        .reca-card-header { background-color: var(--purpura-reca); color: white; padding: 20px; text-align: center; }
+        .reca-card-header h2 { margin: 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        .reca-card-content { padding: 30px; flex-grow: 1; }
+        
+        .reca-resource-list { list-style: none; padding: 0; margin: 0; }
+        .reca-resource-list li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; }
+        .reca-resource-list li::before { content: "→"; color: var(--purpura-reca); margin-right: 12px; font-weight: bold; }
+        .reca-resource-link { text-decoration: none; color: var(--gris-premium); font-size: 0.95rem; transition: 0.3s ease; }
+        .reca-resource-link:hover { color: var(--purpura-reca); padding-left: 5px; }
+
+        .sondeo-box { 
+            margin-top: 50px; padding: 40px; border-radius: 15px; color: white; text-align: center; 
+            background: linear-gradient(135deg, var(--purpura-reca), var(--purpura-footer));
+        }
+
+        /* --- ALIADOS --- */
+        .aliados-carrusel { padding: 80px 10%; text-align: center; background: white; }
+        .divisor-purpura { width: 50px; height: 3px; background: var(--purpura-reca); margin: 25px auto; }
+
+        /* --- FOOTER --- */
+        .reca-footer-wrapper { background-color: var(--purpura-footer); color: #ffffff; padding: 60px 10%; }
+        .reca-container { max-width: 1100px; margin: 0 auto; }
+        .reca-socials { display: flex; justify-content: center; gap: 25px; margin-bottom: 30px; }
+        .reca-socials a { color: white; font-size: 1.5rem; }
+        .reca-main { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 30px; }
+        .reca-logo-footer { max-width: 140px; margin-bottom: 20px; filter: brightness(0) invert(1); }
+        .reca-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .reca-links a { color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
+        .reca-copy { text-align: center; font-size: 0.8rem; opacity: 0.6; margin-top: 20px; }
+
+        @media (max-width: 768px) {
+            .nav-estilizada { display: none; } /* Sugerido: añadir menú hamburguesa luego */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-estilizado">
+        <a href="index.html" class="logo-box">
+            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Colombia">
+        </a>
+        <nav class="nav-estilizada">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="candidato.html">Candidato</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
