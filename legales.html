@@ -1,1 +1,229 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legales y Transparencia – RECA Colombia</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --purpura-reca: #702A75; 
+            --purpura-hover: #55265e;
+            --gris-premium: #2D2D2D;
+            --gris-suave: #666666;
+            --blanco: #ffffff;
+            --sombra-sutil: rgba(0, 0, 0, 0.05);
+        }
+
+        body { margin: 0; font-family: 'Open Sans', sans-serif; color: var(--gris-premium); background-color: #f8f9fa; }
+
+        /* --- NAVEGACIÓN --- */
+        .header-estilizado {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 6%; background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 20px var(--sombra-sutil);
+        }
+        .logo-box img { height: 32px; width: auto; }
+        .nav-estilizada ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+        .nav-estilizada a { 
+            text-decoration: none; color: var(--gris-suave); font-family: 'Montserrat', sans-serif; 
+            font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; 
+        }
+
+        /* --- HERO --- */
+        .hero-legales {
+            padding: 80px 6%; text-align: center;
+            background: linear-gradient(rgba(112, 42, 117, 0.9), rgba(112, 42, 117, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1470') center/cover;
+            color: white;
+        }
+        .hero-legales h1 { font-family: 'Montserrat'; font-size: 38px; font-weight: 800; margin-bottom: 10px; }
+        .hero-legales p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        /* --- CONTENEDOR DOCUMENTOS --- */
+        .seccion-documentos { padding: 80px 6%; max-width: 1200px; margin: 0 auto; }
+        
+        .grid-documentos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .doc-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--purpura-reca);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .doc-icon {
+            background: #fdfafd;
+            color: var(--purpura-reca);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .doc-info { display: flex; flex-direction: column; }
+        .doc-title { font-family: 'Montserrat'; font-size: 14px; font-weight: 700; color: var(--gris-premium); line-height: 1.3; }
+        .doc-meta { font-size: 11px; color: var(--gris-suave); text-transform: uppercase; margin-top: 5px; }
+
+        /* --- FOOTER --- */
+        .reca-footer-wrapper { background-color: #833883; color: white; padding: 40px 6%; text-align: center; }
+        .reca-logo-footer { max-width: 100px; filter: brightness(0) invert(1); margin-bottom: 20px; }
+
+        @media (max-width: 768px) { .nav-estilizada { display: none; } }
+    </style>
+</head>
+<body>
+
+    <header class="header-estilizado">
+        <a href="index.html" class="logo-box">
+            <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Colombia">
+        </a>
+        <nav class="nav-estilizada">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="candidato.html">Candidato</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-legales">
+            <h1>Transparencia <strong>Legal</strong></h1>
+            <p>Documentación institucional y cumplimiento normativo de RECA Colombia.</p>
+        </section>
+
+        <section class="seccion-documentos">
+            <div class="grid-documentos">
+                
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Cámara de Comercio</span>
+                        <span class="doc-meta">Documento PDF</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Certificado Antecedentes Judiciales</span>
+                        <span class="doc-meta">Documento PDF</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Cumplimiento de Requisitos</span>
+                        <span class="doc-meta">Certificación</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Estados Financieros 2024</span>
+                        <span class="doc-meta">Financiero</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-users-cog"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Pago Miembros Directivos</span>
+                        <span class="doc-meta">Certificado</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-gavel"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Acta Asamblea Ordinaria 2025</span>
+                        <span class="doc-meta">Acta Oficial</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-landmark"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Acta de Constitución RECA</span>
+                        <span class="doc-meta">Documento Base</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-percentage"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Régimen Especial Tributario</span>
+                        <span class="doc-meta">Actualización</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-balance-scale"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Estatutos RECA</span>
+                        <span class="doc-meta">Normatividad Interna</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Informe de Gestión 2024</span>
+                        <span class="doc-meta">Reporte Anual</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-search-dollar"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Dictamen Revisor Fiscal</span>
+                        <span class="doc-meta">Auditoría</span>
+                    </div>
+                </a>
+
+                <a href="#" class="doc-card">
+                    <div class="doc-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <div class="doc-info">
+                        <span class="doc-title">Informe Ejecución Excedentes</span>
+                        <span class="doc-meta">Reporte Social</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="reca-footer-wrapper">
+        <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA" class="reca-logo-footer">
+        <p style="font-size: 14px; opacity: 0.8;">RECA © Derechos Reservados 2026</p>
+    </footer>
+
+</body>
+</html>
