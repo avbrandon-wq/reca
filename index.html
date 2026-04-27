@@ -281,6 +281,48 @@
             .btn-flotante-reca span { display: none; }
             .btn-flotante-reca { padding: 15px; border-radius: 50%; }
         }
+
+        .franja-aliados {
+    background-color: rgba(224, 224, 224, 0.6); /* Gris al 60% */
+    padding: 25px 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.aliado-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.texto-aliado {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #666666;
+    letter-spacing: 1px;
+}
+
+.aliado-item img {
+    height: 35px; /* Tamaño profesional para los logos */
+    width: auto;
+    opacity: 0.9;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .franja-aliados {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+        
     </style>
 </head>
 
@@ -441,6 +483,18 @@
         </section>
     </main>
 
+<section class="franja-aliados">
+    <div class="aliado-item">
+        <span class="texto-aliado">Operador</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Logo_Compensar.svg/1200px-Logo_Compensar.svg.png" alt="Compensar">
+    </div>
+    <div class="aliado-item">
+        <span class="texto-aliado">Aliado</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/SENA_logo.svg/1200px-SENA_logo.svg.png" alt="SENA">
+    </div>
+</section>
+
+    
     <footer class="reca-footer-wrapper">
         <div class="reca-container">
             <div class="reca-socials">
