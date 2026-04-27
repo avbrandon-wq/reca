@@ -284,6 +284,130 @@
         margin: 0;
         font-size: 24px;
     }
+
+
+/* --- ESTILOS FORMULARIO EMPRESAS --- */
+.seccion-formulario-empresas {
+    padding: 80px 6%;
+    background-color: #f4f4f4; /* Un gris muy suave para contrastar */
+}
+
+.container-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--blanco);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px var(--sombra-sutil);
+}
+
+.header-form {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ante-titulo {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--purpura-reca);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.titulo-form {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--gris-premium);
+    margin-bottom: 15px;
+}
+
+.subtitulo-form {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: var(--purpura-reca);
+    font-weight: 600;
+}
+
+/* Grid de Formulario */
+.grid-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-input label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gris-suave);
+}
+
+.grupo-input input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.grupo-input input:focus {
+    outline: none;
+    border-color: var(--purpura-reca);
+}
+
+/* Botón Enviar */
+.contenedor-boton {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-enviar-reca {
+    background-color: var(--purpura-reca);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.btn-enviar-reca:hover {
+    background-color: var(--purpura-hover);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .grid-inputs {
+        grid-template-columns: 1fr;
+    }
+    .container-form {
+        padding: 30px 20px;
+    }
+    .titulo-form {
+        font-size: 22px;
+    }
+
+
+
+
     
     </style>
 </head>
@@ -476,6 +600,128 @@
                 </div>
             </div>
         </section>
+
+
+/* --- ESTILOS FORMULARIO EMPRESAS --- */
+.seccion-formulario-empresas {
+    padding: 80px 6%;
+    background-color: #f4f4f4; /* Un gris muy suave para contrastar */
+}
+
+.container-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--blanco);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px var(--sombra-sutil);
+}
+
+.header-form {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ante-titulo {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--purpura-reca);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.titulo-form {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--gris-premium);
+    margin-bottom: 15px;
+}
+
+.subtitulo-form {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: var(--purpura-reca);
+    font-weight: 600;
+}
+
+/* Grid de Formulario */
+.grid-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-input label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gris-suave);
+}
+
+.grupo-input input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.grupo-input input:focus {
+    outline: none;
+    border-color: var(--purpura-reca);
+}
+
+/* Botón Enviar */
+.contenedor-boton {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-enviar-reca {
+    background-color: var(--purpura-reca);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.btn-enviar-reca:hover {
+    background-color: var(--purpura-hover);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .grid-inputs {
+        grid-template-columns: 1fr;
+    }
+    .container-form {
+        padding: 30px 20px;
+    }
+    .titulo-form {
+        font-size: 22px;
+    }
+
+                            
     </main>
 
 
