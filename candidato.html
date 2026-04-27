@@ -162,6 +162,68 @@
                 </div>
             </div>
         </section>
+
+
+
+        </section> <section class="seccion-formulario-candidato">
+        <div class="container-form">
+            <div class="header-form">
+                <span class="ante-titulo">Registro de Talento</span>
+                <h2 class="titulo-form">Deseo iniciar el proceso para postularme en un trabajo de <strong>empleo laboral inclusivo.</strong></h2>
+                <p class="subtitulo-form">Es primera vez que me registro.</p>
+            </div>
+
+            <form action="#" method="POST">
+                <div class="grupo-input">
+                    <label for="nombre">Candidato (Nombre Completo)</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required>
+                </div>
+
+                <div class="grupo-input-radio">
+                    <label>¿Cuentas con certificado de discapacidad?</label>
+                    <div class="opciones-radio">
+                        <label class="radio-label"><input type="radio" name="certificado" value="si" required> Sí</label>
+                        <label class="radio-label"><input type="radio" name="certificado" value="no"> No</label>
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="tipo-discapacidad">Tipo de discapacidad</label>
+                    <select id="tipo-discapacidad" name="tipo-discapacidad" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="fisica">Física</option>
+                        <option value="auditiva">Auditiva</option>
+                        <option value="visual">Visual</option>
+                        <option value="intelectual">Intelectual</option>
+                    </select>
+                </div>
+
+                <div class="contenedor-boton">
+                    <button type="submit" class="btn-enviar-reca">Iniciar proceso</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</main> ```
+
+---
+
+### 2. El CSS (Estilos)
+Para que se vea bien, copia los estilos del formulario y pégalos al final de tu sección `<style>`, justo antes de que se cierre la etiqueta `</style>` en el encabezado (`<head>`).
+
+```css
+    /* Estilos del Formulario de Candidatos */
+    .seccion-formulario-candidato { padding: 80px 6%; background-color: #f9f9f9; }
+    .container-form { max-width: 700px; margin: 0 auto; background: #fff; padding: 50px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .titulo-form { font-family: 'Montserrat'; font-size: 24px; color: var(--gris-premium); margin-bottom: 10px; }
+    .subtitulo-form { color: var(--purpura-reca); font-weight: 600; margin-bottom: 40px; }
+    .grupo-input { display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; }
+    .grupo-input label { font-family: 'Montserrat'; font-size: 12px; font-weight: 700; color: var(--gris-suave); text-transform: uppercase; }
+    .grupo-input input, .grupo-input select { padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px; }
+    .opciones-radio { display: flex; gap: 30px; margin-top: 10px; }
+    .radio-label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    .btn-enviar-reca { background: var(--purpura-reca); color: white; border: none; padding: 15px; border-radius: 6px; font-weight: 800; text-transform: uppercase; width: 100%; cursor: pointer; }
     </main>
 
     <footer class="reca-footer-wrapper">
