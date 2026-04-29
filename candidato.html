@@ -206,15 +206,17 @@
         }
     </script>
 
- <script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
 <script>
     window.addEventListener('load', function() {
         new Accessibility({
             options: {
                 shape: 'circle',
+                icon: 'universal_access',
                 position: {
-                    top: { size: 20, units: 'px' },  // 20px desde arriba
-                    left: { size: 20, units: 'px' }  // 20px desde la izquierda
+                    top: { size: 20, units: 'px' },
+                    left: { size: 20, units: 'px' }
                 }
             },
             language: {
@@ -231,6 +233,12 @@
         });
     }, false);
 </script>
+
+<style>
+    /* Este código fuerza el círculo si la librería falla */
+    ._access-icon { border-radius: 50% !important; }
+</style>
+    
     
 </body>
 </html>
