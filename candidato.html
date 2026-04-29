@@ -205,5 +205,32 @@
             if (!isActive) elemento.classList.add('active');
         }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        new Accessibility({
+            options: {
+                shape: 'circle', // Forzado a redondo
+                position: {
+                    bottom: { size: 160, units: 'px' }, // Lo subí un poco más (160px) por seguridad
+                    right: { size: 15, units: 'px' }
+                }
+            },
+            language: {
+                en: {
+                    fontIncr: 'Aumentar tamaño',
+                    fontDecr: 'Disminuir tamaño',
+                    highContrast: 'Alto contraste',
+                    grayscale: 'Escala de grises',
+                    readingGuide: 'Guía de lectura',
+                    textToSpeech: 'Lector de voz',
+                    speechToText: 'Dictado por voz'
+                }
+            }
+        });
+    }, false);
+</script>
+    
 </body>
 </html>
