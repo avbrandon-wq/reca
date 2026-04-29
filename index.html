@@ -553,12 +553,13 @@
 <script>
     window.addEventListener('load', function() {
         new Accessibility({
-            options: {
+options: {
+                shape: 'circle', // Esto lo hace redondo
                 position: {
                     bottom: { size: 140, units: 'px' },
                     right: { size: 10, units: 'px' }
                 }
-            },
+            }
             language: {
                 en: {
                     fontIncr: 'Aumentar tamaño',
