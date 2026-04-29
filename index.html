@@ -555,6 +555,12 @@
 <script>
     window.addEventListener('load', function() {
         new Accessibility({
+            options: {
+                position: {
+                    bottom: { size: 100, units: 'px' },
+                    right: { size: 0, units: 'px' }
+                }
+            },
             language: {
                 en: {
                     fontIncr: 'Aumentar tamaño',
@@ -565,6 +571,12 @@
                     textToSpeech: 'Lector de voz',
                     speechToText: 'Dictado por voz'
                 }
+            }
+        });
+    }, false);
+</script>
+    
+  
             }
         });
     }, false);
