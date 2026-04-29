@@ -224,5 +224,38 @@
         <p style="font-size: 14px; opacity: 0.8;">RECA © Derechos Reservados 2026</p>
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        new Accessibility({
+            options: {
+                shape: 'circle',
+                icon: 'universal_access',
+                position: {
+                    top: { size: 20, units: 'px' },
+                    left: { size: 20, units: 'px' }
+                }
+            },
+            language: {
+                en: {
+                    fontIncr: 'Aumentar tamaño',
+                    fontDecr: 'Disminuir tamaño',
+                    highContrast: 'Alto contraste',
+                    grayscale: 'Escala de grises',
+                    readingGuide: 'Guía de lectura',
+                    textToSpeech: 'Lector de voz',
+                    speechToText: 'Dictado por voz'
+                }
+            }
+        });
+    }, false);
+</script>
+
+<style>
+    /* Este código fuerza el círculo si la librería falla */
+    ._access-icon { border-radius: 50% !important; }
+</style>
+
 </body>
 </html>
