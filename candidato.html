@@ -213,7 +213,6 @@
         new Accessibility({
             options: {
                 shape: 'circle',
-                icon: 'universal_access',
                 position: {
                     top: { size: 20, units: 'px' },
                     left: { size: 20, units: 'px' }
@@ -235,10 +234,15 @@
 </script>
 
 <style>
-    /* Este código fuerza el círculo si la librería falla */
-    ._access-icon { border-radius: 50% !important; }
+    /* ESTO FUERZA LA UBICACIÓN ARRIBA A LA IZQUIERDA */
+    ._access-icon { 
+        top: 20px !important; 
+        left: 20px !important; 
+        bottom: auto !important; 
+        right: auto !important;
+        border-radius: 50% !important;
+    }
 </style>
-    
     
 </body>
 </html>
