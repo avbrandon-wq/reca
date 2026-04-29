@@ -554,10 +554,9 @@
         new Accessibility({
             options: {
                 shape: 'circle',
-                icon: 'universal_access',
                 position: {
-                    top: { size: 20, units: 'px' },
-                    left: { size: 20, units: 'px' }
+                    bottom: { size: 160, units: 'px' },
+                    right: { size: 20, units: 'px' }
                 }
             },
             language: {
@@ -574,6 +573,17 @@
         });
     }, false);
 </script>
+
+<style>
+    /* Forzamos que sea redondo y respetamos el espacio de WhatsApp */
+    ._access-icon { 
+        bottom: 160px !important; 
+        right: 20px !important; 
+        top: auto !important; 
+        left: auto !important;
+        border-radius: 50% !important;
+    }
+</style>
 
 <style>
     /* Este código fuerza el círculo si la librería falla */
