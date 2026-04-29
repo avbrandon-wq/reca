@@ -360,7 +360,7 @@
     window.addEventListener('load', function() {
         new Accessibility({
             options: {
-                shape: 'circle', // Forzado a redondo
+                shape: 'circle',
                 icon: 'universal_access',
                 position: {
                     top: { size: 20, units: 'px' },
@@ -381,6 +381,11 @@
         });
     }, false);
 </script>
+
+<style>
+    /* Este código fuerza el círculo si la librería falla */
+    ._access-icon { border-radius: 50% !important; }
+</style>
 
     
 </body>
