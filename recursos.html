@@ -197,6 +197,30 @@
         </div>
     </footer>
 
+     <a href="https://wa.me/3105658621" class="btn-flotante-reca" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>Inclusión laboral, Chatea aquí</span>
+    </a>
+
+    <script>
+        function toggleServicio(element) {
+            const bloque = element.closest('.servicio-bloque');
+            const isActive = bloque.classList.contains('active');
+            
+            document.querySelectorAll('.servicio-bloque').forEach(b => {
+                b.classList.remove('active');
+                const btn = b.querySelector('.conozca-mas-btn');
+                if(btn) btn.innerHTML = 'Conozca más <span class="flecha">→</span>';
+            });
+            
+            if (!isActive) {
+                bloque.classList.add('active');
+                element.querySelector('.conozca-mas-btn').innerHTML = 'Cerrar <span class="flecha">↑</span>';
+            }
+        }
+    </script>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
 <script>
