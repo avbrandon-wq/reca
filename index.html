@@ -554,9 +554,10 @@
         new Accessibility({
             options: {
                 shape: 'circle',
+                icon: 'universal_access',
                 position: {
-                    top: { size: 20, units: 'px' },  // 20px desde arriba
-                    left: { size: 20, units: 'px' }  // 20px desde la izquierda
+                    top: { size: 20, units: 'px' },
+                    left: { size: 20, units: 'px' }
                 }
             },
             language: {
@@ -573,5 +574,10 @@
         });
     }, false);
 </script>
+
+<style>
+    /* Este código fuerza el círculo si la librería falla */
+    ._access-icon { border-radius: 50% !important; }
+</style>
 
     
