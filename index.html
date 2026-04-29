@@ -541,12 +541,6 @@
         }
     </script>
 
-    <!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Tu Proyecto Inclusivo</title>
-    </head>
-<body>
 
 <script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
 <script>
@@ -555,7 +549,7 @@
             options: {
                 shape: 'circle',
                 position: {
-                    bottom: { size: 160, units: 'px' },
+                    bottom: { size: 100, units: 'px' }, // Altura ajustada para convivir con WhatsApp
                     right: { size: 20, units: 'px' }
                 }
             },
@@ -573,6 +567,32 @@
         });
     }, false);
 </script>
+
+<style>
+    /* Asegura que el icono sea redondo y se mantenga en posición relativa a WhatsApp */
+    ._access-icon { 
+        bottom: 100px !important; 
+        right: 20px !important; 
+        top: auto !important; 
+        left: auto !important;
+        border-radius: 50% !important;
+        z-index: 9999 !important;
+    }
+
+    /* Corrige el desbordamiento del botón de contacto/WhatsApp */
+    .btn-flotante-reca, 
+    [href*="wa.me"] {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        left: auto !important;
+        z-index: 9998 !important;
+        display: flex !important;
+        width: auto !important;
+    }
+</style>
+
+    
 
 <style>
     /* Forzamos que sea redondo y respetamos el espacio de WhatsApp */
