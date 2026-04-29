@@ -217,18 +217,15 @@
             options: {
                 shape: 'circle',
                 position: {
-                    bottom: { size: 160, units: 'px' },
+                    bottom: { size: 140, units: 'px' },
                     right: { size: 20, units: 'px' }
                 }
             },
             language: {
                 en: {
-                    fontIncr: 'Aumentar tamaño',
-                    fontDecr: 'Disminuir tamaño',
-                    highContrast: 'Alto contraste',
-                    grayscale: 'Escala de grises',
-                    readingGuide: 'Guía de lectura',
-                    textToSpeech: 'Lector de voz',
+                    fontIncr: 'Aumentar tamaño', fontDecr: 'Disminuir tamaño',
+                    highContrast: 'Alto contraste', grayscale: 'Escala de grises',
+                    readingGuide: 'Guía de lectura', textToSpeech: 'Lector de voz',
                     speechToText: 'Dictado por voz'
                 }
             }
@@ -237,14 +234,24 @@
 </script>
 
 <style>
+    /* Forzamos posición y forma del botón de accesibilidad */
     ._access-icon { 
-        bottom: 160px !important; 
+        bottom: 140px !important; 
         right: 20px !important; 
         top: auto !important; 
         left: auto !important;
         border-radius: 50% !important;
+        z-index: 9999 !important;
+    }
+
+    /* Fijamos el botón de WhatsApp a la derecha en todas las páginas */
+    .btn-flotante-reca, [href*="wa.me"] {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        left: auto !important;
+        z-index: 9998 !important;
+        display: flex !important;
+        width: auto !important;
     }
 </style>
-    
-</body>
-</html>
