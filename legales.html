@@ -235,6 +235,8 @@
         </section>
     </main>
 
+    
+<footer>
 
       <footer class="reca-footer-wrapper">
         <div class="reca-container">
@@ -251,6 +253,18 @@
                     <a href="mailto:info@recacolombia.org">info@recacolombia.org</a>
                 </div>
 
+</footer>
+
+    <a href="https://wa.me/3105658621" class="btn-flotante-reca" target="_blank">
+    <i class="fab fa-whatsapp"></i> <span>Inclusión laboral, Chatea aquí</span>
+    </a>
+
+    <script>
+        function toggleFaq(elemento) {
+            const isActive = elemento.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            if (!isActive) elemento.classList.add('active');
+        }
 
 
 <script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
