@@ -321,42 +321,32 @@
         text-align: center;
     }
     
-/* --- NAVEGACIÓN MÓVIL --- */
+/* --- NAVEGACIÓN MÓVIL CORREGIDA --- */
 .menu-hamburguesa {
-    display: none;
+    display: none; /* Oculto en escritorio */
     cursor: pointer;
-    font-size: 24px;
+    font-size: 28px;
+    color: var(--purpura-reca);
     padding: 10px;
 }
-<header class="header-estilizado">
-    <a href="index.html" class="logo-box">
-        <img src="https://raw.githubusercontent.com/avbrandon-wq/reca/main/logo_color.png" alt="RECA Colombia">
-    </a>
 
-    <div class="menu-hamburguesa" onclick="toggleMenu()">
-      <div class="menu-hamburguesa" onclick="toggleMenu()">
-    MENÚ
-    </div>
-
-    <nav class="nav-estilizada">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="candidato.html">Candidato</a></li>
-        </ul>
-    </nav>
-</header>
-    
-##menu-movil {
-    display: none;
+#menu-movil {
+    display: none; /* Oculto por defecto */
     flex-direction: column;
     background: rgba(255, 255, 255, 0.95);
     position: absolute;
-    top: 72px; /* Alineado exactamente con el final de tu header */
+    top: 72px; 
     left: 0;
     width: 100%;
     text-align: center;
     box-shadow: 0 4px 6px var(--sombra-sutil);
     z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .nav-estilizada { display: none !important; } /* Oculta nav normal */
+    .menu-hamburguesa { display: block !important; } /* Muestra botón */
+}
 }
 
 #menu-movil a {
