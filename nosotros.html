@@ -112,9 +112,17 @@
         .reca-links a { color: white; text-decoration: underline; font-size: 0.95rem; font-weight: 300; }
         .reca-location { text-align: center; font-size: 1rem; margin-bottom: 40px; font-weight: 300; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; }
         .reca-copy { text-align: center; font-size: 0.85rem; opacity: 0.8; }
+
+          
+
+        .btn-flotante-reca {
+            position: fixed; bottom: 30px; right: 30px; background-color: var(--purpura-reca); color: white !important;
+            padding: 12px 25px; border-radius: 50px; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; z-index: 9999;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px;
+        }
+
+        @media (max-width: 768px) { .nav-estilizada { display: none; } .hero-candidato { padding-top: 80px; } .opciones-radio { flex-direction: column; gap: 15px; } }
     </style>
-
-
     
 </head>
 <body>
