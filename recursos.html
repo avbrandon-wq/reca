@@ -51,9 +51,11 @@
 
         .nav-estilizada a:hover:not(.btn-asesoria) { color: var(--purpura-reca); }
 
-        .btn-asesoria {
-            background-color: var(--purpura-reca); color: white !important;
-            padding: 10px 22px; border-radius: 6px; font-weight: 800 !important;
+       .btn-flotante-reca {
+            position: fixed; bottom: 30px; right: 30px; background-color: var(--purpura-reca); color: white !important;
+            padding: 12px 25px; border-radius: 50px; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; z-index: 9999;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px;
+
         }
 
         /* --- TOOLBOX --- */
@@ -206,10 +208,18 @@
 </footer>
 
      
-
-   <a href="https://wa.me/3105658621" class="btn-flotante-reca" target="_blank">
+  <a href="https://wa.me/3105658621" class="btn-flotante-reca" target="_blank">
         <i class="fab fa-whatsapp"></i> <span>Inclusión laboral, Chatea aquí</span>
     </a>
+
+    <script>
+        function toggleFaq(elemento) {
+            const isActive = elemento.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            if (!isActive) elemento.classList.add('active');
+        }
+    </script>
+
 
     <script>
         function toggleFaq(elemento) {
