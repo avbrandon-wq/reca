@@ -379,6 +379,26 @@
     z-index: 1001; /* Asegura que esté por encima de todo */
 }
 
+    /* --- CORRECCIÓN DEFINITIVA NAVEGACIÓN MÓVIL --- */
+
+/* 1. Aseguramos que en escritorio el botón esté oculto */
+@media (min-width: 769px) {
+    .menu-hamburguesa { display: none !important; }
+    #menu-movil { display: none !important; }
+}
+
+/* 2. En móviles, forzamos la visibilidad del botón */
+@media (max-width: 768px) {
+    .nav-estilizada { display: none !important; }
+    
+    .menu-hamburguesa { 
+        display: block !important; 
+        cursor: pointer; 
+        font-size: 28px; 
+        color: var(--purpura-reca) !important;
+        padding: 10px;
+    }
+}
     
     </style>
 </head>
