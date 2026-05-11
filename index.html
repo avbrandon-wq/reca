@@ -618,9 +618,9 @@
     window.addEventListener('load', function() {
         new Accessibility({
             options: {
-                    icon: {
-    type: 'img', 
-    img: './icon_todas.png' // Eliminamos "img/" porque el archivo está en la raíz
+                icon: {
+                    type: 'img', 
+                    img: './icon_todas.png' 
                 },
                 position: {
                     bottom: { size: 140, units: 'px' },
@@ -643,30 +643,28 @@
 </script>
 
 <style>
-    /* Contenedor principal del botón corregido */
     ._access-icon { 
-        bottom: 140px !important; /* Mantenemos la posición por encima de la cápsula */
+        bottom: 140px !important; 
         right: 20px !important; 
         top: auto !important;
         left: auto !important;
         border-radius: 50% !important;
-        background-color: #ffffff !important; /* Fondo blanco para el círculo */
+        background-color: #ffffff !important; 
         overflow: hidden !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         z-index: 9999 !important;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important; /* Agregué una sombra más fuerte */
-        width: 60px !important; /* Fijamos un tamaño para consistencia */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important; 
+        width: 60px !important; 
         height: 60px !important;
     }
 
-    /* Aseguramos que la imagen NO se ponga blanca y se vea */
     ._access-icon img {
-        width: 70% !important; /* Ajustamos para que no toque los bordes */
+        width: 75% !important; 
         height: auto !important;
         display: block !important;
-        filter: none !important; /* DESACTIVA CUALQUIER FILTRO QUE LA PONGA BLANCA */
-        opacity: 1 !important; /* Asegura opacidad total */
+        filter: none !important; 
+        opacity: 1 !important; 
     }
 </style>
