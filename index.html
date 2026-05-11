@@ -617,7 +617,10 @@
     window.addEventListener('load', function() {
         new Accessibility({
             options: {
-                shape: 'circle',
+                icon: {
+                    type: 'universal', // Aquí cambiamos el icono de silla de ruedas por el universal
+                    shape: 'circle'
+                },
                 position: {
                     bottom: { size: 140, units: 'px' },
                     right: { size: 20, units: 'px' }
