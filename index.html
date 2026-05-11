@@ -613,15 +613,15 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
+
 <script>
- <script>
     window.addEventListener('load', function() {
         new Accessibility({
             options: {
-                // Definimos la imagen personalizada aquí
                 icon: {
                     type: 'img', 
-                    img: 'https://icon_todas.png' // Reemplaza con la URL de tu icono
+                    // Asegúrate de que esta ruta sea la correcta en tu proyecto de Vercel
+                    img: 'https://icon_todas.png' 
                 },
                 position: {
                     bottom: { size: 140, units: 'px' },
@@ -630,33 +630,40 @@
             },
             language: {
                 en: {
-                    fontIncr: 'Aumentar tamaño', fontDecr: 'Disminuir tamaño',
-                    highContrast: 'Alto contraste', grayscale: 'Escala de grises',
-                    readingGuide: 'Guía de lectura', textToSpeech: 'Lector de voz',
+                    fontIncr: 'Aumentar tamaño', 
+                    fontDecr: 'Disminuir tamaño',
+                    highContrast: 'Alto contraste', 
+                    grayscale: 'Escala de grises',
+                    readingGuide: 'Guía de lectura', 
+                    textToSpeech: 'Lector de voz',
                     speechToText: 'Dictado por voz'
                 }
             }
         });
     }, false);
 </script>
-</script>
 
 <style>
-    /* Ajustes para el contenedor del botón */
+    /* Contenedor principal del botón */
     ._access-icon { 
         bottom: 140px !important; 
         right: 20px !important; 
+        top: auto !important;
+        left: auto !important;
         border-radius: 50% !important;
-        background-color: #ffffff !important; /* O el color de fondo que prefieras */
+        background-color: #ffffff !important;
         overflow: hidden !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        z-index: 9999 !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Agregué una sombra suave para que resalte */
     }
 
-    /* Ajuste específico para la imagen que subiste */
+    /* Ajuste del tamaño de la imagen interna */
     ._access-icon img {
-        width: 70% !important; /* Ajusta este porcentaje para que el icono no toque los bordes */
+        width: 65% !important; 
         height: auto !important;
+        display: block !important;
     }
 </style>
