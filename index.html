@@ -618,11 +618,9 @@
     window.addEventListener('load', function() {
         new Accessibility({
             options: {
-                icon: {
-                    type: 'img', 
-                    // CAMBIA ESTA RUTA POR LA RELATIVA CORRECTA DE TU PROYECTO
-                    // Por ejemplo, si la imagen está en una carpeta img/
-                    img: './img/icon_todas.png' // O la ruta que corresponda en tu Vercel/GitHub
+                    icon: {
+    type: 'img', 
+    img: './icon_todas.png' // Eliminamos "img/" porque el archivo está en la raíz
                 },
                 position: {
                     bottom: { size: 140, units: 'px' },
