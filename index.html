@@ -611,64 +611,70 @@
         }
     </script>
 
+<!-- Botón de Accesibilidad -->
+<div id="accessibility-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <button id="accessibility-btn" title="Opciones de accesibilidad" style="background: none; border: none; cursor: pointer; padding: 0;">
+        <img src="icon_todas.png" alt="Icono de accesibilidad universal" style="width: 50px; height: 50px; transition: transform 0.3s ease;">
+    </button>
 
-<script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
+    <!-- Panel de Ajustes (Oculto por defecto) -->
+    <div id="accessibility-menu" style="display: none; position: absolute; bottom: 60px; right: 0; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 250px; padding: 15px; font-family: sans-serif;">
+        <h3 style="margin-top: 0; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Ajustes de Accesibilidad</h3>
+        
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 10px;">
+                <button onclick="toggleContrast()" style="width: 100%; padding: 8px; cursor: pointer; background: #f0f0f0; border: 1px solid #ddd; border-radius: 4px;">Alto Contraste</button>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <button onclick="increaseText()" style="width: 100%; padding: 8px; cursor: pointer; background: #f0f0f0; border: 1px solid #ddd; border-radius: 4px;">Aumentar Texto</button>
+            </li>
+            <li>
+                <button onclick="resetSettings()" style="width: 100%; padding: 8px; cursor: pointer; background: #ff4444; color: white; border: none; border-radius: 4px;">Restablecer</button>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <script>
-    window.addEventListener('load', function() {
-        new Accessibility({
-            options: {
-                icon: {
-                    type: 'img', 
-                    // Usamos la ruta directa al archivo en la raíz
-                    img: 'icon_todas.png' 
-                },
-                position: {
-                    bottom: { size: 140, units: 'px' },
-                    right: { size: 20, units: 'px' }
-                }
-            },
-            language: {
-                en: {
-                    fontIncr: 'Aumentar tamaño', 
-                    fontDecr: 'Disminuir tamaño',
-                    highContrast: 'Alto contraste', 
-                    grayscale: 'Escala de grises',
-                    readingGuide: 'Guía de lectura', 
-                    textToSpeech: 'Lector de voz',
-                    speechToText: 'Dictado por voz'
-                }
-            }
-        });
-    }, false);
+    const menu = document.getElementById('accessibility-menu');
+    const btn = document.getElementById('accessibility-btn');
+
+    // Mostrar/Ocultar menú
+    btn.addEventListener('click', () => {
+        const isVisible = menu.style.display === 'block';
+        menu.style.display = isVisible ? 'none' : 'block';
+    });
+
+    // Funciones de Accesibilidad
+    function toggleContrast() {
+        document.body.classList.toggle('high-contrast');
+        if(!document.getElementById('contrast-style')) {
+            const style = document.createElement('style');
+            style.id = 'contrast-style';
+            style.innerHTML = `
+                .high-contrast { background-color: #000 !important; color: #fff !important; }
+                .high-contrast * { background-color: #000 !important; color: #fff !important; border-color: #fff !important; }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+
+    let zoomLevel = 1;
+    function increaseText() {
+        zoomLevel += 0.1;
+        document.body.style.fontSize = `${zoomLevel}em`;
+    }
+
+    function resetSettings() {
+        document.body.classList.remove('high-contrast');
+        document.body.style.fontSize = '1em';
+        zoomLevel = 1;
+    }
+
+    // Cerrar menú al hacer clic fuera
+    window.addEventListener('click', (e) => {
+        if (!document.getElementById('accessibility-widget').contains(e.target)) {
+            menu.style.display = 'none';
+        }
+    });
 </script>
-
-<style>
-    /* Estenedor del botón circular */
-    ._access-icon { 
-        bottom: 140px !important; 
-        right: 20px !important; 
-        top: auto !important;
-        left: auto !important;
-        border-radius: 50% !important;
-        background-color: #ffffff !important; 
-        overflow: hidden !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        z-index: 9999 !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important; 
-        width: 60px !important; 
-        height: 60px !important;
-    }
-
-    /* Estilos para que la imagen sea visible */
-    ._access-icon img {
-        width: 80% !important; /* Un poco más grande para mejor visibilidad */
-        height: auto !important;
-        display: block !important;
-        filter: none !important; /* Evita que se ponga blanca */
-        opacity: 1 !important; /* Asegura que no sea transparente */
-        position: static !important;
-    }
-</style>
