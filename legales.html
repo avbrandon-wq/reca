@@ -277,48 +277,97 @@
             if (!isActive) elemento.classList.add('active');
         }
 
-<script src="https://cdn.jsdelivr.net/npm/accessibility@1.0.1/dist/accessibility.min.js"></script>
-<script>
-    window.addEventListener('load', function() {
-        new Accessibility({
-            options: {
-                shape: 'circle',
-                position: {
-                    bottom: { size: 140, units: 'px' },
-                    right: { size: 20, units: 'px' }
-                }
-            },
-            language: {
-                en: {
-                    fontIncr: 'Aumentar tamaño', fontDecr: 'Disminuir tamaño',
-                    highContrast: 'Alto contraste', grayscale: 'Escala de grises',
-                    readingGuide: 'Guía de lectura', textToSpeech: 'Lector de voz',
-                    speechToText: 'Dictado por voz'
-                }
-            }
-        });
-    }, false);
-</script>
+------------------------------------------------------------------------------------
+
+
+    
+    
+<div id="reca-accessibility" style="position: fixed; top: 110px; right: 25px; z-index: 99999;">
+    <button id="acc-main-btn" style="background: none; border: none; cursor: pointer; padding: 0; outline: none;">
+        <img src="icon_todas.png" alt="Accesibilidad" style="width: 55px; height: 55px; display: block; filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));">
+    </button>
+
+    <div id="acc-panel" style="display: none; position: absolute; top: 65px; right: 0; background: #ffffff; width: 280px; border-radius: 12px; box-shadow: 0 10px 35px rgba(0,0,0,0.25); border: 1px solid #ddd; padding: 20px; font-family: Arial, sans-serif; overflow: hidden;">
+        <h2 style="margin: 0 0 15px 0; font-size: 18px; text-align: center; color: #333; border-bottom: 1px solid #eee; padding-bottom: 10px;">Accessibility Options</h2>
+        
+        <div id="acc-actions" style="display: flex; flex-direction: column; gap: 8px;">
+            <button onclick="accAction('inc-text')" style="display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; color: #444; font-size: 14px; text-align: left;">🔍 increase text size</button>
+            <button onclick="accAction('dec-text')" style="display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; color: #444; font-size: 14px; text-align: left;">🔍 decrease text size</button>
+            <button onclick="accAction('invert')" style="display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; color: #444; font-size: 14px; text-align: left;">💧 invert colors</button>
+            <button onclick="accAction('gray')" style="display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; color: #444; font-size: 14px; text-align: left;">🔇 gray hues</button>
+            <button onclick="accAction('links')" style="display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; color: #444; font-size: 14px; text-align: left;"><u>U</u> underline links</button>
+            <button onclick="accAction('speech')" style="display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; color: #444; font-size: 14px; text-align: left;">👤)) text to speech</button>
+            
+            <button onclick="accAction('reset')" style="width: 100%; margin-top: 10px; padding: 12px; background: #000; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; text-transform: uppercase;">Rehacer</button>
+        </div>
+    </div>
+</div>
 
 <style>
-    /* Forzamos posición y forma del botón de accesibilidad */
-    ._access-icon { 
-        bottom: 140px !important; 
-        right: 20px !important; 
-        top: auto !important; 
-        left: auto !important;
-        border-radius: 50% !important;
-        z-index: 9999 !important;
-    }
-
-    /* Fijamos el botón de WhatsApp a la derecha */
-    .btn-flotante-reca, [href*="wa.me"] {
-        position: fixed !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        left: auto !important;
-        z-index: 9998 !important;
-        display: flex !important;
-        width: auto !important;
-    }
+    /* Estilos de estados de accesibilidad */
+    .acc-inverted { filter: invert(1) hue-rotate(180deg) !important; background-color: #000 !important; }
+    .acc-inverted img:not(#acc-main-btn img), .acc-inverted video { filter: invert(1) hue-rotate(180deg) !important; }
+    .acc-grayscale { filter: grayscale(100%) !important; }
+    .acc-underlined a { text-decoration: underline !important; text-decoration-color: currentColor !important; font-weight: bold !important; }
+    /* Evitar que el widget se invierta a sí mismo */
+    #reca-accessibility { filter: none !important; }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mainBtn = document.getElementById('acc-main-btn');
+    const panel = document.getElementById('acc-panel');
+    let currentZoom = 1.0;
+
+    // Abrir y cerrar el menú
+    mainBtn.onclick = function(e) {
+        e.stopPropagation();
+        const isOpen = panel.style.display === 'block';
+        panel.style.display = isOpen ? 'none' : 'block';
+    };
+
+    // Cerrar al hacer clic en cualquier otra parte
+    document.addEventListener('click', function(e) {
+        if (!document.getElementById('reca-accessibility').contains(e.target)) {
+            panel.style.display = 'none';
+        }
+    });
+
+    // Controlador de funciones
+    window.accAction = function(type) {
+        const root = document.documentElement;
+        
+        switch(type) {
+            case 'inc-text':
+                currentZoom += 0.1;
+                document.body.style.fontSize = currentZoom + 'em';
+                break;
+            case 'dec-text':
+                currentZoom = Math.max(0.8, currentZoom - 0.1);
+                document.body.style.fontSize = currentZoom + 'em';
+                break;
+            case 'invert':
+                root.classList.toggle('acc-inverted');
+                break;
+            case 'gray':
+                root.classList.toggle('acc-grayscale');
+                break;
+            case 'links':
+                root.classList.toggle('acc-underlined');
+                break;
+            case 'speech':
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(document.body.innerText);
+                utterance.lang = 'es-ES';
+                window.speechSynthesis.speak(utterance);
+                break;
+            case 'reset':
+                root.classList.remove('acc-inverted', 'acc-grayscale', 'acc-underlined');
+                document.body.style.fontSize = '1em';
+                currentZoom = 1.0;
+                window.speechSynthesis.cancel();
+                break;
+        }
+    };
+});
+</script>
