@@ -629,12 +629,9 @@
             },
             language: {
                 en: {
-                    fontIncr: 'Aumentar tamaño', 
-                    fontDecr: 'Disminuir tamaño',
-                    highContrast: 'Alto contraste', 
-                    grayscale: 'Escala de grises',
-                    readingGuide: 'Guía de lectura', 
-                    textToSpeech: 'Lector de voz',
+                    fontIncr: 'Aumentar tamaño', fontDecr: 'Disminuir tamaño',
+                    highContrast: 'Alto contraste', grayscale: 'Escala de grises',
+                    readingGuide: 'Guía de lectura', textToSpeech: 'Lector de voz',
                     speechToText: 'Dictado por voz'
                 }
             }
@@ -643,32 +640,39 @@
 </script>
 
 <style>
-    /* El contenedor del botón */
-    ._access-icon { 
+    /* Forzamos el contenedor para que sea un círculo blanco con sombra */
+    ._access-icon, ._access-icon.active { 
         bottom: 140px !important; 
         right: 20px !important; 
-        top: auto !important;
-        left: auto !important;
-        border-radius: 50% !important;
         background-color: #ffffff !important; 
+        border-radius: 50% !important;
+        width: 60px !important; 
+        height: 60px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
         z-index: 9999 !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important; 
-        width: 60px !important; 
-        height: 60px !important;
+        border: none !important;
     }
 
-    /* ESTA ES LA PARTE CLAVE: Forzamos la visibilidad de la imagen */
-    ._access-icon img {
-        width: 80% !important; /* Un poco más grande para que se vea mejor */
+    /* FORZADO DE IMAGEN: Anulamos cualquier inversión de color de la librería */
+    ._access-icon img, 
+    body ._access-icon img, 
+    html body ._access-icon img {
+        width: 80% !important; 
         height: auto !important;
-        display: block !important;
-        /* Anulamos cualquier filtro de la librería que la ponga blanca */
+        /* El secreto está aquí: anulamos cualquier filtro y forzamos el renderizado original */
         filter: none !important; 
         -webkit-filter: none !important;
+        filter: brightness(1) contrast(1) !important; 
         opacity: 1 !important;
         visibility: visible !important;
+        display: block !important;
+    }
+
+    /* Evitamos que la librería cambie el color al pasar el mouse */
+    ._access-icon:hover {
+        background-color: #f8f8f8 !important;
     }
 </style>
