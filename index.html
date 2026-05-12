@@ -620,7 +620,8 @@
             options: {
                 icon: {
                     type: 'img', 
-                    'img: 'https://reca.vercel.app/icon_todas.png'' 
+                    // Usamos la ruta directa al archivo en la raíz
+                    img: 'icon_todas.png' 
                 },
                 position: {
                     bottom: { size: 140, units: 'px' },
@@ -629,9 +630,12 @@
             },
             language: {
                 en: {
-                    fontIncr: 'Aumentar tamaño', fontDecr: 'Disminuir tamaño',
-                    highContrast: 'Alto contraste', grayscale: 'Escala de grises',
-                    readingGuide: 'Guía de lectura', textToSpeech: 'Lector de voz',
+                    fontIncr: 'Aumentar tamaño', 
+                    fontDecr: 'Disminuir tamaño',
+                    highContrast: 'Alto contraste', 
+                    grayscale: 'Escala de grises',
+                    readingGuide: 'Guía de lectura', 
+                    textToSpeech: 'Lector de voz',
                     speechToText: 'Dictado por voz'
                 }
             }
@@ -640,39 +644,31 @@
 </script>
 
 <style>
-    /* Forzamos el contenedor para que sea un círculo blanco con sombra */
-    ._access-icon, ._access-icon.active { 
+    /* Estenedor del botón circular */
+    ._access-icon { 
         bottom: 140px !important; 
         right: 20px !important; 
-        background-color: #ffffff !important; 
+        top: auto !important;
+        left: auto !important;
         border-radius: 50% !important;
-        width: 60px !important; 
-        height: 60px !important;
+        background-color: #ffffff !important; 
+        overflow: hidden !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
         z-index: 9999 !important;
-        border: none !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important; 
+        width: 60px !important; 
+        height: 60px !important;
     }
 
-    /* FORZADO DE IMAGEN: Anulamos cualquier inversión de color de la librería */
-    ._access-icon img, 
-    body ._access-icon img, 
-    html body ._access-icon img {
-        width: 80% !important; 
+    /* Estilos para que la imagen sea visible */
+    ._access-icon img {
+        width: 80% !important; /* Un poco más grande para mejor visibilidad */
         height: auto !important;
-        /* El secreto está aquí: anulamos cualquier filtro y forzamos el renderizado original */
-        filter: none !important; 
-        -webkit-filter: none !important;
-        filter: brightness(1) contrast(1) !important; 
-        opacity: 1 !important;
-        visibility: visible !important;
         display: block !important;
-    }
-
-    /* Evitamos que la librería cambie el color al pasar el mouse */
-    ._access-icon:hover {
-        background-color: #f8f8f8 !important;
+        filter: none !important; /* Evita que se ponga blanca */
+        opacity: 1 !important; /* Asegura que no sea transparente */
+        position: static !important;
     }
 </style>
