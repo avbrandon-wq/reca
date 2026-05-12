@@ -643,6 +643,7 @@
 </script>
 
 <style>
+    /* El contenedor del botón */
     ._access-icon { 
         bottom: 140px !important; 
         right: 20px !important; 
@@ -650,21 +651,24 @@
         left: auto !important;
         border-radius: 50% !important;
         background-color: #ffffff !important; 
-        overflow: hidden !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         z-index: 9999 !important;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important; 
         width: 60px !important; 
         height: 60px !important;
     }
 
+    /* ESTA ES LA PARTE CLAVE: Forzamos la visibilidad de la imagen */
     ._access-icon img {
-        width: 75% !important; 
+        width: 80% !important; /* Un poco más grande para que se vea mejor */
         height: auto !important;
         display: block !important;
+        /* Anulamos cualquier filtro de la librería que la ponga blanca */
         filter: none !important; 
-        opacity: 1 !important; 
+        -webkit-filter: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 </style>
