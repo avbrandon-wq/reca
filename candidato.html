@@ -236,73 +236,41 @@
         }
     </script>
 
+--------------------------------------------------------------------------------------------------------------
 
-<div id="accessibility-widget" style="position: fixed; top: 120px; right: 20px; z-index: 1000;">
+
+    
+<div id="accessibility-widget" style="position: fixed; top: 100px; right: 20px; z-index: 10000;">
     <button id="accessibility-btn" title="Opciones de accesibilidad" style="background: none; border: none; cursor: pointer; padding: 0;">
-        <img src="icon_todas.png" alt="Icono de accesibilidad universal" style="width: 55px; height: 55px; transition: transform 0.3s ease; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2));">
+        <img src="icon_todas.png" alt="Accesibilidad" style="width: 55px; height: 55px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); transition: transform 0.2s;">
     </button>
 
-    <div id="accessibility-menu" style="display: none; position: absolute; top: 65px; right: 0; background: white; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); width: 240px; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-        <h3 style="margin-top: 0; font-size: 16px; color: #333; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; text-align: center;">Accesibilidad</h3>
+    <div id="accessibility-menu" style="display: none; position: absolute; top: 65px; right: 0; background: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); width: 280px; padding: 15px; font-family: 'Segoe UI', Arial, sans-serif; border: 1px solid #eaeaea;">
+        <h2 style="margin: 0 0 15px 0; font-size: 18px; text-align: center; color: #1a1a1a;">Accessibility Options</h2>
         
-        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-            <button onclick="toggleContrast()" style="width: 100%; padding: 10px; cursor: pointer; background: #2c3e50; color: white; border: none; border-radius: 6px; font-weight: bold;">Alto Contraste</button>
-            
-            <button onclick="increaseText()" style="width: 100%; padding: 10px; cursor: pointer; background: #ecf0f1; border: 1px solid #bdc3c7; border-radius: 6px; color: #333;">Aumentar Texto</button>
-            
-            <button onclick="resetSettings()" style="width: 100%; padding: 10px; cursor: pointer; background: #e74c3c; color: white; border: none; border-radius: 6px; margin-top: 10px;">Restablecer</button>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button onclick="changeText(0.1)" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; text-align: left;">
+                <span>🔍</span> increase text size
+            </button>
+            <button onclick="changeText(-0.1)" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; text-align: left;">
+                <span>🔍</span> decrease text size
+            </button>
+            <button onclick="toggleInvert()" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; text-align: left;">
+                <span>💧</span> invert colors
+            </button>
+            <button onclick="toggleGray()" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; text-align: left;">
+                <span>🔇</span> gray hues
+            </button>
+            <button onclick="toggleLinks()" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; text-align: left;">
+                <span><u>U</u></span> underline links
+            </button>
+            <button onclick="readText()" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; text-align: left;">
+                <span>👤))</span> text to speech
+            </button>
+            <button onclick="resetAll()" style="width: 100%; margin-top: 10px; padding: 10px; background: #dc3545; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">Reset All</button>
         </div>
     </div>
 </div>
 
-<script>
-    (function() {
-        const widget = document.getElementById('accessibility-widget');
-        const menu = document.getElementById('accessibility-menu');
-        const btn = document.getElementById('accessibility-btn');
-
-        // Toggle Menú
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isVisible = menu.style.display === 'block';
-            menu.style.display = isVisible ? 'none' : 'block';
-            btn.style.transform = isVisible ? 'scale(1)' : 'scale(1.1)';
-        });
-
-        // Cerrar al hacer clic fuera
-        document.addEventListener('click', (e) => {
-            if (!widget.contains(e.target)) {
-                menu.style.display = 'none';
-                btn.style.transform = 'scale(1)';
-            }
-        });
-
-        // Funciones Globales
-        window.toggleContrast = function() {
-            document.body.classList.toggle('high-contrast');
-            if(!document.getElementById('contrast-style')) {
-                const style = document.createElement('style');
-                style.id = 'contrast-style';
-                style.innerHTML = `
-                    .high-contrast { background-color: #000 !important; color: #fff !important; }
-                    .high-contrast *:not(#accessibility-widget *) { background-color: #000 !important; color: #fff !important; border-color: #fff !important; }
-                `;
-                document.head.appendChild(style);
-            }
-        };
-
-        let zoomLevel = 1;
-        window.increaseText = function() {
-            if (zoomLevel < 1.5) {
-                zoomLevel += 0.1;
-                document.body.style.fontSize = zoomLevel + 'em';
-            }
-        };
-
-        window.resetSettings = function() {
-            document.body.classList.remove('high-contrast');
-            document.body.style.fontSize = '1em';
-            zoomLevel = 1;
-        };
-    })();
-</script>
+<style>
+    /* Cl
