@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECA - Registro de Candidatos</title>
-    <!-- Enlazamos el estilo global y el específico -->
-    <link rel="stylesheet" href="../style.css">
+    <title>RECA - Candidatos</title>
     <link rel="stylesheet" href="candidatos.css">
 </head>
 <body>
-    <div class="main-wrapper">
-        <header class="reca-header">
-            <img src="../icon_todas.png" alt="Logo RECA" class="reca-logo">
-            <h1>Gestión de Candidatos</h1>
-        </header>
+    <main id="candidatos-reca">
+        <div class="stepper">
+            <div class="step active"><span></span>1. Perfil</div>
+            <div class="step"><span></span>2. Foto</div>
+            <div class="step"><span></span>3. Certificado</div>
+            <div class="step"><span></span>4. Cita</div>
+        </div>
 
-        <main class="card-container" id="candidatos-reca">
-            <div class="stepper">
-                <div class="step active" id="s1"><span>1</span><p>Perfil</p></div>
-                <div class="step" id="s2"><span>2</span><p>Foto</p></div>
-                <div class="step" id="s3"><span>3</span><p>Certificado</p></div>
-                <div class="step" id="s4"><span>4</span><p>Cita</p></div>
+        <form id="form-reca">
+            <div class="form-step" id="p1">
+                <label>NOMBRE COMPLETO *</label>
+                <input type="text" id="nombre" required placeholder="Ej: Jorge Vargas Posada">
+                <br><br>
+                <label>CORREO ELECTRÓNICO *</label>
+                <input type="email" id="email" required placeholder="correo@ejemplo.com">
             </div>
 
-            <form id="form-registro">
-                <!-- Paso 1 -->
-                <div class="form-step" id="paso-0">
-                    <div class="input-group">
-                        <label>Nombre Completo *</label>
-                        <input type="text" id="nombre" required placeholder="Ej: Jorge Vargas Posada">
-                    </div>
-                    <div class="input-group">
-                        <label>Correo Electrónico *</label>
-                        <input type="email" id="email" required placeholder="correo@ejemplo.com">
-                    </div>
-                </div>
+            <div class="form-step hidden" id="p2">
+                <label>FOTO DE PERFIL *</label>
+                <input type="file" id="foto" accept="image/*">
+            </div>
+
+            <div class="form-step hidden" id="p3">
+                <label>CERTIFICADO DE DISCAPACIDAD (PDF) *</label>
+                <input type="file" id="pdf" accept=".pdf">
+            </div>
+
+            <div class="form-step hidden" id="p4">
+                <p>Postulación completada. Por favor, selecciona tu fecha de entrevista.</p>
+                <!-- Calendly Widget aquí -->
+            </div>
+
+            <button type="button" id="btn-siguiente">SIGUIENTE PASO</button>
+        </form>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>                </div>
 
                 <!-- Paso 2 -->
                 <div class="form-step hidden" id="paso-1">
