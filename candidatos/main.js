@@ -1,28 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('btn-siguiente');
+    const btnSiguiente = document.getElementById('btn-siguiente');
     const pasos = document.querySelectorAll('.form-step');
     const indicadores = document.querySelectorAll('.step');
-    let actual = 0;
+    let pasoActual = 0;
 
-    btn.addEventListener('click', () => {
-        // Validación básica
-        const inputs = pasos[actual].querySelectorAll('input[required]');
-        let valido = true;
-        inputs.forEach(i => { if(!i.value) valido = false; });
+    btnSiguiente.addEventListener('click', () => {
+        const inputsObligatorios = pasos[pasoActual].querySelectorAll('input[required]');
+        let esValido = true;
 
-        if(valido && actual < pasos.length - 1) {
-            pasos[actual].classList.add('hidden');
-            indicadores[actual].classList.remove('active');
-            indicadores[actual].classList.add('completed');
+        inputsObligatorios.forEach(input => {
+            if (!input.value) esValido = false;
+        });
+
+        if (esValido && pasoActual < pasos.length - 1) {
+            // Ocultar actual y marcar como completado
+            pasos[pasoActual].classList.add('hidden');
+            indicadores[pasoActual].classList.remove('active');
             
-            actual++;
-            
-            pasos[actual].classList.remove('hidden');
-            indicadores[actual].classList.add('active');
+            pasoActual++;
 
-            if(actual === pasos.length - 1) btn.textContent = "Finalizar";
-        } else if (!valido) {
-            alert("Completa los campos obligatorios");
+            // Mostrar siguiente y activar indicador
+            pasos[pasoActual].classList.remove('hidden');
+            indicadores[pasoActual].classList.add('active');
+
+            if (pasoActual === pasos.length - 1) {
+                btnSiguiente.textContent = "Finalizar Postulación";
+            }
+        } else if (!esValido) {
+            alert("Por favor, completa los campos requeridos antes de continuar.");
         }
     });
 });
