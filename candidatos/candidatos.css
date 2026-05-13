@@ -1,75 +1,51 @@
 :root {
-    --violeta-reca: #5D2A5E; /* El color violeta de tu marca */
-    --gris-claro: #f4f7f9;
+    --violeta-reca: #5D2A5E; /* El color exacto de tu marca */
+    --gris-fondo: #f4f7f9;
 }
 
 body {
-    background-color: var(--gris-claro);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gris-fondo);
+    font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    padding-top: 30px;
 }
 
+/* Contenedor del Logo */
 .header-reca {
+    margin-bottom: 20px;
     text-align: center;
-    padding: 20px 0;
-    width: 100%;
 }
 
 .logo {
-    max-width: 180px; /* Tamaño controlado para que se vea elegante */
+    max-width: 180px; /* Tamaño profesional para el logo */
     height: auto;
-    display: inline-block;
 }
 
+/* Tarjeta del Formulario */
 #candidatos-reca {
-    /* Mantén el resto igual, esto asegura que el formulario baje un poco */
-    margin-top: 10px;
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
-/* Stepper en Violeta */
-.stepper {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-}
-
-.step {
-    font-size: 12px;
-    color: #ccc;
-}
-
+/* Pasos en Violeta */
 .step.active {
-    color: var(--violeta-reca);
+    color: var(--violeta-reca) !important;
     font-weight: bold;
     border-bottom: 2px solid var(--violeta-reca);
 }
 
-/* Inputs */
-label {
-    font-size: 13px;
-    font-weight: bold;
-    color: #444;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-/* Botón en Violeta RECA */
+/* Botón Violeta RECA */
 #btn-siguiente {
     width: 100%;
-    background-color: var(--violeta-reca);
+    background-color: var(--violeta-reca) !important;
     color: white;
     border: none;
     padding: 15px;
@@ -77,12 +53,7 @@ input {
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 25px;
-    transition: background 0.3s;
-}
-
-#btn-siguiente:hover {
-    background-color: #4a214b; /* Un violeta un poco más oscuro al pasar el mouse */
+    margin-top: 20px;
 }
 
 .hidden { display: none; }
