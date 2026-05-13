@@ -1,72 +1,84 @@
-/* Estilos específicos para la sección de candidatos */
-#candidatos-reca {
-    max-width: 500px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    font-family: sans-serif;
+/* Paleta de colores RECA */
+:root {
+    --blue-reca: #0056b3;
+    --gray-light: #f4f7f9;
+    --white: #ffffff;
 }
 
-/* Diseño del indicador de pasos (Stepper) */
+body {
+    background-color: var(--gray-light);
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.reca-logo {
+    max-width: 80px;
+    margin-bottom: 10px;
+}
+
+.card-container {
+    background: var(--white);
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Diseño del Stepper */
 .stepper {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .step {
-    font-size: 12px;
-    color: #bbb;
     text-align: center;
-    flex: 1;
+    color: #ccc;
+    font-size: 11px;
 }
 
-.step.active { 
-    color: #007bff; 
-    font-weight: bold; 
+.step span {
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin: 0 auto 5px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    line-height: 22px;
 }
 
-.step.completed { 
-    color: #28a745; 
+.step.active { color: var(--blue-reca); }
+.step.active span { border-color: var(--blue-reca); background: var(--blue-reca); color: white; }
+
+/* Inputs y Botones */
+.input-group { margin-bottom: 20px; }
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #eee;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
-/* Organización del formulario */
-.form-step { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
-}
-
-/* Ocultar pasos inactivos */
-.hidden { 
-    display: none; 
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: -10px;
-}
-
-input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-/* Botón principal */
 #btn-siguiente {
-    background: #007bff;
+    width: 100%;
+    background-color: var(--blue-reca);
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-#btn-siguiente:hover {
-    background: #0056b3;
-}
+.hidden { display: none; }
