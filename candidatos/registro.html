@@ -4,37 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECA - Registro de Candidatos</title>
-    <!-- Enlazamos el CSS principal y el específico de candidatos -->
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="candidatos.css">
+    <link rel="stylesheet" href="../style.css"> <!-- Estilo global -->
+    <link rel="stylesheet" href="candidatos.css"> <!-- Estilo específico -->
 </head>
 <body>
     <main class="container" id="candidatos-reca">
         <h1>Gestión de Candidatos RECA</h1>
-        <p>Por favor, completa los 4 pasos para tu postulación.</p>
         
-        <!-- Indicador de pasos (Stepper) -->
         <div class="stepper">
-            <div class="step active">1. Perfil</div>
-            <div class="step">2. Foto</div>
-            <div class="step">3. Certificado</div>
-            <div class="step">4. Cita</div>
+            <div class="step active" id="s1">1. Perfil</div>
+            <div class="step" id="s2">2. Foto</div>
+            <div class="step" id="s3">3. Certificado</div>
+            <div class="step" id="s4">4. Cita</div>
         </div>
 
         <form id="form-registro">
-            <!-- Paso 1: Perfil -->
-            <div class="form-step" id="paso-1">
-                <label for="nombre-completo">Nombre Completo *</label>
-                <input type="text" id="nombre-completo" required placeholder="Ej: Jorge Vargas Posada">
-                
-                <label for="email-candidato">Correo Electrónico *</label>
-                <input type="email" id="email-candidato" required placeholder="correo@ejemplo.com">
+            <!-- Paso 1 -->
+            <div class="form-step" id="paso-0">
+                <label>Nombre Completo *</label>
+                <input type="text" id="nombre" required placeholder="Ej: Jorge Vargas Posada">
+                <label>Correo Electrónico *</label>
+                <input type="email" id="email" required placeholder="correo@ejemplo.com">
             </div>
 
-            <!-- Paso 2: Foto (Oculto inicialmente) -->
-            <div class="form-step hidden" id="paso-2">
+            <!-- Paso 2 -->
+            <div class="form-step hidden" id="paso-1">
                 <label>Foto de Perfil (JPG/PNG) *</label>
-                <input type="file" id="foto-perfil" accept="image/*" required>
+                <input type="file" id="foto" accept="image/*">
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="form-step hidden" id="paso-2">
+                <label>Certificado de Discapacidad (PDF) *</label>
+                <input type="file" id="pdf" accept=".pdf">
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="form-step hidden" id="paso-3">
+                <h3>Agendar Entrevista</h3>
+                <p>Elige una fecha disponible para conversar con el equipo de RECA.</p>
+                <div id="calendario-placeholder" style="border: 1px dashed #ccc; padding: 20px;">
+                    [Aquí puedes insertar el Widget de Calendly]
+                </div>
+            </div>
+
+            <div class="botones-navegacion">
+                <button type="button" id="btn-siguiente">Siguiente</button>
+            </div>
+        </form>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>                <input type="file" id="foto-perfil" accept="image/*" required>
             </div>
 
             <!-- Paso 3: Certificado (Oculto inicialmente) -->
