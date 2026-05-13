@@ -1,84 +1,81 @@
-/* Paleta de colores RECA */
 :root {
-    --blue-reca: #0056b3;
-    --gray-light: #f4f7f9;
-    --white: #ffffff;
+    --purple-reca: #5D2A5E; /* Color extraído de tu captura */
+    --gray-bg: #f8f9fa;
+    --text-color: #333;
 }
 
-body {
-    background-color: var(--gray-light);
-    margin: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+#candidatos-reca {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    font-family: Arial, sans-serif;
 }
 
-.main-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-}
-
-.reca-logo {
-    max-width: 80px;
-    margin-bottom: 10px;
-}
-
-.card-container {
-    background: var(--white);
-    width: 100%;
-    max-width: 450px;
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* Diseño del Stepper */
+/* Stepper con el morado de RECA */
 .stepper {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .step {
-    text-align: center;
-    color: #ccc;
     font-size: 11px;
+    color: #ccc;
+    text-align: center;
+    flex: 1;
+}
+
+.step.active {
+    color: var(--purple-reca);
+    font-weight: bold;
 }
 
 .step span {
-    width: 25px;
-    height: 25px;
     display: block;
+    width: 20px;
+    height: 20px;
     margin: 0 auto 5px;
     border: 2px solid #ccc;
     border-radius: 50%;
-    line-height: 22px;
 }
 
-.step.active { color: var(--blue-reca); }
-.step.active span { border-color: var(--blue-reca); background: var(--blue-reca); color: white; }
+.step.active span {
+    background: var(--purple-reca);
+    border-color: var(--purple-reca);
+    color: white;
+}
 
-/* Inputs y Botones */
-.input-group { margin-bottom: 20px; }
-
-input[type="text"], input[type="email"] {
+/* Inputs con estilo de la captura */
+input {
     width: 100%;
     padding: 12px;
-    border: 1.5px solid #eee;
-    border-radius: 10px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     box-sizing: border-box;
 }
 
+/* Botón idéntico al de "ENVIAR SOLICITUD" */
 #btn-siguiente {
     width: 100%;
-    background-color: var(--blue-reca);
+    background-color: var(--purple-reca);
     color: white;
     border: none;
     padding: 15px;
-    border-radius: 10px;
-    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    transition: opacity 0.3s;
+}
+
+#btn-siguiente:hover {
+    opacity: 0.9;
 }
 
 .hidden { display: none; }
