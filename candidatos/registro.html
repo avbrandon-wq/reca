@@ -4,17 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECA - Registro de Candidatos</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Ajusta la ruta a tu CSS principal -->
+    <!-- Enlazamos el CSS principal y el específico de candidatos -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="candidatos.css">
 </head>
 <body>
-    <main class="container">
+    <main class="container" id="candidatos-reca">
         <h1>Gestión de Candidatos RECA</h1>
         <p>Por favor, completa los 4 pasos para tu postulación.</p>
         
-        <!-- Aquí irá el formulario que diseñamos anteriormente -->
-        <div id="formulario-candidatos">
-            <!-- Paso 1 a 4 -->
+        <!-- Indicador de pasos (Stepper) -->
+        <div class="stepper">
+            <div class="step active">1. Perfil</div>
+            <div class="step">2. Foto</div>
+            <div class="step">3. Certificado</div>
+            <div class="step">4. Cita</div>
         </div>
+
+        <form id="form-registro">
+            <!-- Paso 1: Perfil -->
+            <div class="form-step" id="paso-1">
+                <label for="nombre-completo">Nombre Completo *</label>
+                <input type="text" id="nombre-completo" required placeholder="Ej: Jorge Vargas Posada">
+                
+                <label for="email-candidato">Correo Electrónico *</label>
+                <input type="email" id="email-candidato" required placeholder="correo@ejemplo.com">
+            </div>
+
+            <!-- Paso 2: Foto (Oculto inicialmente) -->
+            <div class="form-step hidden" id="paso-2">
+                <label>Foto de Perfil (JPG/PNG) *</label>
+                <input type="file" id="foto-perfil" accept="image/*" required>
+            </div>
+
+            <!-- Paso 3: Certificado (Oculto inicialmente) -->
+            <div class="form-step hidden" id="paso-3">
+                <label>Certificado de Discapacidad (PDF) *</label>
+                <input type="file" id="certificado-pdf" accept=".pdf" required>
+            </div>
+
+            <!-- Paso 4: Cita (Oculto inicialmente) -->
+            <div class="form-step hidden" id="paso-4">
+                <h3>Agendar Entrevista</h3>
+                <p>Selecciona un espacio disponible en nuestro calendario.</p>
+                <!-- Aquí puedes insertar el código de Calendly más adelante -->
+            </div>
+
+            <div class="botones-navegacion">
+                <button type="button" id="btn-siguiente">Siguiente</button>
+            </div>
+        </form>
     </main>
+
+    <!-- Cargamos la lógica al final para mejorar el rendimiento -->
+    <script src="main.js"></script>
 </body>
 </html>
