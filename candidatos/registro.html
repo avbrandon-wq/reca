@@ -7,71 +7,44 @@
     <link rel="stylesheet" href="candidatos.css">
 </head>
 <body>
-    <main id="candidatos-reca">
-        <div class="stepper">
-            <div class="step active"><span></span>1. Perfil</div>
-            <div class="step"><span></span>2. Foto</div>
-            <div class="step"><span></span>3. Certificado</div>
-            <div class="step"><span></span>4. Cita</div>
+    <div class="main-container">
+        <!-- Logo de RECA centrado -->
+        <div class="header-reca">
+            <img src="../icon_todas.png" alt="Logo RECA" class="logo">
         </div>
 
-        <form id="form-reca">
-            <div class="form-step" id="p1">
-                <label>NOMBRE COMPLETO *</label>
-                <input type="text" id="nombre" required placeholder="Ej: Jorge Vargas Posada">
-                <br><br>
-                <label>CORREO ELECTRÓNICO *</label>
-                <input type="email" id="email" required placeholder="correo@ejemplo.com">
+        <main id="candidatos-reca">
+            <div class="stepper">
+                <div class="step active">1. Perfil</div>
+                <div class="step">2. Foto</div>
+                <div class="step">3. Certificado</div>
+                <div class="step">4. Cita</div>
             </div>
 
-            <div class="form-step hidden" id="p2">
-                <label>FOTO DE PERFIL *</label>
-                <input type="file" id="foto" accept="image/*">
-            </div>
+            <form id="form-reca">
+                <div class="form-step" id="p1">
+                    <label>NOMBRE COMPLETO *</label>
+                    <input type="text" id="nombre" required placeholder="Ej: Jorge Vargas Posada">
+                    <br><br>
+                    <label>CORREO ELECTRÓNICO *</label>
+                    <input type="email" id="email" required placeholder="correo@ejemplo.com">
+                </div>
 
-            <div class="form-step hidden" id="p3">
-                <label>CERTIFICADO DE DISCAPACIDAD (PDF) *</label>
-                <input type="file" id="pdf" accept=".pdf">
-            </div>
-
-            <div class="form-step hidden" id="p4">
-                <p>Postulación completada. Por favor, selecciona tu fecha de entrevista.</p>
-                <!-- Calendly Widget aquí -->
-            </div>
-
-            <button type="button" id="btn-siguiente">SIGUIENTE PASO</button>
-        </form>
-    </main>
-    <script src="main.js"></script>
-</body>
-</html>                </div>
-
-                <!-- Paso 2 -->
-                <div class="form-step hidden" id="paso-1">
-                    <label class="file-label">Subir Foto de Perfil (JPG/PNG) *</label>
+                <div class="form-step hidden" id="p2">
+                    <label>FOTO DE PERFIL *</label>
                     <input type="file" id="foto" accept="image/*">
                 </div>
 
-                <!-- Paso 3 -->
-                <div class="form-step hidden" id="paso-2">
-                    <label class="file-label">Certificado de Discapacidad (PDF) *</label>
+                <div class="form-step hidden" id="p3">
+                    <label>CERTIFICADO DE DISCAPACIDAD (PDF) *</label>
                     <input type="file" id="pdf" accept=".pdf">
                 </div>
 
-                <!-- Paso 4 -->
-                <div class="form-step hidden" id="paso-3">
-                    <div class="success-message">
-                        <h3>¡Casi listo!</h3>
-                        <p>Agenda tu entrevista a continuación:</p>
-                        <div id="calendario-placeholder" class="calendar-box">
-                            <!-- Aquí va el widget de Calendly -->
-                        </div>
-                    </div>
+                <div class="form-step hidden" id="p4">
+                    <p>Postulación completada. Selecciona tu fecha de entrevista.</p>
                 </div>
 
-                <div class="botones-navegacion">
-                    <button type="button" id="btn-siguiente">Continuar</button>
-                </div>
+                <button type="button" id="btn-siguiente">SIGUIENTE PASO</button>
             </form>
         </main>
     </div>
