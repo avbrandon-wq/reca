@@ -4,80 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECA - Registro de Candidatos</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Estilo global -->
-    <link rel="stylesheet" href="candidatos.css"> <!-- Estilo específico -->
+    <!-- Enlazamos el estilo global y el específico -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="candidatos.css">
 </head>
 <body>
-    <main class="container" id="candidatos-reca">
-        <h1>Gestión de Candidatos RECA</h1>
-        
-        <div class="stepper">
-            <div class="step active" id="s1">1. Perfil</div>
-            <div class="step" id="s2">2. Foto</div>
-            <div class="step" id="s3">3. Certificado</div>
-            <div class="step" id="s4">4. Cita</div>
-        </div>
+    <div class="main-wrapper">
+        <header class="reca-header">
+            <img src="../icon_todas.png" alt="Logo RECA" class="reca-logo">
+            <h1>Gestión de Candidatos</h1>
+        </header>
 
-        <form id="form-registro">
-            <!-- Paso 1 -->
-            <div class="form-step" id="paso-0">
-                <label>Nombre Completo *</label>
-                <input type="text" id="nombre" required placeholder="Ej: Jorge Vargas Posada">
-                <label>Correo Electrónico *</label>
-                <input type="email" id="email" required placeholder="correo@ejemplo.com">
+        <main class="card-container" id="candidatos-reca">
+            <div class="stepper">
+                <div class="step active" id="s1"><span>1</span><p>Perfil</p></div>
+                <div class="step" id="s2"><span>2</span><p>Foto</p></div>
+                <div class="step" id="s3"><span>3</span><p>Certificado</p></div>
+                <div class="step" id="s4"><span>4</span><p>Cita</p></div>
             </div>
 
-            <!-- Paso 2 -->
-            <div class="form-step hidden" id="paso-1">
-                <label>Foto de Perfil (JPG/PNG) *</label>
-                <input type="file" id="foto" accept="image/*">
-            </div>
-
-            <!-- Paso 3 -->
-            <div class="form-step hidden" id="paso-2">
-                <label>Certificado de Discapacidad (PDF) *</label>
-                <input type="file" id="pdf" accept=".pdf">
-            </div>
-
-            <!-- Paso 4 -->
-            <div class="form-step hidden" id="paso-3">
-                <h3>Agendar Entrevista</h3>
-                <p>Elige una fecha disponible para conversar con el equipo de RECA.</p>
-                <div id="calendario-placeholder" style="border: 1px dashed #ccc; padding: 20px;">
-                    [Aquí puedes insertar el Widget de Calendly]
+            <form id="form-registro">
+                <!-- Paso 1 -->
+                <div class="form-step" id="paso-0">
+                    <div class="input-group">
+                        <label>Nombre Completo *</label>
+                        <input type="text" id="nombre" required placeholder="Ej: Jorge Vargas Posada">
+                    </div>
+                    <div class="input-group">
+                        <label>Correo Electrónico *</label>
+                        <input type="email" id="email" required placeholder="correo@ejemplo.com">
+                    </div>
                 </div>
-            </div>
 
-            <div class="botones-navegacion">
-                <button type="button" id="btn-siguiente">Siguiente</button>
-            </div>
-        </form>
-    </main>
-    <script src="main.js"></script>
-</body>
-</html>                <input type="file" id="foto-perfil" accept="image/*" required>
-            </div>
+                <!-- Paso 2 -->
+                <div class="form-step hidden" id="paso-1">
+                    <label class="file-label">Subir Foto de Perfil (JPG/PNG) *</label>
+                    <input type="file" id="foto" accept="image/*">
+                </div>
 
-            <!-- Paso 3: Certificado (Oculto inicialmente) -->
-            <div class="form-step hidden" id="paso-3">
-                <label>Certificado de Discapacidad (PDF) *</label>
-                <input type="file" id="certificado-pdf" accept=".pdf" required>
-            </div>
+                <!-- Paso 3 -->
+                <div class="form-step hidden" id="paso-2">
+                    <label class="file-label">Certificado de Discapacidad (PDF) *</label>
+                    <input type="file" id="pdf" accept=".pdf">
+                </div>
 
-            <!-- Paso 4: Cita (Oculto inicialmente) -->
-            <div class="form-step hidden" id="paso-4">
-                <h3>Agendar Entrevista</h3>
-                <p>Selecciona un espacio disponible en nuestro calendario.</p>
-                <!-- Aquí puedes insertar el código de Calendly más adelante -->
-            </div>
+                <!-- Paso 4 -->
+                <div class="form-step hidden" id="paso-3">
+                    <div class="success-message">
+                        <h3>¡Casi listo!</h3>
+                        <p>Agenda tu entrevista a continuación:</p>
+                        <div id="calendario-placeholder" class="calendar-box">
+                            <!-- Aquí va el widget de Calendly -->
+                        </div>
+                    </div>
+                </div>
 
-            <div class="botones-navegacion">
-                <button type="button" id="btn-siguiente">Siguiente</button>
-            </div>
-        </form>
-    </main>
-
-    <!-- Cargamos la lógica al final para mejorar el rendimiento -->
+                <div class="botones-navegacion">
+                    <button type="button" id="btn-siguiente">Continuar</button>
+                </div>
+            </form>
+        </main>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
