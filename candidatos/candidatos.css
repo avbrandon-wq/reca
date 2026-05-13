@@ -1,0 +1,72 @@
+/* Estilos específicos para la sección de candidatos */
+#candidatos-reca {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+}
+
+/* Diseño del indicador de pasos (Stepper) */
+.stepper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.step {
+    font-size: 12px;
+    color: #bbb;
+    text-align: center;
+    flex: 1;
+}
+
+.step.active { 
+    color: #007bff; 
+    font-weight: bold; 
+}
+
+.step.completed { 
+    color: #28a745; 
+}
+
+/* Organización del formulario */
+.form-step { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+/* Ocultar pasos inactivos */
+.hidden { 
+    display: none; 
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Botón principal */
+#btn-siguiente {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#btn-siguiente:hover {
+    background: #0056b3;
+}
