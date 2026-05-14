@@ -1,59 +1,82 @@
 :root {
-    --violeta-reca: #5D2A5E; /* El color exacto de tu marca */
-    --gris-fondo: #f4f7f9;
+    --violeta-reca: #5D2A5E;
+    --gris-fondo: #f0f2f5;
 }
 
-body {
-    background-color: var(--gris-fondo);
-    font-family: Arial, sans-serif;
-    margin: 0;
+body { background: var(--gris-fondo); font-family: 'Segoe UI', sans-serif; margin: 0; }
+
+.main-layout {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding-top: 30px;
+    max-width: 1100px;
+    margin: 20px auto;
+    gap: 20px;
 }
 
-/* Contenedor del Logo */
-.header-reca {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.logo {
-    max-width: 180px; /* Tamaño profesional para el logo */
-    height: auto;
-}
-
-/* Tarjeta del Formulario */
-#candidatos-reca {
-    width: 100%;
-    max-width: 450px;
+/* Formulario */
+.form-container {
+    flex: 1;
     background: white;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Pasos en Violeta */
-.step.active {
-    color: var(--violeta-reca) !important;
-    font-weight: bold;
-    border-bottom: 2px solid var(--violeta-reca);
-}
+.logo { max-width: 120px; display: block; margin: 0 auto 20px; }
 
-/* Botón Violeta RECA */
-#btn-siguiente {
+input {
     width: 100%;
-    background-color: var(--violeta-reca) !important;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+#btn-siguiente, .btn-print {
+    background: var(--violeta-reca);
     color: white;
     border: none;
     padding: 15px;
+    width: 100%;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 20px;
+}
+
+/* Vista Previa de la Hoja de Vida */
+.preview-container {
+    flex: 1;
+    background: #555;
+    padding: 40px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.cv-paper {
+    background: white;
+    width: 210mm; /* Tamaño A4 proporcional */
+    min-height: 297mm;
+    padding: 40px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cv-id { color: var(--violeta-reca); font-weight: bold; margin-bottom: 20px; }
+
+.cv-foto-placeholder {
+    width: 100px;
+    height: 120px;
+    background: #eee;
+    border: 1px solid #ccc;
+    float: right;
+}
+
+/* Ocultar formulario al imprimir */
+@media print {
+    .form-container, .stepper, #btn-siguiente { display: none !important; }
+    .preview-container { background: white; padding: 0; }
+    body { background: white; }
 }
 
 .hidden { display: none; }
