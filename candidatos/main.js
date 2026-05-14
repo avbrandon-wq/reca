@@ -1,45 +1,48 @@
-// Esperamos a que el documento esté listo
 document.addEventListener('DOMContentLoaded', () => {
-    const btnSiguiente = document.getElementById('btn-siguiente');
+    // Generar ID único RECA
+    const randomId = Math.floor(1000 + Math.random() * 9000);
+    document.getElementById('cv-id-num').textContent = `RECA-2026-${randomId}`;
+
+    const btn = document.getElementById('btn-siguiente');
     const pasos = document.querySelectorAll('.form-step');
-    const indicadores = document.querySelectorAll('.step');
-    let pasoActual = 0;
+    let actual = 0;
 
-    btnSiguiente.addEventListener('click', () => {
-        // 1. Validar si el paso actual tiene los campos obligatorios llenos
-        const inputs = pasos[pasoActual].querySelectorAll('input[required]');
-        let todoValido = true;
+    // Sincronizar datos en tiempo real
+    const inputs = ['nombre', 'cedula', 'cel', 'responsable', 'tipo-dis'];
+    inputs.forEach(id => {
+        const inputEl = document.getElementById(`in-${id}`);
+        if(inputEl) {
+            inputEl.addEventListener('input', (e) => {
+                const targetId = id === 'tipo-dis' ? 'cv-dis' : `cv-${id}`;
+                document.getElementById(targetId).textContent = e.target.value.toUpperCase();
+            });
+        }
+    });
 
-        inputs.forEach(input => {
-            if (!input.value) {
-                todoValido = false;
-                input.style.borderColor = 'red'; // Feedback visual simple
-            } else {
-                input.style.borderColor = '#ddd';
-            }
-        });
+    // Carga de Foto optimizada
+    document.getElementById('in-foto').addEventListener('change', function(e) {
+        const reader = new FileReader();
+        reader.onload = () => {
+            const img = document.getElementById('cv-foto-prev');
+            img.src = reader.result;
+            img.style.display = 'block';
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    });
 
-        if (todoValido) {
-            // 2. Ocultar paso actual
-            pasos[pasoActual].classList.add('hidden');
-            indicadores[pasoActual].classList.remove('active');
-            indicadores[pasoActual].classList.add('completed');
+    // Navegación entre capítulos
+    btn.addEventListener('click', () => {
+        const requiredFields = pasos[actual].querySelectorAll('[required]');
+        let valid = true;
+        requiredFields.forEach(f => { if(!f.value) valid = false; });
 
-            // 3. Avanzar al siguiente
-            pasoActual++;
-
-            if (pasoActual < pasos.length) {
-                pasos[pasoActual].classList.remove('hidden');
-                indicadores[pasoActual].classList.add('active');
-            }
-
-            // 4. Si llegamos al último paso, cambiamos el texto del botón
-            if (pasoActual === pasos.length - 1) {
-                btnSiguiente.textContent = "Finalizar y Agendar";
-                btnSiguiente.style.backgroundColor = "#28a745"; // Verde éxito
-            }
+        if(valid) {
+            pasos[actual].classList.add('hidden');
+            actual++;
+            if(pasos[actual]) pasos[actual].classList.remove('hidden');
+            if(actual === pasos.length - 1) btn.style.display = 'none';
         } else {
-            alert("Por favor, completa los campos obligatorios.");
+            alert("Por favor, llena los campos obligatorios para continuar.");
         }
     });
 });
