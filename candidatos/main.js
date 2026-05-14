@@ -1,33 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const btnSiguiente = document.getElementById('btn-siguiente');
+    // Generar Código de Identificación Único
+    const randomID = Math.floor(1000 + Math.random() * 9000);
+    document.getElementById('cv-id-num').textContent = `RECA-2026-${randomID}`;
+
+    const btn = document.getElementById('btn-siguiente');
     const pasos = document.querySelectorAll('.form-step');
-    const indicadores = document.querySelectorAll('.step');
-    let pasoActual = 0;
+    let actual = 0;
 
-    btnSiguiente.addEventListener('click', () => {
-        const inputsObligatorios = pasos[pasoActual].querySelectorAll('input[required]');
-        let esValido = true;
-
-        inputsObligatorios.forEach(input => {
-            if (!input.value) esValido = false;
+    // Actualización en tiempo real
+    const inputs = ['nombre', 'email', 'tel'];
+    inputs.forEach(id => {
+        document.getElementById(`in-${id}`).addEventListener('input', (e) => {
+            document.getElementById(`cv-${id}`).textContent = e.target.value.toUpperCase();
         });
+    });
 
-        if (esValido && pasoActual < pasos.length - 1) {
-            // Ocultar actual y marcar como completado
-            pasos[pasoActual].classList.add('hidden');
-            indicadores[pasoActual].classList.remove('active');
-            
-            pasoActual++;
+    // Manejo de la Foto
+    document.getElementById('in-foto').addEventListener('change', function(e) {
+        const reader = new FileReader();
+        reader.onload = function(){
+            document.getElementById('cv-foto-prev').src = reader.result;
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    });
 
-            // Mostrar siguiente y activar indicador
-            pasos[pasoActual].classList.remove('hidden');
-            indicadores[pasoActual].classList.add('active');
+    // Navegación
+    btn.addEventListener('click', () => {
+        const inputsRequired = pasos[actual].querySelectorAll('input[required]');
+        let valido = true;
+        inputsRequired.forEach(i => { if(!i.value) valido = false; });
 
-            if (pasoActual === pasos.length - 1) {
-                btnSiguiente.textContent = "Finalizar Postulación";
-            }
-        } else if (!esValido) {
-            alert("Por favor, completa los campos requeridos antes de continuar.");
+        if(valido && actual < pasos.length - 1) {
+            pasos[actual].classList.add('hidden');
+            actual++;
+            pasos[actual].classList.remove('hidden');
+            if(actual === pasos.length - 1) btn.style.display = 'none';
+        } else if(!valido) {
+            alert("Por favor, llena los campos obligatorios.");
         }
     });
 });
