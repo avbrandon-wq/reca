@@ -20,19 +20,8 @@ body { background: var(--gris-fondo); font-family: 'Segoe UI', sans-serif; margi
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* Espaciado del Logo */
-.header-reca {
-    margin-bottom: 35px;
-    text-align: center;
-}
-
-.main-logo { 
-    max-width: 150px; 
-    margin-bottom: 15px; 
-    transition: transform 0.2s;
-}
-
-.main-logo:hover { transform: scale(1.05); }
+.header-reca { margin-bottom: 35px; text-align: center; }
+.main-logo { max-width: 150px; margin-bottom: 15px; }
 
 /* Espaciado de campos */
 .form-step { display: flex; flex-direction: column; gap: 20px; }
@@ -64,22 +53,19 @@ body { background: var(--gris-fondo); font-family: 'Segoe UI', sans-serif; margi
     box-sizing: border-box;
 }
 
-.btn-inicio {
-    background: #fff;
-    color: var(--violeta-reca);
-    border: 2px solid var(--violeta-reca);
+.btn-inicio { background: #fff; color: var(--violeta-reca); border: 2px solid var(--violeta-reca); }
+
+/* Hoja de Vida (Fundamental background blanco para PDF) */
+.cv-document { 
+    background: #ffffff; 
+    padding: 50px; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
+    min-height: 800px; 
+    color: #333;
 }
 
-.btn-inicio:hover {
-    background: var(--violeta-reca);
-    color: #fff;
-}
-
-/* Hoja de Vida */
-.cv-document { background: white; padding: 50px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); min-height: 800px; }
 .cv-photo-frame { width: 110px; height: 130px; border: 2px solid var(--violeta-reca); background: #f0f0f0; overflow: hidden; }
 .cv-foto-img { width: 100%; height: 100%; object-fit: cover; }
-
 .cv-section { background: var(--violeta-reca); color: white; padding: 5px 10px; margin: 20px 0 10px; font-size: 14px; }
 
 .hidden { display: none; }
