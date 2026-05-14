@@ -1,44 +1,96 @@
-/* Estilos para dar aire y orden al formulario */
+:root {
+    --violeta-reca: #5D2A5E;
+    --gris-fondo: #f4f7f9;
+}
+
+body { background: var(--gris-fondo); font-family: 'Segoe UI', sans-serif; margin: 0; }
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.form-side {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.main-logo { max-width: 130px; margin-bottom: 20px; }
+
+/* ESPACIADO DE CAMPOS (Solución al amontonamiento) */
 .form-step {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Espacio generoso entre cada campo */
-    margin-top: 30px;
+    gap: 20px;
 }
 
 .input-field {
     display: flex;
-    flex-direction: column; /* Etiqueta arriba, input abajo */
-    align-items: flex-start;
+    flex-direction: column; /* Etiqueta arriba, cuadro abajo */
+    gap: 8px;
 }
 
 .input-field label {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     color: var(--violeta-reca);
-    margin-bottom: 8px; /* Espacio entre el texto y el cuadro */
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.input-field input, 
-.input-field select {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    padding: 12px 15px;
-    border: 1px solid #ccc;
+.input-field input, .input-field select {
+    padding: 12px;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box; /* Asegura que el padding no desborde el ancho */
-    transition: border-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.input-field input:focus {
-    border-color: var(--violeta-reca);
-    outline: none;
-    box-shadow: 0 0 5px rgba(93, 42, 94, 0.2);
+/* DISEÑO DE LA HOJA DE VIDA */
+.cv-document {
+    background: white;
+    padding: 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    min-height: 800px;
 }
 
-/* Espaciado especial para el botón */
-.navigation-btns {
-    margin-top: 40px;
+.cv-photo-frame {
+    width: 110px;
+    height: 130px;
+    border: 2px solid var(--violeta-reca);
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
+.cv-foto-img { width: 100%; height: 100%; object-fit: cover; }
+
+.cv-section {
+    background: var(--violeta-reca);
+    color: white;
+    padding: 5px 10px;
+    margin: 20px 0 10px;
+    font-size: 14px;
+}
+
+#btn-siguiente, .btn-print {
+    background: var(--violeta-reca);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.hidden { display: none; }
+
+@media print {
+    .form-side, .navigation-btns { display: none !important; }
+    .main-layout { display: block; }
 }
