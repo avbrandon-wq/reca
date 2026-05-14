@@ -1,76 +1,44 @@
-:root {
-    --violeta: #5D2A5E;
-    --fondo: #f4f4f9;
-}
-
-body { background: var(--fondo); font-family: 'Segoe UI', sans-serif; margin: 0; }
-
-.main-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 30px auto;
-}
-
-.form-side { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-
-.main-logo { max-width: 130px; margin-bottom: 20px; }
-
-/* Control Estricto de la Foto */
-.cv-photo-frame {
-    width: 110px;
-    height: 130px;
-    border: 2px solid var(--violeta);
-    background: #eee;
-    overflow: hidden; /* Evita que la foto se salga */
+/* Estilos para dar aire y orden al formulario */
+.form-step {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 25px; /* Espacio generoso entre cada campo */
+    margin-top: 30px;
 }
 
-.cv-foto-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta la imagen al cuadro sin estirarla */
-    display: none; /* Se activa al subir la foto */
+.input-field {
+    display: flex;
+    flex-direction: column; /* Etiqueta arriba, input abajo */
+    align-items: flex-start;
 }
 
-/* Estilos de la Hoja de Vida */
-.cv-document {
-    background: white;
-    width: 100%;
-    min-height: 800px;
-    padding: 50px;
-    box-sizing: border-box;
-}
-
-.cv-header { display: flex; justify-content: space-between; align-items: flex-start; }
-
-.cv-section {
-    background: var(--violeta);
-    color: white;
-    padding: 5px 10px;
-    margin: 20px 0 10px;
-    font-size: 14px;
-    text-transform: uppercase;
-}
-
-#btn-siguiente, .btn-print {
-    background: var(--violeta);
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    cursor: pointer;
+.input-field label {
+    font-size: 13px;
     font-weight: bold;
+    color: var(--violeta-reca);
+    margin-bottom: 8px; /* Espacio entre el texto y el cuadro */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.hidden { display: none; }
+.input-field input, 
+.input-field select {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* Asegura que el padding no desborde el ancho */
+    transition: border-color 0.3s;
+}
 
-@media print {
-    .form-side, .navigation-btns { display: none !important; }
-    .main-layout { display: block; }
-    .cv-document { box-shadow: none; padding: 0; }
+.input-field input:focus {
+    border-color: var(--violeta-reca);
+    outline: none;
+    box-shadow: 0 0 5px rgba(93, 42, 94, 0.2);
+}
+
+/* Espaciado especial para el botón */
+.navigation-btns {
+    margin-top: 40px;
 }
