@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Generar ID único
+    // Generar ID único RECA
     const randomId = Math.floor(1000 + Math.random() * 9000);
     document.getElementById('cv-id-num').textContent = `RECA-2026-${randomId}`;
 
-    // Sincronización de campos
     const sync = (inId, outId) => {
         const input = document.getElementById(inId);
         if (input) {
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sync('in-responsable', 'cv-responsable-out');
     sync('in-tipo-dis', 'cv-dis-out');
 
-    // Foto
     document.getElementById('in-foto').addEventListener('change', function(e) {
         const reader = new FileReader();
         reader.onload = () => {
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         reader.readAsDataURL(e.target.files[0]);
     });
 
-    // Navegación
     const btn = document.getElementById('btn-siguiente');
     const pasos = document.querySelectorAll('.form-step');
     let actual = 0;
