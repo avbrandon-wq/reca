@@ -1,82 +1,100 @@
 :root {
     --violeta-reca: #5D2A5E;
-    --gris-fondo: #f0f2f5;
+    --gris-fondo: #f8f9fa;
+    --blanco: #ffffff;
 }
 
-body { background: var(--gris-fondo); font-family: 'Segoe UI', sans-serif; margin: 0; }
+body {
+    background: var(--gris-fondo);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    color: #333;
+}
 
 .main-layout {
-    display: flex;
-    max-width: 1100px;
-    margin: 20px auto;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
 }
 
-/* Formulario */
-.form-container {
-    flex: 1;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+/* Columna del Formulario */
+.form-side {
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.logo { max-width: 120px; display: block; margin: 0 auto 20px; }
+.main-logo { max-width: 150px; margin: 0 auto 30px; display: block; }
+
+.input-field { margin-bottom: 25px; }
+
+label { font-size: 12px; font-weight: bold; color: var(--violeta-reca); letter-spacing: 1px; }
 
 input {
     width: 100%;
     padding: 12px;
-    margin: 10px 0 20px;
+    margin-top: 8px;
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 #btn-siguiente, .btn-print {
     background: var(--violeta-reca);
     color: white;
     border: none;
-    padding: 15px;
+    padding: 18px;
     width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
+    border-radius: 10px;
     font-weight: bold;
+    cursor: pointer;
     text-transform: uppercase;
+    transition: 0.3s;
 }
 
-/* Vista Previa de la Hoja de Vida */
-.preview-container {
-    flex: 1;
-    background: #555;
-    padding: 40px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-}
+/* Columna de Vista Previa */
+.preview-side { display: flex; justify-content: center; }
 
-.cv-paper {
-    background: white;
-    width: 210mm; /* Tamaño A4 proporcional */
-    min-height: 297mm;
-    padding: 40px;
-    box-sizing: border-box;
+.cv-document {
+    background: var(--blanco);
+    width: 100%;
+    max-width: 500px;
+    min-height: 600px;
+    padding: 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     position: relative;
 }
 
-.cv-id { color: var(--violeta-reca); font-weight: bold; margin-bottom: 20px; }
+.cv-id { color: var(--violeta-reca); font-size: 14px; font-weight: bold; margin-bottom: 30px; }
 
-.cv-foto-placeholder {
-    width: 100px;
-    height: 120px;
-    background: #eee;
-    border: 1px solid #ccc;
+.cv-photo-container {
+    width: 110px;
+    height: 130px;
+    background: #f0f0f0;
     float: right;
+    border: 2px solid var(--violeta-reca);
 }
 
-/* Ocultar formulario al imprimir */
+.cv-foto-img { width: 100%; height: 100%; object-fit: cover; }
+
+.cv-divider { height: 2px; background: var(--violeta-reca); margin: 20px 0; opacity: 0.3; }
+
+/* Configuración de Impresión */
 @media print {
-    .form-container, .stepper, #btn-siguiente { display: none !important; }
-    .preview-container { background: white; padding: 0; }
-    body { background: white; }
+    .form-side, .stepper, .main-logo { display: none !important; }
+    .main-layout { display: block; margin: 0; padding: 0; }
+    .preview-side { width: 100%; }
+    .cv-document { 
+        box-shadow: none; 
+        width: 100%; 
+        max-width: none; 
+        margin: 0;
+        padding: 2cm;
+    }
 }
 
 .hidden { display: none; }
