@@ -1,43 +1,35 @@
 :root {
     --violeta-reca: #5D2A5E;
     --gris-fondo: #f8f9fa;
-    --blanco: #ffffff;
 }
 
-body {
-    background: var(--gris-fondo);
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    color: #333;
-}
+body { background: var(--gris-fondo); font-family: 'Segoe UI', sans-serif; margin: 0; }
 
 .main-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 20px;
+    gap: 50px;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* Columna del Formulario */
 .form-side {
-    background: var(--blanco);
+    background: white;
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.main-logo { max-width: 150px; margin: 0 auto 30px; display: block; }
+.main-logo { max-width: 140px; margin-bottom: 20px; }
 
-.input-field { margin-bottom: 25px; }
+.input-field { margin-bottom: 20px; }
 
-label { font-size: 12px; font-weight: bold; color: var(--violeta-reca); letter-spacing: 1px; }
+label { display: block; font-size: 11px; font-weight: bold; color: var(--violeta-reca); margin-bottom: 5px; }
 
-input {
+input, select, textarea {
     width: 100%;
     padding: 12px;
-    margin-top: 8px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-sizing: border-box;
@@ -47,54 +39,33 @@ input {
     background: var(--violeta-reca);
     color: white;
     border: none;
-    padding: 18px;
+    padding: 16px;
     width: 100%;
-    border-radius: 10px;
-    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
-    text-transform: uppercase;
-    transition: 0.3s;
+    font-weight: bold;
 }
-
-/* Columna de Vista Previa */
-.preview-side { display: flex; justify-content: center; }
 
 .cv-document {
-    background: var(--blanco);
-    width: 100%;
-    max-width: 500px;
-    min-height: 600px;
+    background: white;
     padding: 50px;
+    width: 100%;
+    min-height: 700px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    position: relative;
 }
 
-.cv-id { color: var(--violeta-reca); font-size: 14px; font-weight: bold; margin-bottom: 30px; }
-
-.cv-photo-container {
-    width: 110px;
-    height: 130px;
-    background: #f0f0f0;
-    float: right;
-    border: 2px solid var(--violeta-reca);
+.cv-section-title {
+    background: var(--violeta-reca);
+    color: white;
+    padding: 5px 10px;
+    margin: 20px 0 10px;
+    font-size: 14px;
 }
 
-.cv-foto-img { width: 100%; height: 100%; object-fit: cover; }
-
-.cv-divider { height: 2px; background: var(--violeta-reca); margin: 20px 0; opacity: 0.3; }
-
-/* Configuración de Impresión */
 @media print {
-    .form-side, .stepper, .main-logo { display: none !important; }
-    .main-layout { display: block; margin: 0; padding: 0; }
-    .preview-side { width: 100%; }
-    .cv-document { 
-        box-shadow: none; 
-        width: 100%; 
-        max-width: none; 
-        margin: 0;
-        padding: 2cm;
-    }
+    .form-side, .navigation-btns { display: none !important; }
+    .main-layout { display: block; }
+    .cv-document { box-shadow: none; padding: 0; }
 }
 
 .hidden { display: none; }
