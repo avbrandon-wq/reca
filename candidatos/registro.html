@@ -3,51 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECA - Candidatos</title>
+    <title>RECA - Registro y HV</title>
     <link rel="stylesheet" href="candidatos.css">
 </head>
 <body>
-    <div class="main-container">
-        <!-- Logo de RECA centrado -->
-<div class="header-reca">
-    <!-- Se agrega la barra / después de los puntos -->
-    <img src="../logo_color.png" alt="Logo RECA" class="logo">
-</div>
-
-        <main id="candidatos-reca">
+    <div class="main-layout">
+        <!-- LADO IZQUIERDO: FORMULARIO -->
+        <section class="form-container">
+            <div class="header-reca">
+                <img src="../icon_todas.png" alt="Logo RECA" class="logo">
+            </div>
+            
             <div class="stepper">
-                <div class="step active">1. Perfil</div>
-                <div class="step">2. Foto</div>
-                <div class="step">3. Certificado</div>
-                <div class="step">4. Cita</div>
+                <div class="step active" id="s1">1. Perfil</div>
+                <div class="step" id="s2">2. Foto</div>
+                <div class="step" id="s3">3. Documentos</div>
             </div>
 
             <form id="form-reca">
                 <div class="form-step" id="p1">
                     <label>NOMBRE COMPLETO *</label>
-                    <input type="text" id="nombre" required placeholder="Ej: Jorge Vargas Posada">
-                    <br><br>
+                    <input type="text" id="in-nombre" required placeholder="Ej: Jorge Vargas Posada">
                     <label>CORREO ELECTRÓNICO *</label>
-                    <input type="email" id="email" required placeholder="correo@ejemplo.com">
+                    <input type="email" id="in-email" required placeholder="correo@ejemplo.com">
+                    <label>TELÉFONO *</label>
+                    <input type="text" id="in-tel" required placeholder="300 000 0000">
                 </div>
 
                 <div class="form-step hidden" id="p2">
-                    <label>FOTO DE PERFIL *</label>
-                    <input type="file" id="foto" accept="image/*">
+                    <label>SUBIR FOTO DE PERFIL *</label>
+                    <input type="file" id="in-foto" accept="image/*">
                 </div>
 
                 <div class="form-step hidden" id="p3">
-                    <label>CERTIFICADO DE DISCAPACIDAD (PDF) *</label>
-                    <input type="file" id="pdf" accept=".pdf">
-                </div>
-
-                <div class="form-step hidden" id="p4">
-                    <p>Postulación completada. Selecciona tu fecha de entrevista.</p>
+                    <label>CERTIFICADO (PDF) *</label>
+                    <input type="file" id="in-pdf" accept=".pdf">
+                    <button type="button" onclick="window.print()" class="btn-print">IMPRIMIR HOJA DE VIDA</button>
                 </div>
 
                 <button type="button" id="btn-siguiente">SIGUIENTE PASO</button>
             </form>
-        </main>
+        </section>
+
+        <!-- LADO DERECHO: VISTA PREVIA HV -->
+        <section class="preview-container" id="cv-print">
+            <div class="cv-paper">
+                <div class="cv-header">
+                    <div class="cv-id">ID: <span id="cv-id-num">RECA-2026-001</span></div>
+                    <img id="cv-foto-prev" src="" alt="Foto" class="cv-foto-placeholder">
+                </div>
+                <h2 id="cv-nombre">NOMBRE COMPLETO</h2>
+                <hr>
+                <p><strong>Email:</strong> <span id="cv-email">---</span></p>
+                <p><strong>Teléfono:</strong> <span id="cv-tel">---</span></p>
+                <div class="cv-footer">
+                    <p>Documento generado por el sistema de gestión RECA</p>
+                </div>
+            </div>
+        </section>
     </div>
     <script src="main.js"></script>
 </body>
