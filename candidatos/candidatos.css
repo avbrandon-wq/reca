@@ -1,71 +1,35 @@
-:root {
-    --violeta-reca: #5D2A5E;
-    --gris-fondo: #f8f9fa;
+/* Ajuste para la foto en la hoja de vida */
+.cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
-body { background: var(--gris-fondo); font-family: 'Segoe UI', sans-serif; margin: 0; }
-
-.main-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    max-width: 1300px;
-    margin: 40px auto;
-    padding: 0 20px;
+.cv-photo-container {
+    width: 110px;  /* Tamaño fijo */
+    height: 130px; /* Tamaño fijo */
+    border: 2px solid var(--violeta-reca);
+    background-color: #f0f0f0;
+    overflow: hidden; /* Corta cualquier parte de la foto que se salga */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.form-side {
-    background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.main-logo { max-width: 140px; margin-bottom: 20px; }
-
-.input-field { margin-bottom: 20px; }
-
-label { display: block; font-size: 11px; font-weight: bold; color: var(--violeta-reca); margin-bottom: 5px; }
-
-input, select, textarea {
+.cv-photo-img {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box;
+    height: 100%;
+    object-fit: cover; /* Ajusta la foto al cuadro sin deformarla */
 }
 
-#btn-siguiente, .btn-print {
-    background: var(--violeta-reca);
-    color: white;
-    border: none;
-    padding: 16px;
-    width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+/* Espaciado del formulario para que no se vea apretado */
+.form-step {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Más aire entre campos */
 }
 
-.cv-document {
-    background: white;
-    padding: 50px;
-    width: 100%;
-    min-height: 700px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+.input-field input, .input-field select {
+    margin-top: 5px;
 }
-
-.cv-section-title {
-    background: var(--violeta-reca);
-    color: white;
-    padding: 5px 10px;
-    margin: 20px 0 10px;
-    font-size: 14px;
-}
-
-@media print {
-    .form-side, .navigation-btns { display: none !important; }
-    .main-layout { display: block; }
-    .cv-document { box-shadow: none; padding: 0; }
-}
-
-.hidden { display: none; }
