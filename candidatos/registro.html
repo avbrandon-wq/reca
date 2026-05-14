@@ -11,7 +11,10 @@
         <!-- SECCIÓN DE FORMULARIO -->
         <section class="form-side">
             <header class="header-reca">
-                <img src="../logo_color.png" alt="Logo RECA" class="main-logo">
+                <!-- El logo ahora vuelve al inicio -->
+                <a href="../index.html">
+                    <img src="../logo_color.png" alt="Logo RECA" class="main-logo">
+                </a>
                 <h2>Tu información reciente es muy valiosa</h2>
                 <p>Inicia el proceso para encontrar el trabajo que se ajusta a tu perfil laboral.</p>
             </header>
@@ -73,7 +76,10 @@
                 <!-- Capítulo 4: Finalizar -->
                 <div class="form-step hidden" id="cap-4">
                     <h3>4. Imprimir Hoja de Vida</h3>
-                    <button type="button" onclick="window.print()" class="btn-print">GENERAR E IMPRIMIR HV</button>
+                    <div class="final-actions">
+                        <button type="button" onclick="window.print()" class="btn-print">GENERAR E IMPRIMIR HV</button>
+                        <a href="../index.html" class="btn-inicio">VOLVER A INICIO</a>
+                    </div>
                 </div>
 
                 <div class="navigation-btns">
