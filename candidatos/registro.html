@@ -4,48 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECA - Registro de Candidatos</title>
+    <!-- Librería para generar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link rel="stylesheet" href="candidatos.css">
 </head>
 <body>
     <div class="main-layout">
-        <!-- SECCIÓN DE FORMULARIO -->
         <section class="form-side">
             <header class="header-reca">
-                <!-- El logo ahora vuelve al inicio -->
-                <a href="../index.html">
-                    <img src="../logo_color.png" alt="Logo RECA" class="main-logo">
-                </a>
+                <a href="../index.html"><img src="../logo_color.png" alt="Logo RECA" class="main-logo"></a>
                 <h2>Tu información reciente es muy valiosa</h2>
                 <p>Inicia el proceso para encontrar el trabajo que se ajusta a tu perfil laboral.</p>
             </header>
 
             <form id="form-reca">
-                <!-- Capítulo 1: Perfil -->
+                <!-- Capítulos 1, 2 y 3 se mantienen igual -->
                 <div class="form-step" id="cap-1">
                     <h3>1. Perfil Personal</h3>
-                    <div class="input-field">
-                        <label>NOMBRE Y APELLIDO *</label>
-                        <input type="text" id="in-nombre" required placeholder="Ej: Jorge Vargas Posada">
-                    </div>
-                    <div class="input-field">
-                        <label>CÉDULA *</label>
-                        <input type="text" id="in-cedula" required>
-                    </div>
-                    <div class="input-field">
-                        <label>CELULAR *</label>
-                        <input type="text" id="in-cel" required>
-                    </div>
-                    <div class="input-field">
-                        <label>RESPONSABLE</label>
-                        <input type="text" id="in-responsable">
-                    </div>
-                    <div class="input-field">
-                        <label>FOTO DE PERFIL</label>
-                        <input type="file" id="in-foto" accept="image/*">
-                    </div>
+                    <div class="input-field"><label>NOMBRE Y APELLIDO *</label><input type="text" id="in-nombre" required></div>
+                    <div class="input-field"><label>CÉDULA *</label><input type="text" id="in-cedula" required></div>
+                    <div class="input-field"><label>CELULAR *</label><input type="text" id="in-cel" required></div>
+                    <div class="input-field"><label>RESPONSABLE</label><input type="text" id="in-responsable"></div>
+                    <div class="input-field"><label>FOTO DE PERFIL</label><input type="file" id="in-foto" accept="image/*"></div>
                 </div>
 
-                <!-- Capítulo 2: Discapacidad -->
                 <div class="form-step hidden" id="cap-2">
                     <h3>2. Tipo de Discapacidad</h3>
                     <div class="input-field">
@@ -58,26 +40,20 @@
                             <option value="Otra">Otra</option>
                         </select>
                     </div>
-                    <div class="input-field">
-                        <label>CERTIFICADO MÉDICO (PDF) *</label>
-                        <input type="file" id="in-cert" accept=".pdf" required>
-                    </div>
+                    <div class="input-field"><label>CERTIFICADO MÉDICO (PDF) *</label><input type="file" id="in-cert" accept=".pdf" required></div>
                 </div>
 
-                <!-- Capítulo 3: Perfil RECA -->
                 <div class="form-step hidden" id="cap-3">
                     <h3>3. Perfil del Candidato</h3>
-                    <div class="info-box">
-                        <p>Diligencia RECA posterior a la entrevista.</p>
-                        <textarea readonly placeholder="Observaciones de entrevista..."></textarea>
-                    </div>
+                    <div class="info-box"><p>Diligencia RECA posterior a la entrevista.</p><textarea readonly></textarea></div>
                 </div>
 
-                <!-- Capítulo 4: Finalizar -->
+                <!-- Capítulo 4: Finalizar con opción de Descarga -->
                 <div class="form-step hidden" id="cap-4">
-                    <h3>4. Imprimir Hoja de Vida</h3>
+                    <h3>4. Finalizar Proceso</h3>
                     <div class="final-actions">
-                        <button type="button" onclick="window.print()" class="btn-print">GENERAR E IMPRIMIR HV</button>
+                        <button type="button" id="btn-download" class="btn-print">DESCARGAR HOJA DE VIDA (PDF)</button>
+                        <button type="button" onclick="window.print()" class="btn-print" style="background:#777;">SOLO IMPRIMIR</button>
                         <a href="../index.html" class="btn-inicio">VOLVER A INICIO</a>
                     </div>
                 </div>
@@ -88,14 +64,12 @@
             </form>
         </section>
 
-        <!-- SECCIÓN DE VISTA PREVIA (HV) -->
+        <!-- VISTA PREVIA (Elemento que se convertirá a PDF) -->
         <section class="preview-side">
-            <div class="cv-document">
+            <div class="cv-document" id="cv-to-pdf">
                 <div class="cv-header">
                     <div class="cv-id">ID: <span id="cv-id-num">RECA-2026-XXXX</span></div>
-                    <div class="cv-photo-frame">
-                        <img id="cv-foto-prev" src="" alt="" class="cv-foto-img">
-                    </div>
+                    <div class="cv-photo-frame"><img id="cv-foto-prev" src="" alt="" class="cv-foto-img"></div>
                 </div>
                 <h1 id="cv-nombre">NOMBRE CANDIDATO</h1>
                 <p><strong>Cédula:</strong> <span id="cv-cedula-out">---</span></p>
