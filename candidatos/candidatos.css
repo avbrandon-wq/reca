@@ -1,35 +1,76 @@
-/* Ajuste para la foto en la hoja de vida */
-.cv-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
+:root {
+    --violeta: #5D2A5E;
+    --fondo: #f4f4f9;
 }
 
-.cv-photo-container {
-    width: 110px;  /* Tamaño fijo */
-    height: 130px; /* Tamaño fijo */
-    border: 2px solid var(--violeta-reca);
-    background-color: #f0f0f0;
-    overflow: hidden; /* Corta cualquier parte de la foto que se salga */
+body { background: var(--fondo); font-family: 'Segoe UI', sans-serif; margin: 0; }
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.form-side { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+
+.main-logo { max-width: 130px; margin-bottom: 20px; }
+
+/* Control Estricto de la Foto */
+.cv-photo-frame {
+    width: 110px;
+    height: 130px;
+    border: 2px solid var(--violeta);
+    background: #eee;
+    overflow: hidden; /* Evita que la foto se salga */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.cv-photo-img {
+.cv-foto-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la foto al cuadro sin deformarla */
+    object-fit: cover; /* Ajusta la imagen al cuadro sin estirarla */
+    display: none; /* Se activa al subir la foto */
 }
 
-/* Espaciado del formulario para que no se vea apretado */
-.form-step {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; /* Más aire entre campos */
+/* Estilos de la Hoja de Vida */
+.cv-document {
+    background: white;
+    width: 100%;
+    min-height: 800px;
+    padding: 50px;
+    box-sizing: border-box;
 }
 
-.input-field input, .input-field select {
-    margin-top: 5px;
+.cv-header { display: flex; justify-content: space-between; align-items: flex-start; }
+
+.cv-section {
+    background: var(--violeta);
+    color: white;
+    padding: 5px 10px;
+    margin: 20px 0 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#btn-siguiente, .btn-print {
+    background: var(--violeta);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden { display: none; }
+
+@media print {
+    .form-side, .navigation-btns { display: none !important; }
+    .main-layout { display: block; }
+    .cv-document { box-shadow: none; padding: 0; }
 }
