@@ -3,43 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECA - Registro de Candidatos</title>
+    <title>RECA - Gestión de Candidatos</title>
     <link rel="stylesheet" href="candidatos.css">
 </head>
 <body>
     <div class="main-layout">
-        <!-- ÁREA DE FORMULARIO -->
+        <!-- CAPÍTULOS DE REGISTRO -->
         <section class="form-side">
             <header class="header-reca">
                 <img src="../logo_color.png" alt="Logo RECA" class="main-logo">
                 <h2>Tu información reciente es muy valiosa</h2>
                 <p>Inicia el proceso para encontrar el trabajo que se ajusta a tu perfil laboral.</p>
             </header>
-            
-            <div class="stepper">
-                <div class="step active" id="s1">1. Perfil</div>
-                <div class="step" id="s2">2. Discapacidad</div>
-                <div class="step" id="s3">3. Evaluación</div>
-                <div class="step" id="s4">4. Finalizar</div>
-            </div>
 
             <form id="form-reca">
                 <!-- Capítulo 1: Perfil -->
-                <div class="form-step" id="p1">
+                <div class="form-step" id="cap-1">
+                    <h3>1. Perfil Personal</h3>
                     <div class="input-field"><label>NOMBRE Y APELLIDO *</label><input type="text" id="in-nombre" required></div>
                     <div class="input-field"><label>CÉDULA *</label><input type="text" id="in-cedula" required></div>
                     <div class="input-field"><label>CELULAR *</label><input type="text" id="in-cel" required></div>
                     <div class="input-field"><label>RESPONSABLE</label><input type="text" id="in-responsable"></div>
                     <div class="input-field">
                         <label>FOTO DE PERFIL</label>
-                        <input type="file" id="in-foto" accept="image/*" class="file-input">
+                        <input type="file" id="in-foto" accept="image/*">
                     </div>
                 </div>
 
                 <!-- Capítulo 2: Discapacidad -->
-                <div class="form-step hidden" id="p2">
+                <div class="form-step hidden" id="cap-2">
+                    <h3>2. Tipo de Discapacidad</h3>
                     <div class="input-field">
-                        <label>TIPO DE DISCAPACIDAD *</label>
+                        <label>CATEGORÍA *</label>
                         <select id="in-tipo-dis" required>
                             <option value="">Seleccione...</option>
                             <option value="Física">Física</option>
@@ -49,26 +44,24 @@
                         </select>
                     </div>
                     <div class="input-field">
-                        <label>ADJUNTAR CERTIFICADO (PDF) *</label>
+                        <label>CERTIFICADO MÉDICO (PDF) *</label>
                         <input type="file" id="in-cert" accept=".pdf" required>
                     </div>
                 </div>
 
-                <!-- Capítulo 3: Perfil del Candidato (Uso Interno RECA) -->
-                <div class="form-step hidden" id="p3">
+                <!-- Capítulo 3: Perfil Candidato (RECA) -->
+                <div class="form-step hidden" id="cap-3">
+                    <h3>3. Perfil del Candidato</h3>
                     <div class="info-box">
-                        <p><strong>Nota:</strong> Esta sección será diligenciada por el equipo de RECA posterior a la entrevista.</p>
-                        <textarea id="in-reca-obs" readonly placeholder="Espacio reservado para observaciones de la entrevista..."></textarea>
+                        <p>Diligencia RECA posterior a la entrevista.</p>
+                        <textarea readonly placeholder="Observaciones de entrevista..."></textarea>
                     </div>
                 </div>
 
-                <!-- Capítulo 4: Impresión -->
-                <div class="form-step hidden" id="p4">
-                    <div class="success-box">
-                        <h3>Proceso Completado</h3>
-                        <p>Ya puedes generar tu documento oficial.</p>
-                        <button type="button" onclick="window.print()" class="btn-print">IMPRIMIR HOJA DE VIDA</button>
-                    </div>
+                <!-- Capítulo 4: Finalizar -->
+                <div class="form-step hidden" id="cap-4">
+                    <h3>4. Imprimir Hoja de Vida</h3>
+                    <button type="button" onclick="window.print()" class="btn-print">IMPRIMIR DOCUMENTO</button>
                 </div>
 
                 <div class="navigation-btns">
@@ -77,26 +70,28 @@
             </form>
         </section>
 
-        <!-- ÁREA DE VISTA PREVIA (HV) -->
+        <!-- VISTA PREVIA HOJA DE VIDA (ESTÁTICA) -->
         <section class="preview-side">
-            <div class="cv-document">
+            <div class="cv-document" id="cv-final">
                 <div class="cv-header">
-                    <div class="cv-id">CÓDIGO: <span id="cv-id-num">RECA-2026-XXXX</span></div>
-                    <img id="cv-foto-prev" src="" alt="Foto" class="cv-photo-img">
+                    <div class="cv-id">ID: <span id="cv-id-num">RECA-2026-XXXX</span></div>
+                    <div class="cv-photo-frame">
+                        <img id="cv-foto-prev" src="" alt="" class="cv-foto-img">
+                    </div>
                 </div>
                 
                 <h1 id="cv-nombre">NOMBRE CANDIDATO</h1>
                 <p><strong>Cédula:</strong> <span id="cv-cedula">---</span></p>
                 
-                <div class="cv-section-title">DATOS DE CONTACTO</div>
+                <div class="cv-section">DATOS DE CONTACTO</div>
                 <p><strong>Celular:</strong> <span id="cv-cel">---</span></p>
                 <p><strong>Responsable:</strong> <span id="cv-responsable">---</span></p>
                 
-                <div class="cv-section-title">INFORMACIÓN MÉDICA</div>
-                <p><strong>Tipo de Discapacidad:</strong> <span id="cv-dis">---</span></p>
-
-                <div class="cv-section-title">PERFIL RECA</div>
-                <p id="cv-obs"><i>Diligenciado posterior a la entrevista.</i></p>
+                <div class="cv-section">INFORMACIÓN ADICIONAL</div>
+                <p><strong>Discapacidad:</strong> <span id="cv-dis">---</span></p>
+                
+                <div class="cv-section">EVALUACIÓN RECA</div>
+                <p class="placeholder-text">Pendiente de validación tras entrevista.</p>
             </div>
         </section>
     </div>
