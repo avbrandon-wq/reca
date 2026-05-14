@@ -1,42 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Generar Código de Identificación Único
-    const randomID = Math.floor(1000 + Math.random() * 9000);
-    document.getElementById('cv-id-num').textContent = `RECA-2026-${randomID}`;
+    // Generación de ID Único
+    const cvId = `RECA-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
+    document.getElementById('cv-id-num').textContent = cvId;
 
     const btn = document.getElementById('btn-siguiente');
     const pasos = document.querySelectorAll('.form-step');
     let actual = 0;
 
-    // Actualización en tiempo real
-    const inputs = ['nombre', 'email', 'tel'];
-    inputs.forEach(id => {
-        document.getElementById(`in-${id}`).addEventListener('input', (e) => {
-            document.getElementById(`cv-${id}`).textContent = e.target.value.toUpperCase();
+    // Sincronización en tiempo real
+    const sync = (idIn, idOut) => {
+        document.getElementById(idIn).addEventListener('input', (e) => {
+            document.getElementById(idOut).textContent = e.target.value.toUpperCase();
         });
-    });
+    };
 
-    // Manejo de la Foto
+    sync('in-nombre', 'cv-nombre');
+    sync('in-email', 'cv-email');
+    sync('in-tel', 'cv-tel');
+
+    // Carga de Foto
     document.getElementById('in-foto').addEventListener('change', function(e) {
         const reader = new FileReader();
-        reader.onload = function(){
-            document.getElementById('cv-foto-prev').src = reader.result;
-        };
+        reader.onload = () => document.getElementById('cv-foto-prev').src = reader.result;
         reader.readAsDataURL(e.target.files[0]);
     });
 
-    // Navegación
+    // Navegación por pasos
     btn.addEventListener('click', () => {
-        const inputsRequired = pasos[actual].querySelectorAll('input[required]');
-        let valido = true;
-        inputsRequired.forEach(i => { if(!i.value) valido = false; });
+        const requeridos = pasos[actual].querySelectorAll('input[required]');
+        let esValido = true;
+        requeridos.forEach(i => { if(!i.value) esValido = false; });
 
-        if(valido && actual < pasos.length - 1) {
+        if(esValido) {
             pasos[actual].classList.add('hidden');
             actual++;
-            pasos[actual].classList.remove('hidden');
-            if(actual === pasos.length - 1) btn.style.display = 'none';
-        } else if(!valido) {
-            alert("Por favor, llena los campos obligatorios.");
+            if(pasos[actual]) {
+                pasos[actual].classList.remove('hidden');
+            }
+            
+            if(actual === pasos.length - 1) {
+                btn.classList.add('hidden');
+            }
+        } else {
+            alert("Completa todos los campos con * para continuar.");
         }
     });
 });
