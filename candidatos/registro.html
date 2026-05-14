@@ -1,62 +1,29 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECA - Registro de Candidatos</title>
-    <!-- Enlazamos el CSS principal y el específico de candidatos -->
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="candidatos.css">
-</head>
-<body>
-    <main class="container" id="candidatos-reca">
-        <h1>Gestión de Candidatos RECA</h1>
-        <p>Por favor, completa los 4 pasos para tu postulación.</p>
-        
-        <!-- Indicador de pasos (Stepper) -->
-        <div class="stepper">
-            <div class="step active">1. Perfil</div>
-            <div class="step">2. Foto</div>
-            <div class="step">3. Certificado</div>
-            <div class="step">4. Cita</div>
-        </div>
+<!-- Ejemplo del Paso 1 con estructura de bloques -->
+<div class="form-step" id="cap-1">
+    <h3>1. Perfil Personal</h3>
+    
+    <div class="input-field">
+        <label>NOMBRE Y APELLIDO *</label>
+        <input type="text" id="in-nombre" required placeholder="Ingresa tu nombre completo">
+    </div>
 
-        <form id="form-registro">
-            <!-- Paso 1: Perfil -->
-            <div class="form-step" id="paso-1">
-                <label for="nombre-completo">Nombre Completo *</label>
-                <input type="text" id="nombre-completo" required placeholder="Ej: Jorge Vargas Posada">
-                
-                <label for="email-candidato">Correo Electrónico *</label>
-                <input type="email" id="email-candidato" required placeholder="correo@ejemplo.com">
-            </div>
+    <div class="input-field">
+        <label>CÉDULA *</label>
+        <input type="text" id="in-cedula" required placeholder="Número de identificación">
+    </div>
 
-            <!-- Paso 2: Foto (Oculto inicialmente) -->
-            <div class="form-step hidden" id="paso-2">
-                <label>Foto de Perfil (JPG/PNG) *</label>
-                <input type="file" id="foto-perfil" accept="image/*" required>
-            </div>
+    <div class="input-field">
+        <label>CELULAR *</label>
+        <input type="text" id="in-cel" required placeholder="Ej: 300 123 4567">
+    </div>
 
-            <!-- Paso 3: Certificado (Oculto inicialmente) -->
-            <div class="form-step hidden" id="paso-3">
-                <label>Certificado de Discapacidad (PDF) *</label>
-                <input type="file" id="certificado-pdf" accept=".pdf" required>
-            </div>
+    <div class="input-field">
+        <label>RESPONSABLE</label>
+        <input type="text" id="in-responsable" placeholder="Nombre de persona de contacto">
+    </div>
 
-            <!-- Paso 4: Cita (Oculto inicialmente) -->
-            <div class="form-step hidden" id="paso-4">
-                <h3>Agendar Entrevista</h3>
-                <p>Selecciona un espacio disponible en nuestro calendario.</p>
-                <!-- Aquí puedes insertar el código de Calendly más adelante -->
-            </div>
-
-            <div class="botones-navegacion">
-                <button type="button" id="btn-siguiente">Siguiente</button>
-            </div>
-        </form>
-    </main>
-
-    <!-- Cargamos la lógica al final para mejorar el rendimiento -->
-    <script src="main.js"></script>
-</body>
-</html>
+    <div class="input-field">
+        <label>FOTO DE PERFIL</label>
+        <input type="file" id="in-foto" accept="image/*">
+    </div>
+</div>
