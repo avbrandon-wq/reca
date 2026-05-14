@@ -3,62 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECA - Registro y HV</title>
+    <title>RECA - Registro Candidatos</title>
     <link rel="stylesheet" href="candidatos.css">
 </head>
 <body>
     <div class="main-layout">
-        <!-- LADO IZQUIERDO: FORMULARIO -->
-        <section class="form-container">
+        <!-- SECCIÓN DE ENTRADA DE DATOS -->
+        <section class="form-side">
             <div class="header-reca">
-                <img src="../icon_todas.png" alt="Logo RECA" class="logo">
+                <img src="../logo_color.png" alt="Logo RECA" class="main-logo">
             </div>
             
             <div class="stepper">
                 <div class="step active" id="s1">1. Perfil</div>
                 <div class="step" id="s2">2. Foto</div>
-                <div class="step" id="s3">3. Documentos</div>
+                <div class="step" id="s3">3. Finalizar</div>
             </div>
 
             <form id="form-reca">
+                <!-- Paso 1: Información básica -->
                 <div class="form-step" id="p1">
-                    <label>NOMBRE COMPLETO *</label>
-                    <input type="text" id="in-nombre" required placeholder="Ej: Jorge Vargas Posada">
-                    <label>CORREO ELECTRÓNICO *</label>
-                    <input type="email" id="in-email" required placeholder="correo@ejemplo.com">
-                    <label>TELÉFONO *</label>
-                    <input type="text" id="in-tel" required placeholder="300 000 0000">
+                    <div class="input-field">
+                        <label>NOMBRE COMPLETO *</label>
+                        <input type="text" id="in-nombre" required placeholder="Ej: Jorge Vargas Posada">
+                    </div>
+                    <div class="input-field">
+                        <label>CORREO ELECTRÓNICO *</label>
+                        <input type="email" id="in-email" required placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="input-field">
+                        <label>TELÉFONO DE CONTACTO *</label>
+                        <input type="text" id="in-tel" required placeholder="300 123 4567">
+                    </div>
                 </div>
 
+                <!-- Paso 2: Multimedia -->
                 <div class="form-step hidden" id="p2">
-                    <label>SUBIR FOTO DE PERFIL *</label>
-                    <input type="file" id="in-foto" accept="image/*">
+                    <div class="input-field">
+                        <label>FOTO DE PERFIL PROFESIONAL *</label>
+                        <input type="file" id="in-foto" accept="image/*">
+                    </div>
+                    <p class="hint">Asegúrate de que tu rostro sea visible con fondo claro.</p>
                 </div>
 
+                <!-- Paso 3: Confirmación e Impresión -->
                 <div class="form-step hidden" id="p3">
-                    <label>CERTIFICADO (PDF) *</label>
-                    <input type="file" id="in-pdf" accept=".pdf">
-                    <button type="button" onclick="window.print()" class="btn-print">IMPRIMIR HOJA DE VIDA</button>
+                    <div class="success-box">
+                        <h3>¡Postulación Exitosa!</h3>
+                        <p>Tu hoja de vida ha sido generada con el código de identificación asignado.</p>
+                        <button type="button" onclick="window.print()" class="btn-print">IMPRIMIR HOJA DE VIDA</button>
+                    </div>
                 </div>
 
-                <button type="button" id="btn-siguiente">SIGUIENTE PASO</button>
+                <div class="navigation-btns">
+                    <button type="button" id="btn-siguiente">SIGUIENTE PASO</button>
+                </div>
             </form>
         </section>
 
-        <!-- LADO DERECHO: VISTA PREVIA HV -->
-        <section class="preview-container" id="cv-print">
-            <div class="cv-paper">
+        <!-- SECCIÓN DE VISTA PREVIA (HOJA DE VIDA) -->
+        <section class="preview-side">
+            <div class="cv-document" id="printable-cv">
                 <div class="cv-header">
-                    <div class="cv-id">ID: <span id="cv-id-num">RECA-2026-001</span></div>
-                    <img id="cv-foto-prev" src="" alt="Foto" class="cv-foto-placeholder">
+                    <div class="cv-id">ID: <span id="cv-id-num">RECA-2026-XXXX</span></div>
+                    <div class="cv-photo-container">
+                        <img id="cv-foto-prev" src="" alt="Foto" class="cv-foto-img">
+                    </div>
                 </div>
-                <h2 id="cv-nombre">NOMBRE COMPLETO</h2>
-                <hr>
-                <p><strong>Email:</strong> <span id="cv-email">---</span></p>
-                <p><strong>Teléfono:</strong> <span id="cv-tel">---</span></p>
-                <div class="cv-footer">
-                    <p>Documento generado por el sistema de gestión RECA</p>
+                
+                <h1 id="cv-nombre">NOMBRE CANDIDATO</h1>
+                <div class="cv-divider"></div>
+                
+                <div class="cv-content">
+                    <p><strong>Email:</strong> <span id="cv-email">---</span></p>
+                    <p><strong>Teléfono:</strong> <span id="cv-tel">---</span></p>
                 </div>
+
+                <div class="cv-watermark">RECA - GESTIÓN DE CANDIDATOS</div>
             </div>
         </section>
     </div>
